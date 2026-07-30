@@ -1,0 +1,27 @@
+[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol
+[INFO] [Qnn ExecuTorch]: QnnDlcManager Get Qnn Context blob bytes 1887300424
+[INFO] [Qnn ExecuTorch]: create QNN Logger with log_level 2
+[WARNING] [Qnn ExecuTorch]:  <W> Initializing HtpProvider
+
+[WARNING] [Qnn ExecuTorch]:  <W> Function not called, PrepareLib isn't loaded!
+
+[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2
+[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.
+[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000
+[WARNING] [Qnn ExecuTorch]:  <W> Function not called, PrepareLib isn't loaded!
+
+[WARNING] [Qnn ExecuTorch]:  <W> Function not called, PrepareLib isn't loaded!
+
+[INFO] [Qnn ExecuTorch]: Running level=1 optimization.
+Setting up pretokenizer...
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+RE2 is unable to support things such as negative lookaheads in (?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\r\n\p{L}\p{N}]?\p{L}+|\p{N}{1,3}| ?[^\s\p{L}\p{N}]+[\r\n]*|\s*[\r\n]+|\s+(?!\S)|\s+, using PCRE2 instead.
+Pretokenizer set up
+E0000 00:00:1785324230.148696    2577 re2.cc:237] Error parsing '((?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\r\n\p{L}\p{N}]?\p{L}+|\p{N}{1,3}| ?[^\s\p{L}\p{N}]+[\r\n]*|\s*[\r\n...': invalid perl operator: (?!
+[INFO] [Qnn ExecuTorch]: Destroy Qnn backend parameters
+[INFO] [Qnn ExecuTorch]: Destroy Qnn context
+[INFO] [Qnn ExecuTorch]: Destroy Qnn device
+[INFO] [Qnn ExecuTorch]: Destroy Qnn backend
+[WARNING] [Qnn ExecuTorch]:  <W> Function not called, PrepareLib isn't loaded!
+
+PyTorchObserver {"prompt_tokens":18,"generated_tokens":109,"model_load_start_ms":1785324228421,"model_load_end_ms":1785324230190,"inference_start_ms":1785324230190,"inference_end_ms":1785324233714,"prompt_eval_end_ms":1785324230685,"first_token_ms":1785324230712,"tokens_per_second":35.9855,"aggregate_sampling_time_ms":1687571,"SCALING_FACTOR_UNITS_PER_SECOND":1000}
