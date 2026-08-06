@@ -1,0 +1,113 @@
+{
+  "sampling_rule": {
+    "single_turn": "If the ID contains a numeric component, use the first numeric component. Otherwise, use the zero-based occurrence index within each single-turn type.",
+    "multi_turn": "Use the first numeric component of the ID as conversation_id. Retain all snapshots whose conversation_id satisfies the modulo rule.",
+    "modulus": 20,
+    "remainder": 0
+  },
+  "input": {
+    "single_turn": "full_dataset/data/en/single-turn.json",
+    "multi_turn": "full_dataset/data/en/multi-turn.json"
+  },
+  "output": {
+    "single_turn": "en_mod20_eq0/single-turn.json",
+    "multi_turn": "en_mod20_eq0/multi-turn.json",
+    "combined": "en_mod20_eq0/all.json"
+  },
+  "counts": {
+    "single_turn": {
+      "original": 13054,
+      "sampled": 654,
+      "by_type": {
+        "ST-External": {
+          "original": 1175,
+          "sampled": 59
+        },
+        "ST-Perfect": {
+          "original": 2116,
+          "sampled": 106
+        },
+        "ST-Imperfect": {
+          "original": 3240,
+          "sampled": 162
+        },
+        "ir-ST-External": {
+          "original": 1175,
+          "sampled": 59
+        },
+        "ir-ST-Perfect": {
+          "original": 2114,
+          "sampled": 106
+        },
+        "ir-ST-Imperfect": {
+          "original": 3234,
+          "sampled": 162
+        }
+      }
+    },
+    "multi_turn": {
+      "original_snapshots": 17461,
+      "sampled_snapshots": 830,
+      "by_type": {
+        "Based": {
+          "original_snapshots": 2851,
+          "sampled_snapshots": 142,
+          "original_conversations": 1098,
+          "sampled_conversations": 55
+        },
+        "mQmA": {
+          "original_snapshots": 948,
+          "sampled_snapshots": 49,
+          "original_conversations": 404,
+          "sampled_conversations": 20
+        },
+        "mQsA": {
+          "original_snapshots": 1463,
+          "sampled_snapshots": 72,
+          "original_conversations": 404,
+          "sampled_conversations": 20
+        },
+        "sQmA": {
+          "original_snapshots": 948,
+          "sampled_snapshots": 49,
+          "original_conversations": 404,
+          "sampled_conversations": 20
+        },
+        "SO-case1": {
+          "original_snapshots": 2766,
+          "sampled_snapshots": 131,
+          "original_conversations": 1062,
+          "sampled_conversations": 50
+        },
+        "SO-case2": {
+          "original_snapshots": 1819,
+          "sampled_snapshots": 88,
+          "original_conversations": 393,
+          "sampled_conversations": 19
+        },
+        "mSv": {
+          "original_snapshots": 3830,
+          "sampled_snapshots": 181,
+          "original_conversations": 1063,
+          "sampled_conversations": 50
+        },
+        "External": {
+          "original_snapshots": 1420,
+          "sampled_snapshots": 50,
+          "original_conversations": 490,
+          "sampled_conversations": 17
+        },
+        "IS": {
+          "original_snapshots": 1416,
+          "sampled_snapshots": 68,
+          "original_conversations": 1098,
+          "sampled_conversations": 55
+        }
+      }
+    },
+    "total": {
+      "original": 30515,
+      "sampled": 1484
+    }
+  }
+}
