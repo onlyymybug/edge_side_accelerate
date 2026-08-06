@@ -1,0 +1,143 @@
+{
+    "assignee": "mym",
+    "task_group": "W3_action",
+    "paths": {
+        "repo_root": "..",
+        "handoff_root": "handoff_results",
+        "samples_jsonl": "code/data/w3_action_samples.jsonl",
+        "tokenizer_path": "../qwen25_3b_phone_bundle/model/tokenizer.json",
+        "tokenizer_config_path": "../qwen25_3b_phone_bundle/model/tokenizer_config.json",
+        "pre_gen_pte": "../qwen25_3b_phone_bundle/model"
+    },
+    "runtime": {
+        "name": "executorch_qnn",
+        "backend": "QNN_HTP",
+        "device": "3B15B800A0R00000",
+        "soc_model": "SM8750",
+        "model_name": "Qwen2.5-3B-Instruct",
+        "quantization": "Qwen2_5_1_5BQuantRecipe"
+    },
+    "runner": {
+        "temperature": 0.0,
+        "model_mode": "hybrid",
+        "prefill_ar_len": 128,
+        "max_seq_len": 1024,
+        "decoder_model": "qwen2_5-3b_instruct",
+        "system_prompt": "",
+        "adb_path": "/mnt/c/Users/lyyyy/AppData/Local/Microsoft/WinGet/Packages/Google.PlatformTools_Microsoft.Winget.Source_8wekyb3d8bbwe/platform-tools/adb.exe",
+        "adb_server_port": 5037,
+        "device_workspace": "/data/local/tmp/lyy/executorch/qwen25_3b_qnn237_block16",
+        "device_tokenizer_path": "tokenizer.json",
+        "supports_token_timestamps": false,
+        "supports_htp_performance_mode": false,
+        "qnn_op_package_paths": "",
+        "prompt_token_count_mode": "raw_hf"
+    },
+    "thermal": {
+        "enabled": true,
+        "adb_path": "/mnt/c/Users/lyyyy/AppData/Local/Microsoft/WinGet/Packages/Google.PlatformTools_Microsoft.Winget.Source_8wekyb3d8bbwe/platform-tools/adb.exe",
+        "adb_server_port": 5037,
+        "baseline_temp_c": null,
+        "command_timeout_seconds": 10,
+        "poll_interval_seconds": 10,
+        "stable_samples": 4,
+        "stability_range_c": 0.5,
+        "baseline_tolerance_c": 0.5,
+        "cooldown_timeout_seconds": 7200,
+        "max_consecutive_read_failures": 3
+    },
+    "energy": {
+        "enabled": true,
+        "adb_path": "/mnt/c/Users/lyyyy/AppData/Local/Microsoft/WinGet/Packages/Google.PlatformTools_Microsoft.Winget.Source_8wekyb3d8bbwe/platform-tools/adb.exe",
+        "adb_server_port": 5037,
+        "command_timeout_seconds": 15,
+        "counter_step_uah": 2000,
+        "minimum_counter_ticks": 10
+    },
+    "experiment": {
+        "performance_configs": [
+            {
+                "name": "default",
+                "htp_performance_mode_name": "unsupported_by_runner"
+            }
+        ],
+        "action_budget_tokens": 96,
+        "budget_execution_mode": "physical",
+        "deadlines_ms": [
+            2000,
+            5000,
+            10000
+        ],
+        "repeats": 1,
+        "dynamic_max_seq_len": true,
+        "max_seq_len_cap": 1024,
+        "action_schema": {
+            "open_app": {
+                "app_name": "string"
+            },
+            "open_url": {
+                "url": "string"
+            },
+            "search_web": {
+                "query": "string",
+                "result_limit": "integer",
+                "safe_search": "boolean"
+            },
+            "search_contacts": {
+                "name": "string",
+                "favorites_only": "boolean"
+            },
+            "search_calendar": {
+                "keyword": "string",
+                "days_ahead": "integer"
+            },
+            "search_app_store": {
+                "app_query": "string",
+                "free_only": "boolean",
+                "max_results": "integer"
+            },
+            "find_ui_element": {
+                "description": "string",
+                "visible_only": "boolean"
+            },
+            "click_element": {
+                "element_id": "string",
+                "click_count": "integer"
+            },
+            "type_text": {
+                "text": "string",
+                "replace_existing": "boolean"
+            },
+            "set_alarm": {
+                "time": "string",
+                "label": "string",
+                "repeat_days": "array",
+                "vibrate": "boolean"
+            },
+            "set_timer": {
+                "duration_seconds": "integer",
+                "label": "string",
+                "sound": "boolean"
+            },
+            "add_calendar_event": {
+                "title": "string",
+                "start_time": "string",
+                "duration_minutes": "integer",
+                "attendees": "array",
+                "online": "boolean"
+            },
+            "send_message": {
+                "contact": "string",
+                "text": "string",
+                "urgent": "boolean"
+            },
+            "send_email": {
+                "recipient": "string",
+                "subject": "string",
+                "body": "string",
+                "high_priority": "boolean"
+            }
+        },
+        "prompt_template": "You are a function-calling assistant. Return exactly one JSON object and no other text. The object must contain exactly two keys: action and arguments. Choose the single action whose meaning best matches the user's request. Include exactly every argument defined for that action and no others. Infer and normalize argument values from the request instead of relying on identical wording. Ignore irrelevant details, and if the user corrects a value, use the last stated value. Preserve JSON-native types: strings stay quoted, integers are unquoted whole numbers, booleans are true or false, and arrays are JSON arrays. Normalize clock times to 24-hour HH:MM, calendar start times to YYYY-MM-DD HH:MM, durations to minutes or seconds as named by the argument, and repeat_days to three-letter English day names such as Mon and Tue; use an empty array for a one-time alarm.\n\nAction schema:\n{schema_json}\n\nRequired output form:\n{{\"action\":\"<action_name>\",\"arguments\":{{\"<argument_name>\":<value>}}}}\n\nUser request:\n{request}"
+    }
+}

@@ -1,0 +1,5 @@
+task,deadline_ms,num_dataset_tasks,num_completed_tasks,num_energy_measured_tasks,num_correct_under_deadline,num_measured_correct_under_deadline,total_measured_energy_j,provisional_energy_per_correct_task_under_deadline_j,energy_per_correct_task_under_deadline_j,valid_for_full_dataset_reporting
+MATH500,5000,500,500,500,0,0,2458.2799302766525,,,True
+MATH500,10000,500,500,500,0,0,2458.2799302766525,,,True
+MATH500,20000,500,500,500,30,30,2458.2799302766525,81.94266434255509,81.94266434255509,True
+MATH500,30000,500,500,500,30,30,2458.2799302766525,81.94266434255509,81.94266434255509,True

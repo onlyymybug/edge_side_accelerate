@@ -1,0 +1,43 @@
+{
+  "run_id": "bitnet_gsm8k",
+  "timestamp": "2026-08-03T17:11:55.771339+08:00",
+  "task": "GSM8K",
+  "device_serial": "10.29.195.116:5555",
+  "remote_model": "/data/local/tmp/lyy/executorch/single_llama/hybrid_llama_qnn_1024.pte",
+  "local_model_sha256": "d28d04aad92709feec0ef688ba06959b4989fa038c14e60a25859fbe15b93707",
+  "dataset": "/home/lyyyy/pace/datasets/gsm8k_test.jsonl",
+  "dataset_sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+  "qnn_version": "2.28.0.241029232508_102474",
+  "model_mode": "hybrid",
+  "max_seq_len": 1024,
+  "requested_output_budget_tokens": 128,
+  "sequence_length_policy": "prompt_plus_output_budget",
+  "seq_len_compensation": 3,
+  "prompt_token_calibration_csv": null,
+  "prompt_token_calibration_sha256": null,
+  "budget_execution_mode": "physical",
+  "htp_performance_mode": "runner_default_not_controllable",
+  "token_timestamps": "unsupported_by_runner",
+  "score_method": "gsm8k_numeric_exact",
+  "prompt_template": "Solve the grade-school math problem. Show your reasoning briefly. End with exactly: The answer is <scalar>. In that final sentence, <scalar> must be a plain integer, decimal, or a/b fraction. Do not use LaTeX, units, currency symbols, commas, or percent signs in the final answer.\n\nProblem: {question}",
+  "telemetry": {
+    "source": "dumpsys thermalservice HAL vbat/ibat/skin",
+    "power_formula": "signed_power_w = vbat_v * ibat_a",
+    "energy_formula": "trapezoidal integral over observer inference window",
+    "sampling_interval_seconds": 0.5,
+    "memory_source": "/proc/PID/status VmRSS and VmHWM",
+    "boundary_policy": "linear interpolation to inference_start_ms/inference_end_ms"
+  },
+  "deadlines_ms": [
+    5000,
+    10000,
+    20000,
+    30000
+  ],
+  "energy_per_correct_task_under_deadline_formula": "sum energy of all tasks / count(correct tasks with inference_ms <= deadline)",
+  "deadline_latency_field": "inference_ms",
+  "edp_formula": "energy_j * inference_ms / 1000",
+  "energy_per_token_formula": "energy_j / generated_tokens",
+  "memory_use_field": "process VmHWM converted from KiB to MiB",
+  "measurement_scope_note": "battery-level signed energy includes the whole phone and telemetry overhead; it is not isolated NPU energy"
+}

@@ -1,0 +1,62 @@
+{
+  "run_id": "math500_qwen2.5-3b_w4a16-block16_balanced",
+  "device_label": "oneplus",
+  "model_result_name": "qwen2.5-3b",
+  "quantization_result_name": "w4a16-block16",
+  "performance_mode_result_name": "balanced",
+  "timestamp": "2026-08-04T16:25:45.688495+08:00",
+  "adb_transport_serial": "192.168.110.67:5555",
+  "device_identity": {
+    "hardware_serial": "3B15B800A0R00000",
+    "model": "PLQ110",
+    "soc": "SM8750",
+    "abi": "arm64-v8a"
+  },
+  "phone_dir": "/data/local/tmp/lyy/executorch/qwen25_3b_qnn237_balanced",
+  "local_model": "/home/lyyyy/qwen25_3b_qnn_artifacts_hybrid_1024_balanced/hybrid_llama_qnn.pte",
+  "local_model_sha256": "bd94b61a35a1b236a6d27da6bdce8148eda5742db9bf6b3bb8efbc79a053872a",
+  "tokenizer_sha256": "7d3b8cace3c6283818f885ef7ee8ca7b7ae7431c9b29245b0c33a0cc73113ab8",
+  "local_runner": "/home/lyyyy/qwen25_3b_phone_bundle/runtime/qnn_llama_runner",
+  "local_runner_sha256": "87e8f8158087f725ea2c40983f57d277e0ceb607a42f503b99332461ff4c0ad6",
+  "local_backend_sha256": "762c068e8373e4c8602b244982e75b3a3657db42e58338697d5db880fcd789b4",
+  "qnn_version": "2.37",
+  "model_mode": "hybrid",
+  "decoder_model_version": "qwen2_5",
+  "eval_mode": 1,
+  "temperature": 0,
+  "shared_buffer": true,
+  "budget_execution_mode": "physical",
+  "token_timestamps": "unsupported_by_runner",
+  "qnn_op_package_paths": "",
+  "max_seq_len": 1024,
+  "htp_performance_mode": "balanced_aot_from_pte",
+  "telemetry": {
+    "source": "dumpsys thermalservice HAL vbat/ibat/skin",
+    "collection_mode": "bounded on-device shell loop",
+    "power_formula": "signed_power_w = vbat_v * ibat_a",
+    "energy_formula": "trapezoidal integral over observer inference window",
+    "sampling_interval_seconds": 0.5,
+    "memory_source": "/proc/PID/status VmRSS and VmHWM",
+    "boundary_policy": "linear interpolation to inference_start_ms/inference_end_ms",
+    "watchdog_seconds": 1800.0,
+    "external_power_policy": "retain signed net battery flow but invalidate consumption metrics"
+  },
+  "energy_per_token_formula": "energy_j / generated_tokens",
+  "edp_formula": "energy_j * inference_ms / 1000",
+  "memory_use_field": "process VmHWM converted from KiB to MiB",
+  "measurement_scope_note": "battery-level signed energy includes the whole phone and telemetry overhead; it is not isolated NPU energy",
+  "runs": {
+    "MATH500": {
+      "dataset": "/home/lyyyy/pace/datasets/math500_test.jsonl",
+      "dataset_sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132",
+      "dataset_tasks": 500,
+      "requested_budget": 256,
+      "deadlines_ms": [
+        5000,
+        10000,
+        20000,
+        30000
+      ]
+    }
+  }
+}

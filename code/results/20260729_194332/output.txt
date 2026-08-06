@@ -1,5 +1,0 @@
-<|begin_of_text|><|start_header_id|>user<|end_header_id|>
-
-User: Who are you? Assistant:<|eot_id|><|start_header_id|>assistant<|end_header_id|>
-
-I am an AI assistant designed to help you find information and answer your questions. How can I assist you today?<|eot_id|>
