@@ -1,0 +1,12 @@
+{
+  "MATH500": {
+    "samples": 500,
+    "runtime_successes": 499,
+    "scored_samples": 499,
+    "correct": 233,
+    "accuracy": 0.46693386773547096,
+    "mean_ttft_ms": 204.7875751503006,
+    "mean_e2e_latency_ms": 35107.32264529058,
+    "mean_decode_token_per_sec": 14.892148296593186
+  }
+}

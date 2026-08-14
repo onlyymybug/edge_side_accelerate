@@ -1,0 +1,23 @@
+{
+  "scorer_version": "math_benchmarks_v2_relaxed_prm800k",
+  "source_summary": "/home/lyyyy/pace/results/oneplus/math500/qwen2.5-3B-w4a16/balanced/output_budget_512/summary.csv",
+  "output_summary": "/home/lyyyy/pace/results/oneplus/math500/qwen2.5-3B-w4a16/balanced/output_budget_512/summary.rescored_v2.csv",
+  "samples": 500,
+  "runtime_successes": 499,
+  "answer_extractable": 499,
+  "format_compliant": 67,
+  "correct": 186,
+  "accuracy": 0.372,
+  "parse_methods": {
+    "last_boxed_answer": 268,
+    "last_line_expression": 228,
+    "final_answer_phrase": 3,
+    "no_math_answer": 1
+  },
+  "verifier_methods": {
+    "prm800k_grade_answer": 499,
+    "not_run_no_answer": 1
+  },
+  "rescore_errors": [],
+  "timestamp": "2026-08-12T15:28:19.116195+08:00"
+}

@@ -1,0 +1,12 @@
+{
+  "GSM8K": {
+    "samples": 1319,
+    "runtime_successes": 1319,
+    "scored_samples": 1319,
+    "correct": 817,
+    "accuracy": 0.6194086429112965,
+    "mean_ttft_ms": 259.0712661106899,
+    "mean_e2e_latency_ms": 14023.242608036391,
+    "mean_decode_token_per_sec": 13.591898036391205
+  }
+}

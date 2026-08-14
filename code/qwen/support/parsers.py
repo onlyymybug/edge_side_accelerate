@@ -12,27 +12,32 @@ _TERMINAL_CONTROL_TOKENS = ("<|im_end|>", "<|endoftext|>")
 
 
 def strip_terminal_control_tokens(text: str) -> str:
-    result = text
-    while True:
-        without_trailing_whitespace = result.rstrip()
-        matched_token = next(
-            (
-                token
-                for token in _TERMINAL_CONTROL_TOKENS
-                if without_trailing_whitespace.endswith(token)
-            ),
-            None,
-        )
-        if matched_token is None:
-            return result
-        result = without_trailing_whitespace[: -len(matched_token)]
+    positions = [
+        position
+        for token in _TERMINAL_CONTROL_TOKENS
+        if (position := text.find(token)) >= 0
+    ]
+    if positions:
+        text = text[: min(positions)]
+    return text.rstrip()
 
 
 def _extract_assistant_completion(text: str, prompt: str | None = None) -> str:
+    prompt_removed = False
     if prompt and text.startswith(prompt):
         text = text[len(prompt) :].lstrip()
-    if _ASSISTANT_MARKER in text:
-        text = text.split(_ASSISTANT_MARKER, 1)[1]
+        prompt_removed = True
+    if not prompt_removed and _ASSISTANT_MARKER in text:
+        positions = [
+            match.start() for match in re.finditer(re.escape(_ASSISTANT_MARKER), text)
+        ]
+        expected_position = prompt.rfind(_ASSISTANT_MARKER) if prompt else -1
+        boundary = (
+            min(positions, key=lambda position: abs(position - expected_position))
+            if expected_position >= 0
+            else positions[0]
+        )
+        text = text[boundary + len(_ASSISTANT_MARKER) :].lstrip()
     return strip_terminal_control_tokens(text)
 
 

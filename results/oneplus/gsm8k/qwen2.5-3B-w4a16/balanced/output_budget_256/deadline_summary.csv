@@ -1,0 +1,5 @@
+task,deadline_ms,num_dataset_tasks,num_completed_tasks,num_energy_measured_tasks,num_correct_under_deadline,num_measured_correct_under_deadline,total_measured_energy_j,provisional_energy_per_correct_task_under_deadline_j,energy_per_correct_task_under_deadline_j,valid_for_full_dataset_reporting
+GSM8K,5000,1319,1319,1319,25,25,5678.3352711357475,227.1334108454299,227.1334108454299,True
+GSM8K,10000,1319,1319,1319,418,418,5678.3352711357475,13.58453414147308,13.58453414147308,True
+GSM8K,20000,1319,1319,1319,774,774,5678.3352711357475,7.33635047950355,7.33635047950355,True
+GSM8K,30000,1319,1319,1319,774,774,5678.3352711357475,7.33635047950355,7.33635047950355,True

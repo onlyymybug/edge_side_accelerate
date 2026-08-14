@@ -28,9 +28,9 @@ DATASET_ROOT = Path(
 ).resolve()
 MODEL_PROFILE = os.environ.get("RUNNER_MODEL_PROFILE", "qwen").strip().lower()
 PROMPT_TEMPLATE_VERSION = (
-    "hammerbench_llama3_json_v1"
+    "hammerbench_official_appendix_d_llama3_v2"
     if MODEL_PROFILE == "bitnet"
-    else "hammerbench_qwen_json_v1"
+    else "hammerbench_official_appendix_d_qwen_v2"
 )
 TASK_NAME = "HAMMERBENCH"
 SAFE_COMPONENT_RE = re.compile(r"[^A-Za-z0-9_.-]+")
@@ -83,18 +83,26 @@ def visible_input(row: dict[str, Any]) -> str:
 
 
 def build_prompt(_task: str, sample: dict[str, Any], _cfg: dict[str, Any]) -> str:
+    # Align with HammerBench, Appendix D, "Prompts of Function Calling".  In
+    # particular, snapshots must preserve user wording, represent unavailable
+    # parameter values as empty strings, and reject an irrelevant tool set.
     tool_lines = "\n".join(
         json.dumps(tool, ensure_ascii=False, separators=(",", ":"))
         for tool in sample["tools"]
     )
     system_content = (
-        "You select and call one tool for the user's current request.\n"
-        "Available tools are listed inside <tools> tags:\n"
+        "You have access to the following functions.\n"
         f"<tools>\n{tool_lines}\n</tools>\n"
-        "Return exactly one JSON object in this form:\n"
+        "To call a function, respond with exactly one JSON object in this form:\n"
         '{"name":"fully.qualified.tool.name","parameters":{"parameter":"value"}}\n'
-        "Use the key parameters, not arguments. Do not include Markdown, explanations, "
-        "or any text outside the JSON object."
+        "Do not hallucinate parameters or parameter values. Include every parameter "
+        "defined by the selected function; if its value is not stated in the user "
+        "request or conversation history, use an empty string. Preserve values exactly "
+        "as the user expressed them. In particular, do not normalize or rewrite time "
+        "expressions. Never ask the user for missing parameters; output the current "
+        "function-call snapshot using empty strings. Do not include Markdown, "
+        "explanations, or any text outside the JSON object. If none of the available "
+        "tools is suitable, output exactly: Sorry, no tool is suitable for your request."
     )
     if MODEL_PROFILE == "bitnet":
         # The legacy BitNet runner itself wraps --prompt as a Llama-3 user
@@ -644,7 +652,11 @@ def main() -> int:
 
     identity = qrun.device_identity()
     model_path = qrun.MODEL_ROOT / "hybrid_llama_qnn.pte"
-    runner_path = qrun.BUNDLE / "runtime" / "qnn_llama_runner"
+    runner_path = (
+        qrun.BUNDLE / "runtime" / "qnn_llama_runner"
+        if MODEL_PROFILE == "bitnet"
+        else qrun.QNN_RUNNER_LOCAL_PATH
+    )
     backend_path = qrun.BUNDLE / "runtime" / "libqnn_executorch_backend.so"
     for required in (model_path, runner_path, backend_path):
         if not required.is_file():
@@ -664,7 +676,7 @@ def main() -> int:
         )
         if MODEL_PROFILE == "bitnet"
         else (
-            "qnn_llama_runner",
+            qrun.QNN_RUNNER_NAME,
             "hybrid_llama_qnn.pte",
             "tokenizer.json",
             "tokenizer_config.json",
@@ -686,21 +698,20 @@ def main() -> int:
             f"{MODEL_PROFILE} phone bundle is incomplete under {qrun.PHONE_DIR}"
         )
 
-    type_suffix = (
-        "-" + "_".join(safe_component(value) for value in selected_types)
-        if selected_types
-        else ""
-    )
-    default_run_id = (
-        f"hammerbench-{args.language}-{args.split}{type_suffix}_"
-        f"{qrun.MODEL_RESULT_NAME}_{qrun.QUANTIZATION_RESULT_NAME}_"
-        f"{qrun.PERFORMANCE_MODE_RESULT_NAME}"
-    )
+    default_run_id = qrun.PERFORMANCE_MODE_RESULT_NAME
     run_id = args.run_id or default_run_id
+    task_dir = (
+        "hammerbench-single" if args.split == "single-turn" else "hammerbench-multi"
+    )
     output_parent = (
         args.output_root.resolve()
         if args.output_root
-        else qrun.RESULTS_ROOT / qrun.DEVICE_LABEL
+        else (
+            qrun.RESULTS_ROOT
+            / qrun.DEVICE_LABEL
+            / task_dir
+            / qrun.RESULT_MODEL_DIR_NAME
+        )
     )
     root = output_parent / run_id
     manifest_path = root / "manifest.json"
@@ -720,11 +731,17 @@ def main() -> int:
         "model_result_name": qrun.MODEL_RESULT_NAME,
         "quantization_result_name": qrun.QUANTIZATION_RESULT_NAME,
         "performance_mode_result_name": qrun.PERFORMANCE_MODE_RESULT_NAME,
-        "htp_performance_mode": qrun.HTP_PERFORMANCE_MODE_NAME,
+        "htp_performance_mode": qrun.HTP_PERFORMANCE_MODE,
+        "htp_performance_mode_name": qrun.HTP_PERFORMANCE_MODE_NAME,
         "qnn_version": "2.28" if MODEL_PROFILE == "bitnet" else "2.37",
         "local_model": str(model_path),
         "local_model_sha256": qrun.sha256(model_path),
         "local_runner_sha256": qrun.sha256(runner_path),
+        "remote_runner": (
+            "qnn_llama_runner"
+            if MODEL_PROFILE == "bitnet"
+            else qrun.QNN_RUNNER_NAME
+        ),
         "local_backend_sha256": qrun.sha256(backend_path),
         "tokenizer_sha256": qrun.sha256(tokenizer_path),
         "dataset": str(dataset_path),
@@ -746,7 +763,7 @@ def main() -> int:
         "qnn_op_package_paths": "",
         "telemetry": {
             "source": "dumpsys thermalservice HAL vbat/ibat/skin",
-            "collection_mode": "bounded on-device shell loop",
+            "collection_mode": "host-side ADB polling",
             "sampling_interval_seconds": args.telemetry_interval,
             "power_formula": "signed_power_w = vbat_v * ibat_a",
             "energy_formula": "trapezoidal integral over inference window",
@@ -808,6 +825,15 @@ def main() -> int:
             str(row["sample_id"]): row
             for row in qrun.load_csv(root / "summary_metrics.csv")
         }
+    # Result directories may be moved into the canonical hierarchy between
+    # runs. Rebase path-valued columns in memory so the next checkpoint does
+    # not carry obsolete absolute paths forward. Existing result files are not
+    # rewritten merely by loading them.
+    for sample_id, row in rows_by_id.items():
+        sample_dir = root / TASK_NAME.lower() / sample_id
+        row["output_path"] = str(sample_dir / "generated_text.txt")
+        row["log_path"] = str(sample_dir / "runner.log")
+        row["telemetry_path"] = str(sample_dir / "telemetry.csv")
     samples_by_id = {sample["sample_id"]: sample for sample in samples}
     completed = {
         sample_id

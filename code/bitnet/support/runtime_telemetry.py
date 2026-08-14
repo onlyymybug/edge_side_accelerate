@@ -59,11 +59,11 @@ class TelemetrySample:
 class RuntimeTelemetrySampler:
     """Poll OEM thermalservice while a runner process is alive."""
 
-    REMOTE_COMMAND = r"""
+    REMOTE_COMMAND_TEMPLATE = r"""
 printf '__PACE_TS_BEGIN__='; date +%s%3N
 dumpsys thermalservice
 printf '__PACE_MEMORY__\n'
-pid="$(pidof qnn_llama_runner 2>/dev/null | awk '{print $1}')"
+pid="$(pidof __PACE_RUNNER_PROCESS_NAME__ 2>/dev/null | awk '{print $1}')"
 if [ -n "$pid" ] && [ -r "/proc/$pid/status" ]; then
   printf 'pid=%s\n' "$pid"
   awk '/^VmRSS:/{print "rss_kb=" $2} /^VmHWM:/{print "vmhwm_kb=" $2}' "/proc/$pid/status"
@@ -75,11 +75,18 @@ printf '__PACE_TS_END__='; date +%s%3N
         self,
         adb: Callable[..., Any],
         interval_seconds: float,
+        runner_process_name: str = "qnn_llama_runner",
     ) -> None:
         if interval_seconds <= 0:
             raise ValueError("telemetry interval must be positive")
+        if not re.fullmatch(r"[A-Za-z0-9._+-]+", runner_process_name):
+            raise ValueError("runner process name must be a plain executable name")
         self._adb = adb
         self._interval_seconds = interval_seconds
+        self._runner_process_name = runner_process_name
+        self._remote_command = self.REMOTE_COMMAND_TEMPLATE.replace(
+            "__PACE_RUNNER_PROCESS_NAME__", shlex.quote(runner_process_name)
+        )
         self._stop_event = threading.Event()
         self._thread: threading.Thread | None = None
         self.samples: list[TelemetrySample] = []
@@ -111,7 +118,7 @@ printf '__PACE_TS_END__='; date +%s%3N
         try:
             result = self._adb(
                 "shell",
-                self.REMOTE_COMMAND,
+                self._remote_command,
                 check=False,
                 capture_output=True,
                 timeout=10,

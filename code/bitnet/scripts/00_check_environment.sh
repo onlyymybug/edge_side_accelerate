@@ -10,6 +10,8 @@ require_file "${BUNDLE_ROOT}/hybrid_llama_qnn.pte"
 require_file "${BUNDLE_ROOT}/hybrid_llama_qnn_quant_attrs.txt"
 require_file "${DATASET_PATH}"
 require_file "${TOKENIZER_PATH}"
+require_file "${RUNTIME_BUNDLE_ROOT}/runtime/qnn_llama_runner"
+require_file "${RUNTIME_BUNDLE_ROOT}/runtime/libqnn_executorch_backend.so"
 require_file "${PYTHON_BIN}"
 require_device
 
@@ -19,7 +21,9 @@ echo "Host artifacts:"
 sha256sum \
   "${BUNDLE_ROOT}/hybrid_llama_qnn.pte" \
   "${BUNDLE_ROOT}/hybrid_llama_qnn_quant_attrs.txt" \
-  "${TOKENIZER_PATH}"
+  "${TOKENIZER_PATH}" \
+  "${RUNTIME_BUNDLE_ROOT}/runtime/qnn_llama_runner" \
+  "${RUNTIME_BUNDLE_ROOT}/runtime/libqnn_executorch_backend.so"
 
 echo
 echo "Phone:"
@@ -34,6 +38,21 @@ for filename in "${required_phone_files[@]}"; do
     exit 1
   fi
   adb_run shell "ls -lh '${DEVICE_DIR}/${filename}'"
+done
+
+echo
+echo "Checking deployed BitNet runtime hashes:"
+for filename in qnn_llama_runner libqnn_executorch_backend.so; do
+  host_path="${RUNTIME_BUNDLE_ROOT}/runtime/${filename}"
+  host_hash="$(sha256sum "${host_path}" | awk '{print $1}')"
+  phone_hash="$(adb_run shell "sha256sum '${DEVICE_DIR}/${filename}'" | awk '{print $1}')"
+  if [[ "${host_hash}" != "${phone_hash}" ]]; then
+    echo "Runtime SHA-256 mismatch: ${filename}" >&2
+    echo "host=${host_hash}" >&2
+    echo "phone=${phone_hash}" >&2
+    exit 1
+  fi
+  echo "${filename}: ${host_hash}"
 done
 
 echo

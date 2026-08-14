@@ -8,12 +8,7 @@ set -a
 source "${BITNET_CODE_ROOT}/config.env"
 set +a
 
-tag="${1:-bitnet}"
-if [[ $# -gt 0 ]]; then
-  shift
-fi
-
 "${BITNET_CODE_ROOT}/scripts/05_run_gsm8k.sh" \
-  --run-id "${tag}_gsm8k" --continue-on-error "$@"
+  --continue-on-error "$@"
 "${BITNET_CODE_ROOT}/scripts/06_run_math500.sh" \
-  --run-id "${tag}_math500" --continue-on-error "$@"
+  --continue-on-error "$@"

@@ -10,7 +10,7 @@ set +a
 
 BFCL_ROOT="${BFCL_ROOT:-/home/lyyyy/gorilla/berkeley-function-call-leaderboard}"
 BFCL_PYTHON="${BFCL_PYTHON:-/home/lyyyy/miniconda3/envs/bfcl-phone/bin/python}"
-BFCL_PROJECT_ROOT="${BFCL_PROJECT_ROOT:-${PACE_ROOT}/results/${DEVICE_LABEL}/bfcl_${MODEL_RESULT_NAME}_${QUANTIZATION_RESULT_NAME}_${PERFORMANCE_MODE_RESULT_NAME}}"
+BFCL_PROJECT_ROOT="${BFCL_PROJECT_ROOT:-${PACE_ROOT}/results/${DEVICE_LABEL}/bfcl/${RESULT_MODEL_DIR_NAME}/${PERFORMANCE_MODE_RESULT_NAME}}"
 PACE_CODE_ROOT="${PACE_CODE_ROOT:-${PACE_ROOT}/code}"
 
 if [[ ! -x "${BFCL_PYTHON}" ]]; then

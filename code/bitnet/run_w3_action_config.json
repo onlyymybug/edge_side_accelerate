@@ -29,7 +29,7 @@
         "device_workspace": "/data/local/tmp/lyy/executorch/qwen25_3b_qnn237_block16",
         "device_tokenizer_path": "tokenizer.json",
         "supports_token_timestamps": false,
-        "supports_htp_performance_mode": false,
+        "supports_htp_performance_mode": true,
         "qnn_op_package_paths": "",
         "prompt_token_count_mode": "raw_hf"
     },
@@ -57,8 +57,9 @@
     "experiment": {
         "performance_configs": [
             {
-                "name": "default",
-                "htp_performance_mode_name": "unsupported_by_runner"
+                "name": "burst",
+                "htp_performance_mode": 2,
+                "htp_performance_mode_name": "burst_runtime_override"
             }
         ],
         "action_budget_tokens": 96,

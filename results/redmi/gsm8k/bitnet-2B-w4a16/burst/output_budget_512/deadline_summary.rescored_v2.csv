@@ -1,0 +1,5 @@
+deadline_ms,num_dataset_tasks,num_completed_tasks,num_energy_measured_tasks,num_correct_under_deadline,num_measured_correct_under_deadline,total_measured_energy_j,provisional_energy_per_correct_task_under_deadline_j,energy_per_correct_task_under_deadline_j,valid_for_full_dataset_reporting
+5000,1319,1319,1318,95,95,9124.649656606827,96.04894375375608,,False
+10000,1319,1319,1318,612,612,9124.649656606827,14.909558262429456,,False
+20000,1319,1319,1318,901,900,9124.649656606827,10.13849961845203,,False
+30000,1319,1319,1318,905,904,9124.649656606827,10.093639000671269,,False

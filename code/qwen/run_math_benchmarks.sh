@@ -8,5 +8,7 @@ set -a
 source "${QWEN_CODE_ROOT}/config.env"
 set +a
 
-exec "${PYTHON_BIN}" "${QWEN_CODE_ROOT}/run_pace_datasets.py" \
-  --tasks GSM8K MATH500 "$@"
+"${PYTHON_BIN}" "${QWEN_CODE_ROOT}/run_pace_datasets.py" \
+  --tasks GSM8K "$@"
+"${PYTHON_BIN}" "${QWEN_CODE_ROOT}/run_pace_datasets.py" \
+  --tasks MATH500 "$@"

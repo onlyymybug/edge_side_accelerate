@@ -1,0 +1,3 @@
+# Dependencies for math_benchmarks.py and the vendored PRM800K grader.
+sympy==1.14.0
+pylatexenc==2.11

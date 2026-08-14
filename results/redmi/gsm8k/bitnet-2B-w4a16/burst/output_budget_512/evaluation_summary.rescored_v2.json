@@ -1,0 +1,22 @@
+{
+  "scorer_version": "math_benchmarks_v2_relaxed_prm800k",
+  "source_summary": "/home/lyyyy/pace/results/redmi/gsm8k/bitnet-2B-w4a16/burst/output_budget_512/summary.csv",
+  "output_summary": "/home/lyyyy/pace/results/redmi/gsm8k/bitnet-2B-w4a16/burst/output_budget_512/summary.rescored_v2.csv",
+  "samples": 1319,
+  "runtime_successes": 1319,
+  "answer_extractable": 1319,
+  "format_compliant": 627,
+  "correct": 905,
+  "accuracy": 0.686125852918878,
+  "parse_methods": {
+    "relaxed_answer_phrase": 629,
+    "strict_answer_phrase": 627,
+    "last_number_fallback": 19,
+    "last_line_number": 44
+  },
+  "verifier_methods": {
+    "decimal_numeric_exact": 1319
+  },
+  "rescore_errors": [],
+  "timestamp": "2026-08-12T15:26:23.937902+08:00"
+}

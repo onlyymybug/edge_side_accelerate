@@ -18,6 +18,7 @@ CODE_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(CODE_ROOT))
 from math_benchmarks import (  # noqa: E402
     BENCHMARKS,
+    SCORER_VERSION,
     build_benchmark_prompt,
     load_benchmark_samples,
     score_benchmark_answer,
@@ -88,6 +89,11 @@ def write_summary(path: Path, rows: list[dict[str, Any]]) -> None:
         "normalized_predicted_answer",
         "normalized_gold_answer",
         "answer_parse_method",
+        "answer_extractable",
+        "format_compliant",
+        "scorer_version",
+        "verifier_method",
+        "verifier_error",
         "score_method",
         "answer_correct",
         "estimated_prompt_tokens",
@@ -269,6 +275,7 @@ def main() -> int:
         parser.error("--telemetry-interval must be positive")
 
     root = Path(required_env("BUNDLE_ROOT")).resolve()
+    runtime_root = Path(required_env("RUNTIME_BUNDLE_ROOT")).resolve()
     benchmark = args.dataset_kind.upper() if args.dataset_kind != "w2" else None
     if args.dataset_kind == "w2":
         dataset_path = Path(required_env("W2_DATASET_PATH")).resolve()
@@ -344,13 +351,26 @@ def main() -> int:
     device_output_dir = f"{device_dir}/outputs/{output_label}_hybrid_1024/{run_id}"
     adb("shell", f"mkdir -p {shell_quote(device_output_dir)}")
 
+    device_hardware_serial = adb(
+        "shell",
+        "getprop ro.serialno",
+        capture_output=True,
+    ).stdout.strip()
+    if not device_hardware_serial:
+        parser.error("connected device returned an empty ro.serialno")
+
     manifest = {
         "run_id": run_id,
         "timestamp": datetime.now().astimezone().isoformat(),
         "task": task_name,
         "device_serial": required_env("ANDROID_SERIAL"),
+        "device_hardware_serial": device_hardware_serial,
         "remote_model": f"{device_dir}/{required_env('REMOTE_MODEL_NAME')}",
         "local_model_sha256": sha256(root / "hybrid_llama_qnn.pte"),
+        "local_runner_sha256": sha256(runtime_root / "runtime/qnn_llama_runner"),
+        "local_backend_sha256": sha256(
+            runtime_root / "runtime/libqnn_executorch_backend.so"
+        ),
         "dataset": str(dataset_path),
         "dataset_sha256": sha256(dataset_path),
         "qnn_version": "2.28.0.241029232508_102474",
@@ -370,15 +390,18 @@ def main() -> int:
             sha256(calibration_path) if calibration_path is not None else None
         ),
         "budget_execution_mode": "physical",
-        "htp_performance_mode": "runner_default_not_controllable",
+        "scorer_version": SCORER_VERSION,
+        "format_required_for_correctness": False,
+        "htp_performance_mode": int(required_env("HTP_PERFORMANCE_MODE")),
+        "htp_performance_mode_name": required_env("HTP_PERFORMANCE_MODE_NAME"),
         "token_timestamps": "unsupported_by_runner",
         "score_method": (
             "w2_numeric_exact"
             if benchmark is None
             else (
-                "gsm8k_numeric_exact"
+                "gsm8k_relaxed_extract_numeric_exact"
                 if benchmark == "GSM8K"
-                else "math500_normalized_exact_not_symbolic_equivalence"
+                else "math500_relaxed_extract_prm800k_grade_answer"
             )
         ),
         "prompt_template": prompt_template,
@@ -410,7 +433,7 @@ def main() -> int:
         existing_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         compatibility_keys = (
             "task",
-            "device_serial",
+            "device_hardware_serial",
             "remote_model",
             "local_model_sha256",
             "dataset_sha256",
@@ -430,6 +453,12 @@ def main() -> int:
             )
         existing_manifest.update(
             {
+                # The ADB transport address can change after Wi-Fi/DHCP changes.
+                # Keep it for provenance, but identify the phone by ro.serialno.
+                "device_serial": manifest["device_serial"],
+                "device_hardware_serial": manifest["device_hardware_serial"],
+                "scorer_version": manifest["scorer_version"],
+                "format_required_for_correctness": False,
                 "telemetry": manifest["telemetry"],
                 "deadlines_ms": deadlines_ms,
                 "energy_per_correct_task_under_deadline_formula": manifest[
@@ -511,6 +540,11 @@ def main() -> int:
             sample_output_capacity = (
                 max_seq_len - estimated_prompt_tokens - seq_len_compensation
             )
+            if sample_output_capacity < 1:
+                raise RuntimeError(
+                    f"{sample_id}: prompt({estimated_prompt_tokens}) leaves no "
+                    f"output capacity in max_seq_len={max_seq_len}"
+                )
         elif calibration_path is not None:
             available = max_seq_len - seq_len_prompt_tokens - 1
             if available < 1:
@@ -561,6 +595,8 @@ def main() -> int:
             required_env("LOGITS_SCALE"),
             "--logits_offset",
             required_env("LOGITS_OFFSET"),
+            "--htp_performance_mode",
+            required_env("HTP_PERFORMANCE_MODE"),
             "--num_iters",
             "1",
             "--output_path",
@@ -575,6 +611,7 @@ def main() -> int:
                 'export LD_PRELOAD="$PWD/libc++_shared.so"',
                 'export ADSP_LIBRARY_PATH="$PWD${ADSP_LIBRARY_PATH:+;$ADSP_LIBRARY_PATH}"',
                 "unset QNN_OP_PACKAGE_PATHS",
+                f"rm -f {shell_quote(remote_output)} {shell_quote(remote_speed)}",
                 shlex.join(runner_args),
             ]
         )
@@ -589,7 +626,11 @@ def main() -> int:
             flush=True,
         )
         log_path = sample_dir / "run.log"
-        telemetry = RuntimeTelemetrySampler(adb, telemetry_interval)
+        telemetry = RuntimeTelemetrySampler(
+            adb,
+            telemetry_interval,
+            runner_process_name="qnn_llama_runner",
+        )
         returncode = stream_process(command, log_path, telemetry=telemetry)
         telemetry_path = sample_dir / "telemetry.csv"
         write_telemetry(telemetry_path, telemetry.samples)
@@ -645,13 +686,18 @@ def main() -> int:
         normalized_predicted_answer = "NA"
         normalized_gold_answer = "NA"
         parse_method = "no_output"
+        answer_extractable: bool | str = ""
+        format_compliant: bool | str = ""
+        scorer_version = SCORER_VERSION if benchmark is not None else ""
+        verifier_method = ""
+        verifier_error = ""
         score_method = (
             "w2_numeric_exact"
             if benchmark is None
             else (
-                "gsm8k_numeric_exact"
+                "gsm8k_relaxed_extract_numeric_exact"
                 if benchmark == "GSM8K"
-                else "math500_normalized_exact_not_symbolic_equivalence"
+                else "math500_relaxed_extract_prm800k_grade_answer"
             )
         )
         answer_correct = False
@@ -669,6 +715,11 @@ def main() -> int:
                 ]
                 normalized_gold_answer = scored["normalized_gold_answer"]
                 parse_method = scored["answer_parse_method"]
+                answer_extractable = scored["answer_extractable"]
+                format_compliant = scored["format_compliant"]
+                scorer_version = scored["scorer_version"]
+                verifier_method = scored["verifier_method"]
+                verifier_error = scored["verifier_error"]
                 score_method = scored["score_method"]
                 answer_correct = bool(scored["score_correct"])
             else:
@@ -712,13 +763,20 @@ def main() -> int:
                 "normalized_predicted_answer": normalized_predicted_answer,
                 "normalized_gold_answer": normalized_gold_answer,
                 "answer_parse_method": parse_method,
+                "answer_extractable": answer_extractable,
+                "format_compliant": format_compliant,
+                "scorer_version": scorer_version,
+                "verifier_method": verifier_method,
+                "verifier_error": verifier_error,
                 "score_method": score_method,
                 "answer_correct": answer_correct,
                 "estimated_prompt_tokens": estimated_prompt_tokens,
                 "runner_prompt_tokens": observer.get("prompt_tokens", ""),
                 "seq_len_prompt_tokens": seq_len_prompt_tokens,
                 "prompt_token_source": prompt_token_source,
-                "requested_output_tokens": target_output_tokens,
+                "requested_output_tokens": (
+                    "none" if args.model_max_seq_len else target_output_tokens
+                ),
                 "target_output_tokens": sample_output_capacity,
                 "seq_len": seq_len,
                 "generated_tokens": generated_tokens,

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run one complete W1/W2/W3 pass with the deployed QNN 2.37 Qwen bundle."""
+"""Run PACE tasks with a deployed QNN language-model bundle."""
 
 from __future__ import annotations
 
@@ -12,6 +12,7 @@ import re
 import shlex
 import subprocess
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from statistics import mean
@@ -38,14 +39,13 @@ sys.path.insert(0, str(PACE_CODE))
 
 from math_benchmarks import (  # noqa: E402
     BENCHMARKS,
+    SCORER_VERSION,
     build_benchmark_prompt,
     load_benchmark_samples,
     score_benchmark_answer,
 )
 from bitnet.support.runtime_telemetry import (  # noqa: E402
-    parse_phone_telemetry,
-    phone_telemetry_cleanup_command,
-    phone_telemetry_runner_command,
+    RuntimeTelemetrySampler,
     summarize_inference_window,
     write_telemetry,
 )
@@ -72,6 +72,9 @@ QUANTIZATION_RESULT_NAME = os.environ.get(
 PERFORMANCE_MODE_RESULT_NAME = os.environ.get(
     "PERFORMANCE_MODE_RESULT_NAME", "balanced"
 )
+RESULT_MODEL_DIR_NAME = os.environ.get(
+    "RESULT_MODEL_DIR_NAME", "qwen2.5-3B-w4a16"
+)
 TELEMETRY_INTERVAL_SECONDS = float(
     os.environ.get("TELEMETRY_INTERVAL_SECONDS", "0.5")
 )
@@ -79,15 +82,41 @@ DEFAULT_DEADLINES_MS = os.environ.get(
     "DEADLINES_MS", "5000,10000,20000,30000"
 )
 HTP_PERFORMANCE_MODE_NAME = os.environ.get(
-    "HTP_PERFORMANCE_MODE_NAME", "balanced_aot_from_pte"
+    "HTP_PERFORMANCE_MODE_NAME", "balanced_runtime_override"
 )
 QNN_RUNNER_MAX_SECONDS = float(os.environ.get("QNN_RUNNER_MAX_SECONDS", "1800"))
 RUNNER_MODEL_PROFILE = os.environ.get("RUNNER_MODEL_PROFILE", "qwen").strip().lower()
+DECODER_MODEL_VERSION = os.environ.get(
+    "DECODER_MODEL_VERSION",
+    "llama3" if RUNNER_MODEL_PROFILE == "llama" else "qwen2_5",
+).strip()
+QNN_RUNNER_NAME = os.environ.get(
+    "QNN_RUNNER_NAME", "qnn_llama_runner_htp_mode"
+).strip()
+QNN_RUNNER_LOCAL_PATH = Path(
+    os.environ.get(
+        "QNN_RUNNER_LOCAL_PATH",
+        "/home/lyyyy/qwen25_runner_htp_mode/qnn_llama_runner",
+    )
+).resolve()
+HTP_PERFORMANCE_MODE = int(os.environ.get("HTP_PERFORMANCE_MODE", "8"))
 REMOTE_MODEL_NAME = os.environ.get("REMOTE_MODEL_NAME", "hybrid_llama_qnn.pte")
+QNN_RUNNER_REMOTE_PATH = os.environ.get(
+    "QNN_RUNNER_REMOTE_PATH", f"{PHONE_DIR}/{QNN_RUNNER_NAME}"
+).strip()
 BITNET_KV_UPDATER = os.environ.get("KV_UPDATER", "ShiftPointer")
 BITNET_LOGITS_SCALE = os.environ.get("LOGITS_SCALE", "0.0012398984981700778")
 BITNET_LOGITS_OFFSET = os.environ.get("LOGITS_OFFSET", "32310")
 OBSERVER_RE = re.compile(r"PyTorchObserver\s+(\{.*?\})")
+QWEN_BENCHMARK_CHAT_TEMPLATE_VERSION = "qwen2.5_default_system_user_v1"
+QWEN_DEFAULT_SYSTEM_PROMPT = (
+    "You are Qwen, created by Alibaba Cloud. You are a helpful assistant."
+)
+COMPLETION_TERMINATION_POLICY = (
+    "truncate_at_first_llama_eos_v1"
+    if RUNNER_MODEL_PROFILE == "llama"
+    else "truncate_at_first_qwen_eos_v1"
+)
 ADB_TRANSPORT_FAILURE_MARKERS = (
     "device offline",
     "device not found",
@@ -226,12 +255,42 @@ def observer_metrics(log_text: str) -> dict[str, Any]:
 
 
 def completion_from_output(raw: str, prompt: str) -> str:
+    prompt_removed = False
     if raw.startswith(prompt):
-        return raw[len(prompt) :].lstrip()
-    llama_assistant_marker = "<|start_header_id|>assistant<|end_header_id|>"
-    if llama_assistant_marker in raw:
-        return raw.rsplit(llama_assistant_marker, 1)[-1].lstrip()
-    return raw
+        raw = raw[len(prompt) :].lstrip()
+        prompt_removed = True
+    if not prompt_removed:
+        for marker in (
+            "<|im_start|>assistant\n",
+            "<|start_header_id|>assistant<|end_header_id|>",
+        ):
+            expected_position = prompt.rfind(marker)
+            positions = [match.start() for match in re.finditer(re.escape(marker), raw)]
+            if positions:
+                boundary = (
+                    min(positions, key=lambda position: abs(position - expected_position))
+                    if expected_position >= 0
+                    else positions[0]
+                )
+                raw = raw[boundary + len(marker) :].lstrip()
+                break
+    terminal_positions = [
+        position
+        for token in ("<|im_end|>", "<|eot_id|>", "<|endoftext|>")
+        if (position := raw.find(token)) >= 0
+    ]
+    if terminal_positions:
+        raw = raw[: min(terminal_positions)]
+    return raw.rstrip()
+
+
+def qwen_benchmark_chat_prompt(user_prompt: str) -> str:
+    """Apply the Qwen2.5 chat protocol used for GSM8K and MATH500."""
+    return (
+        f"<|im_start|>system\n{QWEN_DEFAULT_SYSTEM_PROMPT}<|im_end|>\n"
+        f"<|im_start|>user\n{user_prompt}<|im_end|>\n"
+        "<|im_start|>assistant\n"
+    )
 
 
 def prompt_for(task: str, sample: dict[str, Any], cfg: dict[str, Any]) -> str:
@@ -295,9 +354,12 @@ def run_sample(
     tokenizer_path_arg: str = "tokenizer.json",
 ) -> dict[str, Any]:
     sample_id = sample["sample_id"]
-    prompt = (prompt_builder or prompt_for)(task, sample, cfg)
+    raw_prompt = (prompt_builder or prompt_for)(task, sample, cfg)
+    prompt = raw_prompt
+    if RUNNER_MODEL_PROFILE == "qwen" and task in BENCHMARKS:
+        prompt = qwen_benchmark_chat_prompt(raw_prompt)
     prompt_for_counting = prompt
-    if RUNNER_MODEL_PROFILE == "bitnet":
+    if RUNNER_MODEL_PROFILE in ("bitnet", "llama"):
         # The legacy BitNet runner applies this Llama-3 wrapper internally.
         # tokenizer.json already inserts BOS, so it is intentionally omitted.
         prompt_for_counting = (
@@ -330,11 +392,14 @@ def run_sample(
         "speed.txt",
         "runner.log",
         "completion.txt",
+        "raw_prompt.txt",
         "telemetry.csv",
         "telemetry.raw",
     ):
         (local_dir / stale_name).unlink(missing_ok=True)
     (local_dir / "prompt.txt").write_text(prompt, encoding="utf-8")
+    if prompt != raw_prompt:
+        (local_dir / "raw_prompt.txt").write_text(raw_prompt, encoding="utf-8")
 
     if RUNNER_MODEL_PROFILE == "bitnet":
         runner_args = [
@@ -349,6 +414,7 @@ def run_sample(
             "--temperature", "0",
             "--logits_scale", BITNET_LOGITS_SCALE,
             "--logits_offset", BITNET_LOGITS_OFFSET,
+            "--htp_performance_mode", str(HTP_PERFORMANCE_MODE),
             "--num_iters", "1",
             "--output_path", f"{remote_dir}/generated_text.txt",
             "--performance_output_path", f"{remote_dir}/speed.txt",
@@ -361,10 +427,12 @@ def run_sample(
         ]
     else:
         runner_args = [
-            "./qnn_llama_runner",
-            "--decoder_model_version", "qwen2_5",
-            "--model_path", "hybrid_llama_qnn.pte",
-            "--tokenizer_path", tokenizer_path_arg,
+            QNN_RUNNER_REMOTE_PATH,
+            "--decoder_model_version", DECODER_MODEL_VERSION,
+            "--model_path", REMOTE_MODEL_NAME,
+            # EOS ids are loaded from tokenizer_config.json, so this must be
+            # the directory containing both tokenizer files.
+            "--tokenizer_path", ".",
             "--prompt", prompt,
             "--system_prompt", "",
             "--seq_len", str(seq_len),
@@ -372,6 +440,7 @@ def run_sample(
             "--temperature", "0",
             "--num_iters", "1",
             "--shared_buffer",
+            "--htp_performance_mode", str(HTP_PERFORMANCE_MODE),
             "--output_path", f"{remote_dir}/generated_text.txt",
             "--performance_output_path", f"{remote_dir}/speed.txt",
         ]
@@ -380,31 +449,25 @@ def run_sample(
             "export ADSP_LIBRARY_PATH=$PWD;",
             "export QNN_OP_PACKAGE_PATHS='';",
         ]
-    telemetry_raw_remote = f"{remote_dir}/telemetry.raw"
-    telemetry_stop_remote = f"{remote_dir}/telemetry.stop"
-    runner_pid_remote = f"{remote_dir}/runner.pid"
-    sampler_pid_remote = f"{remote_dir}/sampler.pid"
-    cleanup_command = phone_telemetry_cleanup_command(
-        runner_pid_remote, sampler_pid_remote, telemetry_stop_remote
-    )
-    wrapped_runner = phone_telemetry_runner_command(
-        runner_command=shlex.join(runner_args),
-        runner_log_path=f"{remote_dir}/runner.log",
-        telemetry_raw_path=telemetry_raw_remote,
-        telemetry_stop_path=telemetry_stop_remote,
-        runner_pid_path=runner_pid_remote,
-        sampler_pid_path=sampler_pid_remote,
-        interval_seconds=telemetry_interval,
-        maximum_seconds=QNN_RUNNER_MAX_SECONDS,
-    )
+    runner_log_remote = f"{remote_dir}/runner.log"
+    # The runner is invoked plainly and its output redirected to runner.log
+    # on-device; the exit code is appended as a marker line for the rc regex.
+    # Telemetry is NOT embedded in this command: an on-device dumpsys/proc
+    # sampling loop competes with the runner for SoC cycles and corrupts the
+    # measured decode speed and energy.  Instead RuntimeTelemetrySampler polls
+    # thermalservice host-side over a separate adb connection (see below).
     command = " ".join(
         [
             f"cd {shlex.quote(PHONE_DIR)} || exit 1;",
             f"mkdir -p {shlex.quote(remote_dir)};",
             f"rm -f {shlex.quote(remote_dir + '/generated_text.txt')} "
-            f"{shlex.quote(remote_dir + '/speed.txt')} {shlex.quote(remote_dir + '/runner.log')};",
+            f"{shlex.quote(remote_dir + '/speed.txt')} "
+            f"{shlex.quote(remote_dir + '/telemetry.raw')} "
+            f"{shlex.quote(runner_log_remote)};",
             *runtime_environment,
-            wrapped_runner,
+            f"{shlex.join(runner_args)} > {shlex.quote(runner_log_remote)} 2>&1;",
+            f"printf 'runner_returncode=%s\\n' \"$?\" "
+            f">> {shlex.quote(runner_log_remote)}",
         ]
     )
     (local_dir / "command.txt").write_text(
@@ -413,19 +476,23 @@ def run_sample(
         encoding="utf-8",
     )
     battery_state_start = battery_power_state()
-    # A resumed sample first terminates only the PIDs recorded in its own
-    # remote directory; this clears a runner/sampler stranded by an ADB drop.
-    adb("shell", cleanup_command, timeout=20)
+    # Derive the process name from the executable actually placed in this
+    # sample's command. This stays correct for both Qwen and BitNet profiles
+    # even when QNN_RUNNER_NAME is overridden by the environment.
+    runner_process_name = Path(runner_args[0]).name
+    sampler = RuntimeTelemetrySampler(
+        adb,
+        telemetry_interval,
+        runner_process_name=runner_process_name,
+    )
+    sampler.start()
     try:
-        shell_result = adb("shell", command, timeout=None)
-    except BaseException:
-        adb("shell", cleanup_command, timeout=20)
-        raise
-    if adb_transport_failure(shell_result.stdout):
-        adb("shell", cleanup_command, timeout=20)
+        shell_result = adb("shell", command, timeout=QNN_RUNNER_MAX_SECONDS + 30)
+    finally:
+        sampler.stop()
     battery_state_end = battery_power_state()
     pull_result = adb("pull", "-a", remote_dir + "/.", adb_local_path(local_dir))
-    telemetry = parse_phone_telemetry(local_dir / "telemetry.raw")
+    telemetry = sampler.samples
     telemetry_path = local_dir / "telemetry.csv"
     write_telemetry(telemetry_path, telemetry)
 
@@ -726,6 +793,21 @@ def summarize(rows: list[dict[str, Any]], tasks: list[str]) -> dict[str, Any]:
     return summary
 
 
+def optional_output_budget(value: str) -> int | None:
+    """Parse a fixed output budget or select all remaining model context."""
+    if value.lower() in ("none", "no_budget"):
+        return None
+    try:
+        budget = int(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(
+            "budget must be a positive integer, none, or no_budget"
+        ) from exc
+    if budget < 1:
+        raise argparse.ArgumentTypeError("budget must be positive")
+    return budget
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--run-id", help="fixed result directory name")
@@ -755,13 +837,15 @@ def main() -> int:
     )
     parser.add_argument(
         "--gsm8k-budget",
-        type=int,
+        type=optional_output_budget,
         default=BENCHMARKS["GSM8K"].default_budget,
+        help="output-token limit, or no_budget to use all remaining context",
     )
     parser.add_argument(
         "--math500-budget",
-        type=int,
+        type=optional_output_budget,
         default=BENCHMARKS["MATH500"].default_budget,
+        help="output-token limit, or no_budget to use all remaining context",
     )
     parser.add_argument(
         "--output-root",
@@ -783,19 +867,25 @@ def main() -> int:
         parser.error("use --run-id, not both --run-id and legacy --tag")
     if args.limit is not None and args.limit < 1:
         parser.error("--limit must be positive")
-    if args.gsm8k_budget < 1 or args.math500_budget < 1:
-        parser.error("benchmark budgets must be positive")
     if args.telemetry_interval <= 0:
         parser.error("--telemetry-interval must be positive")
+    if RUNNER_MODEL_PROFILE not in ("qwen", "llama", "bitnet"):
+        parser.error("RUNNER_MODEL_PROFILE must be qwen, llama, or bitnet")
+    if not QNN_RUNNER_NAME or "/" in QNN_RUNNER_NAME:
+        parser.error("QNN_RUNNER_NAME must be a plain remote filename")
+    if not QNN_RUNNER_REMOTE_PATH:
+        parser.error("QNN_RUNNER_REMOTE_PATH must not be empty")
+    if not 0 <= HTP_PERFORMANCE_MODE <= 8:
+        parser.error("HTP_PERFORMANCE_MODE must be an integer from 0 through 8")
 
     device = adb("get-state", timeout=15)
     if device.returncode != 0 or device.stdout.strip() != "device":
         raise RuntimeError(f"phone is not connected or authorized: {SERIAL}")
     identity = device_identity()
     required_remote_files = (
-        "qnn_llama_runner",
         "hybrid_llama_qnn.pte",
         "tokenizer.json",
+        "tokenizer_config.json",
         "libqnn_executorch_backend.so",
         "libQnnHtp.so",
         "libQnnHtpV79Stub.so",
@@ -807,18 +897,30 @@ def main() -> int:
         f"test -f {shlex.quote(PHONE_DIR + '/' + filename)}"
         for filename in required_remote_files
     )
+    remote_check += f" && test -f {shlex.quote(QNN_RUNNER_REMOTE_PATH)}"
     if adb("shell", remote_check, timeout=20).returncode != 0:
-        raise RuntimeError(f"Qwen runtime/model is incomplete: {PHONE_DIR}")
+        raise RuntimeError(
+            f"{RUNNER_MODEL_PROFILE} runtime/model is incomplete: {PHONE_DIR}"
+        )
 
     model_path = MODEL_ROOT / "hybrid_llama_qnn.pte"
     tokenizer_path = MODEL_ROOT / "tokenizer.json"
-    runner_path = BUNDLE / "runtime/qnn_llama_runner"
+    tokenizer_config_path = MODEL_ROOT / "tokenizer_config.json"
+    runner_path = QNN_RUNNER_LOCAL_PATH
     backend_path = BUNDLE / "runtime/libqnn_executorch_backend.so"
     if not all(
         path.is_file()
-        for path in (model_path, tokenizer_path, runner_path, backend_path)
+        for path in (
+            model_path,
+            tokenizer_path,
+            tokenizer_config_path,
+            runner_path,
+            backend_path,
+        )
     ):
-        raise FileNotFoundError(f"missing Balanced Qwen artifact under {MODEL_ROOT}")
+        raise FileNotFoundError(
+            f"missing {RUNNER_MODEL_PROFILE} artifact under {MODEL_ROOT}"
+        )
 
     tokenizer = Tokenizer.from_file(str(tokenizer_path))
     all_definitions = {
@@ -851,14 +953,32 @@ def main() -> int:
     tasks = list(dict.fromkeys(args.tasks))
     definitions = [(task, *all_definitions[task]) for task in tasks]
     task_label = "_".join(task.lower() for task in tasks)
-    run_id = args.run_id or args.tag or (
-        f"{task_label}_{MODEL_RESULT_NAME}_{QUANTIZATION_RESULT_NAME}_"
-        f"{PERFORMANCE_MODE_RESULT_NAME}"
-    )
+    single_benchmark = len(tasks) == 1 and tasks[0] in BENCHMARKS
+    if single_benchmark:
+        benchmark_budget = (
+            args.gsm8k_budget if tasks[0] == "GSM8K" else args.math500_budget
+        )
+        default_run_id = (
+            "output_budget_no_budget"
+            if benchmark_budget is None
+            else f"output_budget_{benchmark_budget}"
+        )
+        default_output_parent = (
+            RESULTS_ROOT
+            / DEVICE_LABEL
+            / tasks[0].lower()
+            / RESULT_MODEL_DIR_NAME
+            / PERFORMANCE_MODE_RESULT_NAME
+        )
+    else:
+        default_run_id = (
+            f"{task_label}_{MODEL_RESULT_NAME}_{QUANTIZATION_RESULT_NAME}_"
+            f"{PERFORMANCE_MODE_RESULT_NAME}"
+        )
+        default_output_parent = RESULTS_ROOT / DEVICE_LABEL
+    run_id = args.run_id or args.tag or default_run_id
     output_parent = (
-        args.output_root.resolve()
-        if args.output_root
-        else RESULTS_ROOT / DEVICE_LABEL
+        args.output_root.resolve() if args.output_root else default_output_parent
     )
     local_root = output_parent / run_id
     summary_path = local_root / "summary.csv"
@@ -913,23 +1033,31 @@ def main() -> int:
         "local_model": str(model_path),
         "local_model_sha256": sha256(model_path),
         "tokenizer_sha256": sha256(tokenizer_path),
+        "tokenizer_config_sha256": sha256(tokenizer_config_path),
+        "runner_tokenizer_path": ".",
+        "completion_termination_policy": COMPLETION_TERMINATION_POLICY,
         "local_runner": str(runner_path),
         "local_runner_sha256": sha256(runner_path),
+        "remote_runner": QNN_RUNNER_REMOTE_PATH,
         "local_backend_sha256": sha256(backend_path),
         "qnn_version": "2.37",
         "model_mode": "hybrid",
-        "decoder_model_version": "qwen2_5",
+        "decoder_model_version": DECODER_MODEL_VERSION,
+        "runner_model_profile": RUNNER_MODEL_PROFILE,
         "eval_mode": 1,
         "temperature": 0,
         "shared_buffer": True,
         "budget_execution_mode": "physical",
+        "scorer_version": SCORER_VERSION,
+        "format_required_for_correctness": False,
         "token_timestamps": "unsupported_by_runner",
         "qnn_op_package_paths": "",
         "max_seq_len": MAX_SEQ_LEN,
-        "htp_performance_mode": HTP_PERFORMANCE_MODE_NAME,
+        "htp_performance_mode": HTP_PERFORMANCE_MODE,
+        "htp_performance_mode_name": HTP_PERFORMANCE_MODE_NAME,
         "telemetry": {
             "source": "dumpsys thermalservice HAL vbat/ibat/skin",
-            "collection_mode": "bounded on-device shell loop",
+            "collection_mode": "host-side ADB polling",
             "power_formula": "signed_power_w = vbat_v * ibat_a",
             "energy_formula": "trapezoidal integral over observer inference window",
             "sampling_interval_seconds": args.telemetry_interval,
@@ -955,6 +1083,15 @@ def main() -> int:
                 "dataset_sha256": sha256(dataset),
                 "dataset_tasks": total_tasks_by_task[task],
                 "requested_budget": budget,
+                "prompt_template_version": (
+                    QWEN_BENCHMARK_CHAT_TEMPLATE_VERSION
+                    if RUNNER_MODEL_PROFILE == "qwen" and task in BENCHMARKS
+                    else (
+                        "llama3_runner_chat_template_v1"
+                        if RUNNER_MODEL_PROFILE == "llama" and task in BENCHMARKS
+                        else "runner_or_task_specific"
+                    )
+                ),
                 "deadlines_ms": deadlines_by_task[task],
             }
             for task, dataset, _, budget in definitions
@@ -970,6 +1107,18 @@ def main() -> int:
             == manifest["local_model_sha256"],
             "tokenizer_sha256": existing_manifest.get("tokenizer_sha256")
             == manifest["tokenizer_sha256"],
+            "tokenizer_config_sha256": existing_manifest.get(
+                "tokenizer_config_sha256"
+            )
+            == manifest["tokenizer_config_sha256"],
+            "runner_tokenizer_path": existing_manifest.get(
+                "runner_tokenizer_path"
+            )
+            == manifest["runner_tokenizer_path"],
+            "completion_termination_policy": existing_manifest.get(
+                "completion_termination_policy"
+            )
+            == manifest["completion_termination_policy"],
             "local_runner_sha256": existing_manifest.get(
                 "local_runner_sha256", manifest["local_runner_sha256"]
             )
@@ -999,6 +1148,8 @@ def main() -> int:
                 "qnn_version": manifest["qnn_version"],
                 "model_mode": manifest["model_mode"],
                 "budget_execution_mode": manifest["budget_execution_mode"],
+                "scorer_version": manifest["scorer_version"],
+                "format_required_for_correctness": False,
                 "token_timestamps": manifest["token_timestamps"],
                 "telemetry": manifest["telemetry"],
             }

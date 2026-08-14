@@ -159,6 +159,7 @@ def main() -> int:
     args = parser.parse_args()
 
     root = Path(required_env("BUNDLE_ROOT")).resolve()
+    runtime_root = Path(required_env("RUNTIME_BUNDLE_ROOT")).resolve()
     dataset_path = Path(required_env("DATASET_PATH")).resolve()
     tokenizer_path = Path(required_env("TOKENIZER_PATH")).resolve()
     device_dir = required_env("DEVICE_DIR").rstrip("/")
@@ -197,6 +198,10 @@ def main() -> int:
         "remote_model": remote_model,
         "local_model_sha256": sha256(root / "hybrid_llama_qnn.pte"),
         "tokenizer_sha256": sha256(tokenizer_path),
+        "local_runner_sha256": sha256(runtime_root / "runtime/qnn_llama_runner"),
+        "local_backend_sha256": sha256(
+            runtime_root / "runtime/libqnn_executorch_backend.so"
+        ),
         "dataset": str(dataset_path),
         "dataset_sha256": sha256(dataset_path),
         "qnn_version": "2.28.0.241029232508_102474",
@@ -205,7 +210,8 @@ def main() -> int:
         "prefill_ar_len": int(required_env("PREFILL_AR_LEN")),
         "max_seq_len": max_seq_len,
         "target_output_tokens": target_output_tokens,
-        "htp_performance_mode": "runner_default_not_controllable",
+        "htp_performance_mode": int(required_env("HTP_PERFORMANCE_MODE")),
+        "htp_performance_mode_name": required_env("HTP_PERFORMANCE_MODE_NAME"),
         "token_timestamps": "unsupported_by_runner",
         "logits_scale": float(required_env("LOGITS_SCALE")),
         "logits_offset": int(required_env("LOGITS_OFFSET")),
@@ -256,6 +262,8 @@ def main() -> int:
             required_env("LOGITS_SCALE"),
             "--logits_offset",
             required_env("LOGITS_OFFSET"),
+            "--htp_performance_mode",
+            required_env("HTP_PERFORMANCE_MODE"),
             "--num_iters",
             "1",
             "--output_path",
@@ -270,6 +278,7 @@ def main() -> int:
                 'export LD_PRELOAD="$PWD/libc++_shared.so"',
                 'export ADSP_LIBRARY_PATH="$PWD${ADSP_LIBRARY_PATH:+;$ADSP_LIBRARY_PATH}"',
                 "unset QNN_OP_PACKAGE_PATHS",
+                f"rm -f {shell_quote(remote_output)} {shell_quote(remote_speed)}",
                 shlex.join(runner_args),
             ]
         )
