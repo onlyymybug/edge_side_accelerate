@@ -1,0 +1,5 @@
+task,deadline_ms,num_dataset_tasks,num_completed_tasks,num_energy_measured_tasks,num_correct_under_deadline,num_measured_correct_under_deadline,total_measured_energy_j,provisional_energy_per_correct_task_under_deadline_j,energy_per_correct_task_under_deadline_j,valid_for_full_dataset_reporting
+HAMMERBENCH,5000,830,830,830,60,60,1292.1272136644761,21.5354535610746,21.5354535610746,True
+HAMMERBENCH,10000,830,830,830,60,60,1292.1272136644761,21.5354535610746,21.5354535610746,True
+HAMMERBENCH,20000,830,830,830,60,60,1292.1272136644761,21.5354535610746,21.5354535610746,True
+HAMMERBENCH,30000,830,830,830,60,60,1292.1272136644761,21.5354535610746,21.5354535610746,True

@@ -1,0 +1,71 @@
+{
+  "run_id": "output_budget_no_budget",
+  "device_label": "oneplus",
+  "model_result_name": "llama3.1-8b",
+  "quantization_result_name": "qnn237-hybrid-1024",
+  "performance_mode_result_name": "balanced",
+  "timestamp": "2026-08-18T20:40:08.734560+08:00",
+  "adb_transport_serial": "192.168.14.157:5555",
+  "device_identity": {
+    "hardware_serial": "3B15B800A0R00000",
+    "model": "PLQ110",
+    "soc": "SM8750",
+    "abi": "arm64-v8a"
+  },
+  "phone_dir": "/data/local/tmp/lyy/executorch/llama31_8b_qnn237_dynamic",
+  "local_model": "/home/lyyyy/llama31_8b_qnn237_artifacts_hybrid_1024/hybrid_llama_qnn.pte",
+  "local_model_sha256": "fe297ccf5731d28bd98277e5bd3416bf778bc3f9eb4afa5cce2af3c455b13ab5",
+  "tokenizer_sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+  "tokenizer_config_sha256": "22c52bb101d55d08035d10b27c22ffacf32ac42a983ae1a0aabbf32638d6ff0b",
+  "runner_tokenizer_path": ".",
+  "completion_termination_policy": "truncate_at_first_llama_eos_v1",
+  "local_runner": "/home/lyyyy/qwen25_runner_htp_mode/qnn_llama_runner",
+  "local_runner_sha256": "2e4cfe9e18e9a3ebea13589f99ce60c7c5460e07a74ae7ffcb46fcb3edc7bafd",
+  "remote_runner": "/data/local/tmp/lyy/executorch/llama31_8b_qnn237_dynamic/qnn_llama_runner",
+  "local_backend_sha256": "762c068e8373e4c8602b244982e75b3a3657db42e58338697d5db880fcd789b4",
+  "qnn_version": "2.37",
+  "model_mode": "hybrid",
+  "decoder_model_version": "llama3",
+  "runner_model_profile": "llama",
+  "eval_mode": 1,
+  "temperature": 0,
+  "shared_buffer": true,
+  "budget_execution_mode": "physical",
+  "scorer_version": "math_benchmarks_v2_relaxed_prm800k",
+  "format_required_for_correctness": false,
+  "token_timestamps": "unsupported_by_runner",
+  "qnn_op_package_paths": "",
+  "max_seq_len": 1024,
+  "htp_performance_mode": 8,
+  "htp_performance_mode_name": "balanced_runtime_override",
+  "telemetry": {
+    "source": "dumpsys thermalservice HAL vbat/ibat/skin",
+    "collection_mode": "host-side ADB polling",
+    "power_formula": "signed_power_w = vbat_v * ibat_a",
+    "energy_formula": "trapezoidal integral over observer inference window",
+    "sampling_interval_seconds": 0.5,
+    "memory_source": "/proc/PID/status VmRSS and VmHWM",
+    "boundary_policy": "linear interpolation to inference_start_ms/inference_end_ms",
+    "watchdog_seconds": 1800.0,
+    "external_power_policy": "retain signed net battery flow but invalidate consumption metrics"
+  },
+  "energy_per_token_formula": "energy_j / generated_tokens",
+  "edp_formula": "energy_j * inference_ms / 1000",
+  "memory_use_field": "process VmHWM converted from KiB to MiB",
+  "measurement_scope_note": "battery-level signed energy includes the whole phone and telemetry overhead; it is not isolated NPU energy",
+  "runs": {
+    "GSM8K": {
+      "dataset": "/home/lyyyy/pace/datasets/gsm8k_test.jsonl",
+      "dataset_sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+      "dataset_tasks": 1319,
+      "requested_budget": null,
+      "prompt_template_version": "llama3_runner_chat_template_v1",
+      "deadlines_ms": [
+        5000,
+        10000,
+        20000,
+        30000
+      ]
+    }
+  }
+}
