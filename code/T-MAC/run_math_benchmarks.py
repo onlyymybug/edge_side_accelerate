@@ -162,12 +162,28 @@ def main() -> int:
     parser.add_argument("--output-root", type=Path)
     parser.add_argument("--run-id")
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument(
+        "--rerun-sample-ids",
+        help=(
+            "comma-separated sample IDs to replace in an existing run; requires "
+            "--resume and leaves every unlisted summary row unchanged"
+        ),
+    )
     parser.add_argument("--continue-on-error", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--deadlines-ms", default=",".join(map(str, DEFAULT_DEADLINES)))
     args = parser.parse_args()
     if args.limit is not None and args.limit <= 0:
         parser.error("--limit must be positive")
+    rerun_sample_ids = {
+        value.strip()
+        for value in (args.rerun_sample_ids or "").split(",")
+        if value.strip()
+    }
+    if rerun_sample_ids and not args.resume:
+        parser.error("--rerun-sample-ids requires --resume")
+    if rerun_sample_ids and args.limit is not None:
+        parser.error("--rerun-sample-ids cannot be combined with --limit")
     try:
         budgets = {
             "GSM8K": parse_budget(args.gsm8k_budget),
@@ -188,6 +204,15 @@ def main() -> int:
         all_samples = load_benchmark_samples(datasets[task], task)
         dataset_sizes[task] = len(all_samples)
         loaded[task] = all_samples[: args.limit] if args.limit is not None else all_samples
+    if rerun_sample_ids:
+        available_ids = {
+            sample["sample_id"] for task in args.tasks for sample in loaded[task]
+        }
+        unknown_ids = sorted(rerun_sample_ids - available_ids)
+        if unknown_ids:
+            parser.error(
+                "unknown --rerun-sample-ids for selected tasks: " + ",".join(unknown_ids)
+            )
     if args.dry_run:
         print(
             json.dumps(
@@ -282,7 +307,14 @@ def main() -> int:
     for task in args.tasks:
         for index, sample in enumerate(loaded[task], 1):
             key = (task, sample["sample_id"])
-            if args.resume and key in rows_by_id and str(rows_by_id[key].get("runner_returncode")) == "0":
+            if rerun_sample_ids and sample["sample_id"] not in rerun_sample_ids:
+                continue
+            if (
+                args.resume
+                and not rerun_sample_ids
+                and key in rows_by_id
+                and str(rows_by_id[key].get("runner_returncode")) == "0"
+            ):
                 print(f"[{index}/{len(loaded[task])}] {task} {sample['sample_id']}: already completed")
                 continue
             raw_prompt = build_benchmark_prompt(task, sample["question"])

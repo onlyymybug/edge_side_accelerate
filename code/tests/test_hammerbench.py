@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import json
 import sys
 import tempfile
 import unittest
@@ -29,6 +30,27 @@ def sample(*, kind: str, split: str = "single-turn") -> dict[str, object]:
 
 
 class HammerBenchScoringTest(unittest.TestCase):
+    def test_inference_export_accepts_failed_row_without_output_path(self) -> None:
+        benchmark_sample = {
+            "sample_id": "failed_0001",
+            "original_id": "failed_0001",
+            "visible_input": "Call the test tool.",
+            "label_name": "Diagnostics.Test",
+            "label_parameters": {},
+        }
+        row = {
+            "sample_id": "failed_0001",
+            "runner_returncode": -1,
+            "error": "ADB command timed out",
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_path = Path(temp_dir) / "inference_results.json"
+            hammer.write_inference_results(
+                output_path, [row], {"failed_0001": benchmark_sample}
+            )
+            exported = json.loads(output_path.read_text(encoding="utf-8"))
+        self.assertEqual(exported[0]["predict"], "")
+
     def test_bitnet_completion_uses_outer_llama_assistant_boundary(self) -> None:
         prompt = (
             "<|im_start|>system\nRules<|im_end|>\n"

@@ -1,0 +1,43 @@
+{
+  "output_root": "/home/lyyyy/pace/results/appendix_c_controls",
+  "datasets": {
+    "GSM8K": "/home/lyyyy/pace/datasets/gsm8k_test.jsonl",
+    "MATH500": "/home/lyyyy/pace/datasets/math500_test.jsonl"
+  },
+  "graph_boundary": {
+    "runtimes": ["qnn", "llm.npu"],
+    "prefix_lengths": [127, 128, 129, 159, 160, 161, 191, 192, 193],
+    "output_budget": 8,
+    "repeats": 5,
+    "seed": 20260920,
+    "modes": {"qnn": "balanced", "llm.npu": "balanced"},
+    "block_widths": {"qnn": 128, "llm.npu": 32}
+  },
+  "tmac_threads": {
+    "historical_summary": "/home/lyyyy/pace/results/T-MAC/oneplus/gsm8k/qwen2.5-3B-tmac-w4a16/threads_6/output_budget_512/summary.csv",
+    "sample_count": 12,
+    "settings": [[6, 6], [8, 6], [6, 8], [8, 8]],
+    "output_budget": 512,
+    "repeats": 3,
+    "seed": 20260921
+  },
+  "budget_termination": {
+    "per_category": 8,
+    "repeats": 3,
+    "seed": 20260922,
+    "tasks": {
+      "GSM8K": {
+        "short_budget": 256,
+        "long_budget": 512,
+        "short_summary": "/home/lyyyy/pace/results/T-MAC/oneplus/gsm8k/qwen2.5-3B-tmac-w4a16/threads_6/output_budget_256/summary.csv",
+        "long_summary": "/home/lyyyy/pace/results/T-MAC/oneplus/gsm8k/qwen2.5-3B-tmac-w4a16/threads_6/output_budget_512/summary.csv"
+      },
+      "MATH500": {
+        "short_budget": 512,
+        "long_budget": null,
+        "short_summary": "/home/lyyyy/pace/results/T-MAC/oneplus/math500/qwen2.5-3B-tmac-w4a16/threads_6/output_budget_512/summary.csv",
+        "long_summary": "/home/lyyyy/pace/results/T-MAC/oneplus/math500/qwen2.5-3B-tmac-w4a16/threads_6/output_budget_no_budget/summary.csv"
+      }
+    }
+  }
+}

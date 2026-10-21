@@ -1,0 +1,37 @@
+{
+  "data_root": "/home/lyyyy/pace/results",
+  "output_root": "/home/lyyyy/pace/result/finding_validation",
+  "device": "oneplus",
+  "tasks": ["gsm8k", "math500"],
+  "allowed_budgets": ["256", "512", "no_budget"],
+  "target_scorer_version": "math_benchmarks_v2_relaxed_prm800k",
+  "calibration_fraction": 0.2,
+  "seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+  "target_grid": {
+    "gsm8k": {
+      "deadlines_s": [10, 20, 30],
+      "target_success": [0.6, 0.75]
+    },
+    "math500": {
+      "deadlines_s": [20, 30, 60],
+      "target_success": [0.3, 0.4]
+    }
+  },
+  "runtimes": {
+    "QNN": {
+      "model_dir": "qwen2.5-3B-w4a16",
+      "reference_mode": "balanced",
+      "f1_modes": ["balanced", "burst", "low_power"]
+    },
+    "llm.npu": {
+      "model_dir": "qwen2.5-3B-llm-npu-lpbq-w4a16-kv-w8a8",
+      "reference_mode": "balanced",
+      "f1_modes": ["balanced", "burst", "low_power_saver"]
+    },
+    "T-MAC": {
+      "model_dir": "qwen2.5-3B-tmac-w4a16",
+      "reference_mode": "threads_6",
+      "f1_modes": ["threads_4", "threads_6", "threads_8"]
+    }
+  }
+}

@@ -621,12 +621,18 @@ def write_inference_results(
         sample = samples_by_id.get(str(row.get("sample_id", "")))
         if sample is None:
             continue
-        completion_path = Path(str(row.get("output_path", ""))).with_name(
-            "completion.txt"
+        completion_value = str(row.get("completion_path") or "").strip()
+        output_value = str(row.get("output_path") or "").strip()
+        completion_path = (
+            Path(completion_value)
+            if completion_value
+            else Path(output_value).with_name("completion.txt")
+            if output_value
+            else None
         )
         prediction = (
             completion_path.read_text(encoding="utf-8", errors="replace")
-            if completion_path.is_file()
+            if completion_path is not None and completion_path.is_file()
             else ""
         )
         output.append(

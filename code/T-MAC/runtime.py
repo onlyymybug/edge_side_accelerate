@@ -8,6 +8,7 @@ import os
 import re
 import shlex
 import subprocess
+import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -136,6 +137,7 @@ class TmacConfig:
     local_tokenizer: Path = Path("/home/lyyyy/qwen25_3b_phone_bundle/model/tokenizer.json")
     max_seq_len: int = 1024
     threads: int = 4
+    batch_threads: int | None = None
     telemetry_interval: float = 0.5
     timeout_seconds: float = 1800
 
@@ -159,6 +161,11 @@ class TmacConfig:
             ).resolve(),
             max_seq_len=int(os.environ.get("MAX_SEQ_LEN", "1024")),
             threads=int(os.environ.get("TMAC_THREADS", "4")),
+            batch_threads=int(
+                os.environ.get(
+                    "TMAC_BATCH_THREADS", os.environ.get("TMAC_THREADS", "4")
+                )
+            ),
             telemetry_interval=float(
                 os.environ.get("TELEMETRY_INTERVAL_SECONDS", "0.5")
             ),
@@ -175,6 +182,8 @@ class TmacPhoneRunner:
             raise ValueError("MAX_SEQ_LEN must be greater than one")
         if self.config.threads <= 0:
             raise ValueError("TMAC_THREADS must be positive")
+        if self.batch_threads <= 0:
+            raise ValueError("TMAC_BATCH_THREADS must be positive")
         if self.config.telemetry_interval <= 0:
             raise ValueError("TELEMETRY_INTERVAL_SECONDS must be positive")
         if not self.config.local_tokenizer.is_file():
@@ -183,6 +192,11 @@ class TmacPhoneRunner:
             )
         self.tokenizer = Tokenizer.from_file(str(self.config.local_tokenizer))
         self._check_phone()
+
+    @property
+    def batch_threads(self) -> int:
+        """Prefill/batch threads; defaults to decode threads for compatibility."""
+        return self.config.batch_threads or self.config.threads
 
     def adb_command(self, *args: str) -> list[str]:
         return [
@@ -255,7 +269,27 @@ class TmacPhoneRunner:
         return identity
 
     def battery_state(self) -> dict[str, Any]:
-        result = self.adb("shell", "dumpsys battery", timeout=15)
+        now = time.monotonic()
+        cached = getattr(self, "_battery_state_cache", None)
+        cached_at = getattr(self, "_battery_state_cache_time", 0.0)
+        if cached is not None and now - cached_at < 300.0:
+            return dict(cached)
+        result: subprocess.CompletedProcess[str] | None = None
+        for attempt in range(3):
+            try:
+                result = self.adb("shell", "dumpsys battery", timeout=15)
+                if result.returncode == 0:
+                    break
+            except subprocess.TimeoutExpired:
+                result = None
+            if attempt < 2:
+                time.sleep(1)
+        if result is None or result.returncode != 0:
+            return {
+                "external_powered": True,
+                "power_sources": "unknown_battery_state",
+                "battery_status": "",
+            }
         powered = {
             source.casefold(): value.casefold() == "true"
             for source, value in re.findall(
@@ -265,11 +299,14 @@ class TmacPhoneRunner:
             )
         }
         status = re.search(r"^\s*status:\s*(\d+)\s*$", result.stdout, re.MULTILINE)
-        return {
+        state = {
             "external_powered": any(powered.values()),
             "power_sources": "+".join(k for k, active in powered.items() if active),
             "battery_status": int(status.group(1)) if status else "",
         }
+        self._battery_state_cache = state
+        self._battery_state_cache_time = now
+        return dict(state)
 
     def run(
         self,
@@ -322,7 +359,7 @@ class TmacPhoneRunner:
             "-t",
             str(self.config.threads),
             "-tb",
-            str(self.config.threads),
+            str(self.batch_threads),
             "-c",
             str(self.config.max_seq_len),
             "-n",

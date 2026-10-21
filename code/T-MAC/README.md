@@ -49,6 +49,11 @@ stderr, combined runner log, structured metrics JSON, prompt, command, and
 telemetry CSV. Run roots contain a manifest and summary tables. BFCL retains its
 official result/score files plus per-step T-MAC artifacts and metrics.
 
+To replace only known-contaminated math samples in a completed run, combine
+`--resume` with a comma-separated `--rerun-sample-ids` list. The selected rows
+and their per-sample artifacts are replaced in place; all unlisted rows remain
+unchanged. Do not combine this repair mode with `--limit`.
+
 Latency output keeps both the QNN-compatible inference boundary and the actual
 per-process cold-start boundary:
 
