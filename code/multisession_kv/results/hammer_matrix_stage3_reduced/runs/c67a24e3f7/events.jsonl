@@ -1,0 +1,2 @@
+{"run_id":"20261009T031545Z_951a665a","host_monotonic_ns":77445193501025,"event":"create_session","session_id":"Based::429","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"Based::429","status":"ok","valid_tokens":0}}
+{"run_id":"20261009T031545Z_951a665a","host_monotonic_ns":77445200619564,"event":"create_session","session_id":"SO-case1::23","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"SO-case1::23","status":"ok","valid_tokens":0}}

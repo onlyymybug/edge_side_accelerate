@@ -1,0 +1,31 @@
+{
+  "backend": "mock",
+  "task_ids": [
+    "6bdbc26_1",
+    "6bdbc26_2",
+    "6bdbc26_3"
+  ],
+  "profile": "follower_count",
+  "max_sessions": 3,
+  "kv_slots": 2,
+  "policy": "lru",
+  "release_on_done": true,
+  "tool_delay_ms": 1000.0,
+  "max_steps": 5,
+  "task_tool_delay_ms": {
+    "6bdbc26_1": 0.0,
+    "6bdbc26_2": 3000.0
+  },
+  "task_arrival_delay_ms": {
+    "6bdbc26_2": 10.0,
+    "6bdbc26_3": 20.0
+  },
+  "max_new_tokens": 128,
+  "context_tokens": 6144,
+  "serial": null,
+  "experiment_name": "agent_multi_mock_lru_arrivals_20261026_01",
+  "bootstrap_auth": true,
+  "prompt_style": "direct_json",
+  "script_sha256": "0cb1c8c83e8d34092f6611b51e1549fac68106151bce2030ad8b45541dd5497a",
+  "note": "small multi-session plumbing smoke; synthetic tool delay, not benchmark"
+}

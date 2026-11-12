@@ -1,0 +1,1918 @@
+{
+  "active_slot_kv_bytes": 42430464,
+  "command": "get_capabilities",
+  "htp_performance_mode_allowed_values": [
+    -1,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "htp_performance_mode_effective": null,
+  "htp_performance_mode_name": "balanced",
+  "htp_performance_mode_requested": 8,
+  "htp_performance_mode_source": "runtime_override",
+  "htp_performance_mode_supported": true,
+  "kv_ar_len": 1,
+  "kv_dtype": "UInt16",
+  "kv_head_dim": 128,
+  "kv_heads": 2,
+  "kv_layer_count": 36,
+  "kv_output_scratch_tensor_count": 72,
+  "kv_preallocated_to_max_window": true,
+  "kv_tensor_count": 72,
+  "kv_tensors": [
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 0,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 0,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 0,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 0,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 1,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 1,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 1,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 1,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 2,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 2,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 2,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 2,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 3,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 3,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 3,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 3,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 4,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 4,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 4,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 4,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 5,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 5,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 5,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 5,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 6,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 6,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 6,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 6,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 7,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 7,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 7,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 7,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 8,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 8,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 8,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 8,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 9,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 9,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 9,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 9,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 10,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 10,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 10,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 10,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 11,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 11,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 11,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 11,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 12,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 12,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 12,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 12,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 13,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 13,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 13,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 13,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 14,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 14,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 14,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 14,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 15,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 15,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 15,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 15,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 16,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 16,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 16,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 16,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 17,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 17,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 17,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 17,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 18,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 18,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 18,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 18,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 19,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 19,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 19,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 19,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 20,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 20,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 20,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 20,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 21,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 21,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 21,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 21,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 22,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 22,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 22,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 22,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 23,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 23,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 23,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 23,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 24,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 24,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 24,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 24,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 25,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 25,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 25,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 25,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 26,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 26,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 26,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 26,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 27,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 27,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 27,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 27,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 28,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 28,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 28,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 28,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 29,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 29,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 29,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 29,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 30,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 30,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 30,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 30,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 31,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 31,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 31,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 31,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 32,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 32,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 32,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 32,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 33,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 33,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 33,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 33,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 34,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 34,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 34,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 34,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "key_input",
+      "layer": 35,
+      "shape": [
+        1,
+        2,
+        128,
+        1023
+      ]
+    },
+    {
+      "bytes": 523776,
+      "dtype": "UInt16",
+      "elements": 261888,
+      "kind": "value_input",
+      "layer": 35,
+      "shape": [
+        1,
+        2,
+        1023,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "key_output_scratch",
+      "layer": 35,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    },
+    {
+      "bytes": 65536,
+      "dtype": "UInt16",
+      "elements": 32768,
+      "kind": "value_output_scratch",
+      "layer": 35,
+      "shape": [
+        1,
+        2,
+        128,
+        128
+      ]
+    }
+  ],
+  "max_cache_tokens": 1023,
+  "max_context_tokens": 1024,
+  "max_resident_sessions": 4,
+  "model_load_count": 1,
+  "model_loaded": true,
+  "multi_session_scheme": "B_single_execution_slot",
+  "prefill_ar_len": 128,
+  "server_pid": 21679,
+  "session_backing_bytes": 37711872,
+  "status": "ok",
+  "supports_evict": true,
+  "supports_incremental_prefill": true,
+  "supports_multi_session": true,
+  "supports_token_ids": true,
+  "supports_trim": true
+}

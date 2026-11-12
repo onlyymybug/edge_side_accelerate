@@ -1,0 +1,7 @@
+[
+  "adb",
+  "-s",
+  "189f0fad",
+  "shell",
+  "cd /data/local/tmp/qwen3_vl_geniex_multicl16k_3tier && export LD_LIBRARY_PATH=/data/local/tmp/qwen3_vl_geniex_multicl16k_3tier/lib:/data/local/tmp/qwen3_vl_geniex_multicl16k_3tier/lib/qairt:/data/local/tmp/qwen3_vl_geniex_multicl16k_3tier/lib/qairt/htp-files && export GENIEX_PLUGIN_PATH=/data/local/tmp/qwen3_vl_geniex_multicl16k_3tier/lib && export ADSP_LIBRARY_PATH='/data/local/tmp/qwen3_vl_geniex_multicl16k_3tier/lib/qairt/htp-files;/vendor/lib/rfsa/adsp;/vendor/dsp;/system/lib/rfsa/adsp;/dsp' && echo 1000 > /proc/$$/oom_score_adj && test \"$(cat /proc/$$/oom_score_adj)\" = 1000 && exec /data/local/tmp/android_world_phone/vlm_server /data/local/tmp/qwen3_vl_geniex_multicl16k_3tier/model/tokenizer.json"
+]

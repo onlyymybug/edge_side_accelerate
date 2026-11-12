@@ -1,0 +1,318 @@
+{
+  "bundle": "/home/lyyyy/edge_side_work/phone_bundle",
+  "model": "Qwen3-VL-4B-Instruct",
+  "model_release": "v0.66.0",
+  "geniex": "v0.10.0",
+  "qairt": "2.50.0.260828221209",
+  "device": "REDMI K90 / SM8750 / Android 16",
+  "remote_directory": "/data/local/tmp/qwen3_vl_geniex_sm8750",
+  "max_context_tokens": 4096,
+  "precision": "w4a16",
+  "kv_io_dtype": "uint8",
+  "vision_preprocessing": "512x512",
+  "manifest_local": "pass",
+  "manifest_phone": "pass",
+  "phases": {
+    "text": {
+      "host": {
+        "phase": "text",
+        "process_exit_code": 0,
+        "process_wall_seconds": 9.745862420997582,
+        "first_complete_answer_print_wall_seconds": 7.913688900996931,
+        "generated_lines": [
+          "[gen ] 42",
+          "[gen ] {\"city\": \"北京\"}",
+          "[gen ] 我是一个AI助手，用于提供信息查询、问题解答和日常陪伴。",
+          "[gen ] （无图片）"
+        ],
+        "sdk_json_pulled": true,
+        "note": "First printed answer is full-answer completion, not SDK TTFT; process wall includes hash verification and startup."
+      },
+      "sdk_runs": [
+        {
+          "run_idx": 0,
+          "ttft_us": 63474,
+          "media_us": 0,
+          "prompt_time_us": 63474,
+          "decode_time_us": 89795,
+          "prompt_tokens": 128,
+          "gen_tokens": 3,
+          "prefill_tps": 2016.573715,
+          "decode_tps": 33.409433,
+          "stop_reason": "eos"
+        },
+        {
+          "run_idx": 1,
+          "ttft_us": 60809,
+          "media_us": 0,
+          "prompt_time_us": 60809,
+          "decode_time_us": 258080,
+          "prompt_tokens": 128,
+          "gen_tokens": 7,
+          "prefill_tps": 2104.95157,
+          "decode_tps": 27.123373,
+          "stop_reason": "eos"
+        },
+        {
+          "run_idx": 2,
+          "ttft_us": 60883,
+          "media_us": 0,
+          "prompt_time_us": 60883,
+          "decode_time_us": 919079,
+          "prompt_tokens": 128,
+          "gen_tokens": 22,
+          "prefill_tps": 2102.393115,
+          "decode_tps": 23.937007,
+          "stop_reason": "eos"
+        }
+      ],
+      "sdk_aggregates": {
+        "ttft_ms": {
+          "median": 60.883,
+          "min": 60.809,
+          "max": 63.474,
+          "mean": 61.722,
+          "stdev": 1.517728
+        },
+        "prefill_tps": {
+          "median": 2102.393115,
+          "min": 2016.573715,
+          "max": 2104.95157,
+          "mean": 2074.639467,
+          "stdev": 50.302684
+        },
+        "decode_tps": {
+          "median": 27.123373,
+          "min": 23.937007,
+          "max": 33.409433,
+          "mean": 28.156604,
+          "stdev": 4.819999
+        },
+        "gen_tokens": {
+          "median": 7.0
+        },
+        "prompt_tokens": {
+          "median": 128.0
+        },
+        "media_ms": {
+          "median": 0.0
+        }
+      },
+      "all_runs_eos": true,
+      "context_error_5005_present": true,
+      "llama_cpp_version_query_error_present": true
+    },
+    "image": {
+      "host": {
+        "phase": "image",
+        "process_exit_code": 0,
+        "process_wall_seconds": 10.850588056026027,
+        "first_complete_answer_print_wall_seconds": 7.6569391380180605,
+        "generated_lines": [
+          "[gen ] 42",
+          "[gen ] {",
+          "[gen ]   \"city\": \"北京\"",
+          "[gen ] }",
+          "[gen ] 我是一个AI助手，用于提供各种信息和帮助。图片显示了一个红色正方形，没有其他内容。"
+        ],
+        "sdk_json_pulled": true,
+        "note": "First printed answer is full-answer completion, not SDK TTFT; process wall includes hash verification and startup."
+      },
+      "sdk_runs": [
+        {
+          "run_idx": 0,
+          "ttft_us": 323973,
+          "media_us": 105061,
+          "prompt_time_us": 218912,
+          "decode_time_us": 131963,
+          "prompt_tokens": 384,
+          "gen_tokens": 3,
+          "prefill_tps": 1754.129513,
+          "decode_tps": 22.733645,
+          "stop_reason": "eos"
+        },
+        {
+          "run_idx": 1,
+          "ttft_us": 330227,
+          "media_us": 102152,
+          "prompt_time_us": 228075,
+          "decode_time_us": 569247,
+          "prompt_tokens": 384,
+          "gen_tokens": 10,
+          "prefill_tps": 1683.656692,
+          "decode_tps": 17.567067,
+          "stop_reason": "eos"
+        },
+        {
+          "run_idx": 2,
+          "ttft_us": 343793,
+          "media_us": 102977,
+          "prompt_time_us": 240816,
+          "decode_time_us": 1340032,
+          "prompt_tokens": 384,
+          "gen_tokens": 24,
+          "prefill_tps": 1594.578433,
+          "decode_tps": 17.91002,
+          "stop_reason": "eos"
+        }
+      ],
+      "sdk_aggregates": {
+        "ttft_ms": {
+          "median": 330.227,
+          "min": 323.973,
+          "max": 343.793,
+          "mean": 332.664333,
+          "stdev": 10.132302
+        },
+        "prefill_tps": {
+          "median": 1683.656692,
+          "min": 1594.578433,
+          "max": 1754.129513,
+          "mean": 1677.454879,
+          "stdev": 79.956136
+        },
+        "decode_tps": {
+          "median": 17.91002,
+          "min": 17.567067,
+          "max": 22.733645,
+          "mean": 19.403577,
+          "stdev": 2.889017
+        },
+        "gen_tokens": {
+          "median": 10.0
+        },
+        "prompt_tokens": {
+          "median": 384.0
+        },
+        "media_ms": {
+          "median": 102.977
+        }
+      },
+      "all_runs_eos": true,
+      "context_error_5005_present": true,
+      "llama_cpp_version_query_error_present": true
+    },
+    "image_info": {
+      "host": {
+        "phase": "image_info",
+        "process_exit_code": 0,
+        "process_wall_seconds": 11.41523409500951,
+        "first_complete_answer_print_wall_seconds": 8.157581362000201,
+        "generated_lines": [
+          "[gen ] 42",
+          "[gen ] {",
+          "[gen ]   \"city\": \"北京\"",
+          "[gen ] }",
+          "[gen ] 我是一个AI助手，用于提供各种信息和帮助。图片显示了一个红色正方形，没有其他内容。"
+        ],
+        "sdk_json_pulled": true,
+        "note": "First printed answer is full-answer completion, not SDK TTFT; process wall includes hash verification and startup."
+      },
+      "sdk_runs": [
+        {
+          "run_idx": 0,
+          "ttft_us": 325743,
+          "media_us": 102408,
+          "prompt_time_us": 223335,
+          "decode_time_us": 107673,
+          "prompt_tokens": 384,
+          "gen_tokens": 3,
+          "prefill_tps": 1719.390154,
+          "decode_tps": 27.862138,
+          "stop_reason": "eos"
+        },
+        {
+          "run_idx": 1,
+          "ttft_us": 323752,
+          "media_us": 101302,
+          "prompt_time_us": 222450,
+          "decode_time_us": 585058,
+          "prompt_tokens": 384,
+          "gen_tokens": 10,
+          "prefill_tps": 1726.230614,
+          "decode_tps": 17.092322,
+          "stop_reason": "eos"
+        },
+        {
+          "run_idx": 2,
+          "ttft_us": 358820,
+          "media_us": 101728,
+          "prompt_time_us": 257092,
+          "decode_time_us": 1363570,
+          "prompt_tokens": 384,
+          "gen_tokens": 24,
+          "prefill_tps": 1493.62874,
+          "decode_tps": 17.600857,
+          "stop_reason": "eos"
+        }
+      ],
+      "sdk_aggregates": {
+        "ttft_ms": {
+          "median": 325.743,
+          "min": 323.752,
+          "max": 358.82,
+          "mean": 336.105,
+          "stdev": 19.69694
+        },
+        "prefill_tps": {
+          "median": 1719.390154,
+          "min": 1493.62874,
+          "max": 1726.230614,
+          "mean": 1646.416502,
+          "stdev": 132.36228
+        },
+        "decode_tps": {
+          "median": 17.600857,
+          "min": 17.092322,
+          "max": 27.862138,
+          "mean": 20.851772,
+          "stdev": 6.076477
+        },
+        "gen_tokens": {
+          "median": 10.0
+        },
+        "prompt_tokens": {
+          "median": 384.0
+        },
+        "media_ms": {
+          "median": 101.728
+        }
+      },
+      "all_runs_eos": true,
+      "context_error_5005_present": true,
+      "llama_cpp_version_query_error_present": true
+    }
+  },
+  "verbose_context_evidence": {
+    "successful_creates": 5,
+    "success_line_numbers": [
+      115,
+      254,
+      1048,
+      1874,
+      2652
+    ],
+    "prompt_separator_line_numbers": [
+      3384,
+      3471,
+      3673
+    ],
+    "no_successful_recreates_after_first_answer": true,
+    "pd0_failure_followed_by_pd2_success_for_context4": true
+  },
+  "not_validated": [
+    "full 4096-token execution",
+    "6144-token support",
+    "multiple independent sessions with retained KV",
+    "representative image understanding or AndroidWorld tasks",
+    "sustained thermal performance",
+    "device-wide DSP/CPU peak memory"
+  ],
+  "sdk_report_notes": [
+    "model_path resolves to tokenizer.json and model_size_bytes is tokenizer size; actual package is 4595172966 bytes",
+    "prompt_tokens and prefill_tps are padded to 128-token chunks by official benchmark",
+    "ttft_us is SDK per-request time after model creation; startup and manifest verification are excluded",
+    "first printed answer is a full answer; stdout is buffered, so prompt separator line times cannot measure init completion",
+    "short generations do not establish stable sustained decode throughput"
+  ]
+}

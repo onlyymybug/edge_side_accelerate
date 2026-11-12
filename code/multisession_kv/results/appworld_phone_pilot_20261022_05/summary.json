@@ -1,0 +1,14 @@
+{
+  "task_id": "6bdbc26_1",
+  "steps": 2,
+  "success": false,
+  "error": "unexpected parameters for spotify__show_artist: {'is_playing', 'played_seconds', 'access_token', 'song_id', 'is_looping'}",
+  "completion_ms": 10551.075427,
+  "evaluation": {
+    "difficulty": 1,
+    "num_tests": 2,
+    "passed_tests": 1
+  },
+  "repaired_tool_calls": 1,
+  "note": "single-task feasibility pilot; not a benchmark aggregate"
+}

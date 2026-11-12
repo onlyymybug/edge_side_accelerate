@@ -1,0 +1,15 @@
+{
+  "task_id": "b119b1f_2",
+  "steps": 1,
+  "success": false,
+  "error": "call must contain only name and parameters",
+  "completion_ms": 5460.800915,
+  "evaluation": {
+    "difficulty": 2,
+    "num_tests": 6,
+    "passed_tests": 0
+  },
+  "repaired_tool_calls": 0,
+  "filtered_tool_calls": 0,
+  "note": "single-task feasibility pilot; not a benchmark aggregate"
+}

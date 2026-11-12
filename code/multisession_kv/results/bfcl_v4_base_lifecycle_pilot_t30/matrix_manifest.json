@@ -1,0 +1,1618 @@
+{
+  "created_at_utc": "2026-10-12T08:01:38.287564+00:00",
+  "spec_hash": "222fa1c4d3d840f797e42d48cdb2f06c0c756bbe81b8ef53cffc619f5a278997",
+  "spec_identity": {
+    "config_sha256": "03082364b8b1ba388d599a8e84be36be482c51787b110fa670250d9befb7b2a1",
+    "trace_sha256": "d0a431d8a534c6e271e527b9b51ef38c3c0462bcf3b0db08714b4f23307226e9",
+    "bundle_runner_sha256": "7afe6be137ef8565318cbc7f9798e61ebc962e5dbb24cb0cbdc5ae29522944d9",
+    "session_ids": [
+      "multi_turn_base_3",
+      "multi_turn_base_96",
+      "multi_turn_base_32",
+      "multi_turn_base_57",
+      "multi_turn_base_159",
+      "multi_turn_base_94",
+      "multi_turn_base_47",
+      "multi_turn_base_171",
+      "multi_turn_base_179",
+      "multi_turn_base_140",
+      "multi_turn_base_106",
+      "multi_turn_base_173",
+      "multi_turn_base_142",
+      "multi_turn_base_131",
+      "multi_turn_base_15",
+      "multi_turn_base_156",
+      "multi_turn_base_132",
+      "multi_turn_base_133",
+      "multi_turn_base_31",
+      "multi_turn_base_91",
+      "multi_turn_base_29",
+      "multi_turn_base_73",
+      "multi_turn_base_23",
+      "multi_turn_base_63",
+      "multi_turn_base_25",
+      "multi_turn_base_87",
+      "multi_turn_base_0",
+      "multi_turn_base_172",
+      "multi_turn_base_107",
+      "multi_turn_base_33",
+      "multi_turn_base_110",
+      "multi_turn_base_196",
+      "multi_turn_base_100",
+      "multi_turn_base_41",
+      "multi_turn_base_34",
+      "multi_turn_base_175",
+      "multi_turn_base_16",
+      "multi_turn_base_101",
+      "multi_turn_base_134",
+      "multi_turn_base_157",
+      "multi_turn_base_146",
+      "multi_turn_base_24",
+      "multi_turn_base_14",
+      "multi_turn_base_193",
+      "multi_turn_base_118",
+      "multi_turn_base_153",
+      "multi_turn_base_148",
+      "multi_turn_base_95",
+      "multi_turn_base_105",
+      "multi_turn_base_84"
+    ],
+    "bundle_pte_sha256": "f4209253afbea284c6f1d963a07c0e65881400bbbce795102fdd83580be875d1",
+    "bundle_tokenizer_sha256": "7d3b8cace3c6283818f885ef7ee8ca7b7ae7431c9b29245b0c33a0cc73113ab8",
+    "device_dir": "/data/local/tmp/qnn_multisession_ctx6144"
+  },
+  "config": {
+    "seed": 4244,
+    "repeats": 1,
+    "max_groups_per_session_count": null,
+    "experiments": [
+      {
+        "name": "bfcl_n4_c3_pilot",
+        "session_counts": [
+          4
+        ],
+        "max_groups_per_session_count": 1,
+        "schedules": [
+          "round_robin"
+        ],
+        "policies": [
+          {
+            "name": "lru",
+            "budget_ratios": [
+              0.75
+            ]
+          },
+          {
+            "name": "lifecycle_lru",
+            "budget_ratios": [
+              0.75
+            ]
+          }
+        ]
+      },
+      {
+        "name": "bfcl_n8_c6_pilot",
+        "session_counts": [
+          8
+        ],
+        "max_groups_per_session_count": 1,
+        "schedules": [
+          "round_robin"
+        ],
+        "policies": [
+          {
+            "name": "lru",
+            "budget_ratios": [
+              0.75
+            ]
+          },
+          {
+            "name": "lifecycle_lru",
+            "budget_ratios": [
+              0.75
+            ]
+          }
+        ]
+      }
+    ],
+    "max_new_tokens": 64,
+    "htp_mode": 8,
+    "request_timeout_seconds": 600,
+    "warmup": true,
+    "telemetry_interval_seconds": 1,
+    "require_not_charging": true,
+    "temperature_gate": {
+      "enabled": true,
+      "sensor": "skin",
+      "max_start_c": 30.0,
+      "consecutive_samples": 3,
+      "poll_seconds": 5,
+      "timeout_seconds": 1800
+    }
+  },
+  "trace": "/home/lyyyy/edge_side_work/code/multisession_kv/data/bfcl_v4_base_50_ctx6144/reference_history.jsonl",
+  "bundle": "/home/lyyyy/edge_side_work/qnn_multisession_phone_bundle_ctx6144",
+  "randomization_seed": 4244,
+  "jobs": [
+    {
+      "job_id": "43f4f5852c",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "multi_turn_base_3",
+        "multi_turn_base_96",
+        "multi_turn_base_32",
+        "multi_turn_base_57"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "bfcl_n4_c3_pilot",
+      "status": "pass",
+      "attempts": 1,
+      "started_at_utc": "2026-10-12T08:02:09.462746+00:00",
+      "stdout_tail": "{\n  \"run_id\": \"20261012T080212Z_0004a63a\",\n  \"status\": \"pass\",\n  \"requests\": 8,\n  \"duration_ms\": 109859.431779,\n  \"total_input_tokens\": 34798,\n  \"total_prefill_tokens\": 34798,\n  \"total_reused_tokens\": 0,\n  \"evictions\": 5,\n  \"resets\": 0\n}\n",
+      "stderr_tail": "aching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached backend bundle for current backend: kHtpBackend\n[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2\n[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached backend bundle for current backend: kHtpBackend\n[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2\n[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached backend bundle for current backend: kHtpBackend\n[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2\n[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\nI 00:00:01.436642 executorch:runner.cpp:228] Reading metadata from model\nI 00:00:01.440872 executorch:runner.cpp:368] creating io_memory\nI 00:00:01.559421 executorch:prompt_processor.cpp:272] Prompt Processor: total 2759 prompt tokens (AR-128 * 22 iters)\nI 00:00:09.996566 executorch:prompt_processor.cpp:272] Prompt Processor: total 2759 prompt tokens (AR-128 * 22 iters)\nI 00:00:18.759935 executorch:prompt_processor.cpp:272] Prompt Processor: total 3909 prompt tokens (AR-128 * 31 iters)\nI 00:00:30.105720 executorch:prompt_processor.cpp:272] Prompt Processor: total 4749 prompt tokens (AR-128 * 38 iters)\nI 00:00:44.143713 executorch:prompt_processor.cpp:272] Prompt Processor: total 5695 prompt tokens (AR-128 * 45 iters)\nI 00:01:01.062029 executorch:prompt_processor.cpp:272] Prompt Processor: total 2850 prompt tokens (AR-128 * 23 iters)\nI 00:01:14.228579 executorch:prompt_processor.cpp:272] Prompt Processor: total 4104 prompt tokens (AR-128 * 33 iters)\nI 00:01:26.499080 executorch:prompt_processor.cpp:272] Prompt Processor: total 4872 prompt tokens (AR-128 * 39 iters)\nI 00:01:43.895377 executorch:prompt_processor.cpp:272] Prompt Processor: total 5860 prompt tokens (AR-128 * 46 iters)\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn device\n[INFO] [Qnn ExecuTorch]: Destroy Qnn backend\n",
+      "completed_at_utc": "2026-10-12T08:04:14.416947+00:00",
+      "run_dir": "results/bfcl_v4_base_lifecycle_pilot_t30/runs/43f4f5852c",
+      "launch_battery": {
+        "powered": {
+          "ac": false,
+          "usb": false,
+          "wireless": false,
+          "dock": false
+        },
+        "status": 3,
+        "level": 100
+      },
+      "recovery_samples": [
+        {
+          "host_timestamp_ns": 1791792118821687898,
+          "sensor": "skin",
+          "temperature_c": 28.88,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791792124017776467,
+          "sensor": "skin",
+          "temperature_c": 28.858,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791792129462723865,
+          "sensor": "skin",
+          "temperature_c": 28.852,
+          "threshold_c": 30.0
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "run_id": "20261012T080212Z_0004a63a",
+        "requests": 8,
+        "total_prefill_tokens": 34798,
+        "total_reused_tokens": 0
+      }
+    },
+    {
+      "job_id": "66e4d7a128",
+      "nominal_session_count": 8,
+      "session_offset": 0,
+      "session_count": 8,
+      "sessions": [
+        "multi_turn_base_3",
+        "multi_turn_base_96",
+        "multi_turn_base_32",
+        "multi_turn_base_57",
+        "multi_turn_base_159",
+        "multi_turn_base_94",
+        "multi_turn_base_47",
+        "multi_turn_base_171"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "bfcl_n8_c6_pilot",
+      "status": "pass",
+      "attempts": 1,
+      "started_at_utc": "2026-10-12T08:24:58.916905+00:00",
+      "stdout_tail": "{\n  \"run_id\": \"20261012T082500Z_e261a0c8\",\n  \"status\": \"pass\",\n  \"requests\": 20,\n  \"duration_ms\": 236768.338169,\n  \"total_input_tokens\": 87935,\n  \"total_prefill_tokens\": 70248,\n  \"total_reused_tokens\": 17687,\n  \"evictions\": 10,\n  \"resets\": 0\n}\n",
+      "stderr_tail": "[INFO] [Qnn ExecuTorch]: Use cached backend bundle for current backend: kHtpBackend\n[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2\n[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\nI 00:00:01.390299 executorch:runner.cpp:228] Reading metadata from model\nI 00:00:01.395165 executorch:runner.cpp:368] creating io_memory\nI 00:00:02.145726 executorch:prompt_processor.cpp:272] Prompt Processor: total 2759 prompt tokens (AR-128 * 22 iters)\nI 00:00:10.469654 executorch:prompt_processor.cpp:272] Prompt Processor: total 2759 prompt tokens (AR-128 * 22 iters)\nI 00:00:18.905866 executorch:prompt_processor.cpp:272] Prompt Processor: total 3909 prompt tokens (AR-128 * 31 iters)\nI 00:00:30.260277 executorch:prompt_processor.cpp:272] Prompt Processor: total 4749 prompt tokens (AR-128 * 38 iters)\nI 00:00:44.185522 executorch:prompt_processor.cpp:272] Prompt Processor: total 5695 prompt tokens (AR-128 * 45 iters)\nI 00:01:01.035298 executorch:prompt_processor.cpp:272] Prompt Processor: total 3535 prompt tokens (AR-128 * 28 iters)\nI 00:01:14.709269 executorch:prompt_processor.cpp:272] Prompt Processor: total 3924 prompt tokens (AR-128 * 31 iters)\nI 00:01:26.662700 executorch:prompt_processor.cpp:272] Prompt Processor: total 4741 prompt tokens (AR-128 * 38 iters)\nI 00:01:40.079894 executorch:prompt_processor.cpp:272] Prompt Processor: total 4776 prompt tokens (AR-128 * 38 iters)\nI 00:01:58.143275 executorch:prompt_processor.cpp:272] Prompt Processor: total 2850 prompt tokens (AR-128 * 23 iters)\nI 00:02:11.387231 executorch:prompt_processor.cpp:272] Prompt Processor: total 4104 prompt tokens (AR-128 * 33 iters)\nI 00:02:23.693375 executorch:prompt_processor.cpp:272] Prompt Processor: total 4872 prompt tokens (AR-128 * 39 iters)\nI 00:02:40.939005 executorch:prompt_processor.cpp:272] Prompt Processor: total 5860 prompt tokens (AR-128 * 46 iters)\nI 00:02:56.911225 executorch:prompt_processor.cpp:272] Prompt Processor: total 3782 prompt tokens (AR-128 * 30 iters)\nI 00:03:12.349751 executorch:prompt_processor.cpp:272] Prompt Processor: total 4035 prompt tokens (AR-128 * 32 iters)\nI 00:03:23.530147 executorch:prompt_processor.cpp:272] Prompt Processor: total 4782 prompt tokens (AR-128 * 38 iters)\nI 00:03:37.331902 executorch:prompt_processor.cpp:272] Prompt Processor: total 5088 prompt tokens (AR-128 * 40 iters)\nI 00:03:53.295451 executorch:prompt_processor.cpp:272] Prompt Processor: total 156 prompt tokens (AR-128 * 2 iters)\nI 00:03:58.990019 executorch:prompt_processor.cpp:272] Prompt Processor: total 212 prompt tokens (AR-128 * 2 iters)\nI 00:04:00.761269 executorch:prompt_processor.cpp:272] Prompt Processor: total 125 prompt tokens (AR-128 * 1 iters)\nI 00:04:03.749537 executorch:prompt_processor.cpp:272] Prompt Processor: total 294 prompt tokens (AR-128 * 3 iters)\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn device\n[INFO] [Qnn ExecuTorch]: Destroy Qnn backend\n",
+      "completed_at_utc": "2026-10-12T08:29:09.501600+00:00",
+      "run_dir": "results/bfcl_v4_base_lifecycle_pilot_t30/runs/66e4d7a128",
+      "launch_battery": {
+        "powered": {
+          "ac": false,
+          "usb": false,
+          "wireless": false,
+          "dock": false
+        },
+        "status": 3,
+        "level": 100
+      },
+      "recovery_samples": [
+        {
+          "host_timestamp_ns": 1791793488476369522,
+          "sensor": "skin",
+          "temperature_c": 28.298,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793493603576211,
+          "sensor": "skin",
+          "temperature_c": 28.26,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793498916868220,
+          "sensor": "skin",
+          "temperature_c": 28.255,
+          "threshold_c": 30.0
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "run_id": "20261012T082500Z_e261a0c8",
+        "requests": 20,
+        "total_prefill_tokens": 70248,
+        "total_reused_tokens": 17687
+      }
+    },
+    {
+      "job_id": "3a6714af1a",
+      "nominal_session_count": 8,
+      "session_offset": 0,
+      "session_count": 8,
+      "sessions": [
+        "multi_turn_base_3",
+        "multi_turn_base_96",
+        "multi_turn_base_32",
+        "multi_turn_base_57",
+        "multi_turn_base_159",
+        "multi_turn_base_94",
+        "multi_turn_base_47",
+        "multi_turn_base_171"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "bfcl_n8_c6_pilot",
+      "status": "pass",
+      "attempts": 1,
+      "started_at_utc": "2026-10-12T08:36:35.080128+00:00",
+      "stdout_tail": "{\n  \"run_id\": \"20261012T083638Z_aa2bc267\",\n  \"status\": \"pass\",\n  \"requests\": 20,\n  \"duration_ms\": 174666.838554,\n  \"total_input_tokens\": 87935,\n  \"total_prefill_tokens\": 46363,\n  \"total_reused_tokens\": 41572,\n  \"evictions\": 3,\n  \"resets\": 0\n}\n",
+      "stderr_tail": "omProtocol\n[INFO] [Qnn ExecuTorch]: Use cached backend bundle for current backend: kHtpBackend\n[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2\n[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\nI 00:00:01.238184 executorch:runner.cpp:228] Reading metadata from model\nI 00:00:01.242114 executorch:runner.cpp:368] creating io_memory\nI 00:00:01.350179 executorch:prompt_processor.cpp:272] Prompt Processor: total 2759 prompt tokens (AR-128 * 22 iters)\nI 00:00:09.684134 executorch:prompt_processor.cpp:272] Prompt Processor: total 2759 prompt tokens (AR-128 * 22 iters)\nI 00:00:18.148406 executorch:prompt_processor.cpp:272] Prompt Processor: total 3909 prompt tokens (AR-128 * 31 iters)\nI 00:00:29.523334 executorch:prompt_processor.cpp:272] Prompt Processor: total 4749 prompt tokens (AR-128 * 38 iters)\nI 00:00:43.442260 executorch:prompt_processor.cpp:272] Prompt Processor: total 5695 prompt tokens (AR-128 * 45 iters)\nI 00:01:00.253737 executorch:prompt_processor.cpp:272] Prompt Processor: total 3535 prompt tokens (AR-128 * 28 iters)\nI 00:01:13.911107 executorch:prompt_processor.cpp:272] Prompt Processor: total 3924 prompt tokens (AR-128 * 31 iters)\nI 00:01:25.877778 executorch:prompt_processor.cpp:272] Prompt Processor: total 4741 prompt tokens (AR-128 * 38 iters)\nI 00:01:39.295658 executorch:prompt_processor.cpp:272] Prompt Processor: total 4776 prompt tokens (AR-128 * 38 iters)\nI 00:01:57.394010 executorch:prompt_processor.cpp:272] Prompt Processor: total 2850 prompt tokens (AR-128 * 23 iters)\nI 00:02:10.409343 executorch:prompt_processor.cpp:272] Prompt Processor: total 4104 prompt tokens (AR-128 * 33 iters)\nI 00:02:22.523165 executorch:prompt_processor.cpp:272] Prompt Processor: total 123 prompt tokens (AR-128 * 1 iters)\nI 00:02:25.376272 executorch:prompt_processor.cpp:272] Prompt Processor: total 165 prompt tokens (AR-128 * 2 iters)\nI 00:02:27.966016 executorch:prompt_processor.cpp:272] Prompt Processor: total 3782 prompt tokens (AR-128 * 30 iters)\nI 00:02:43.328980 executorch:prompt_processor.cpp:272] Prompt Processor: total 111 prompt tokens (AR-128 * 1 iters)\nI 00:02:44.430646 executorch:prompt_processor.cpp:272] Prompt Processor: total 41 prompt tokens (AR-128 * 1 iters)\nI 00:02:46.261185 executorch:prompt_processor.cpp:272] Prompt Processor: total 312 prompt tokens (AR-128 * 3 iters)\nI 00:02:50.382254 executorch:prompt_processor.cpp:272] Prompt Processor: total 156 prompt tokens (AR-128 * 2 iters)\nI 00:02:55.963030 executorch:prompt_processor.cpp:272] Prompt Processor: total 212 prompt tokens (AR-128 * 2 iters)\nI 00:02:57.658677 executorch:prompt_processor.cpp:272] Prompt Processor: total 125 prompt tokens (AR-128 * 1 iters)\nI 00:03:00.822488 executorch:prompt_processor.cpp:272] Prompt Processor: total 294 prompt tokens (AR-128 * 3 iters)\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn device\n[INFO] [Qnn ExecuTorch]: Destroy Qnn backend\n",
+      "completed_at_utc": "2026-10-12T08:39:44.175944+00:00",
+      "run_dir": "results/bfcl_v4_base_lifecycle_pilot_t30/runs/3a6714af1a",
+      "launch_battery": {
+        "powered": {
+          "ac": false,
+          "usb": false,
+          "wireless": false,
+          "dock": false
+        },
+        "status": 3,
+        "level": 99
+      },
+      "recovery_samples": [
+        {
+          "host_timestamp_ns": 1791793749848696713,
+          "sensor": "skin",
+          "temperature_c": 36.291,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793755032669667,
+          "sensor": "skin",
+          "temperature_c": 36.028,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793760231310939,
+          "sensor": "skin",
+          "temperature_c": 35.401,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793765477322789,
+          "sensor": "skin",
+          "temperature_c": 34.755,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793770697434681,
+          "sensor": "skin",
+          "temperature_c": 34.24,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793775900984013,
+          "sensor": "skin",
+          "temperature_c": 33.849,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793781131671592,
+          "sensor": "skin",
+          "temperature_c": 33.55,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793786529261596,
+          "sensor": "skin",
+          "temperature_c": 33.301,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793791729447798,
+          "sensor": "skin",
+          "temperature_c": 33.101,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793797077681993,
+          "sensor": "skin",
+          "temperature_c": 32.957,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793802198935777,
+          "sensor": "skin",
+          "temperature_c": 32.807,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793807592268610,
+          "sensor": "skin",
+          "temperature_c": 32.701,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793812752642746,
+          "sensor": "skin",
+          "temperature_c": 32.601,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793818120118822,
+          "sensor": "skin",
+          "temperature_c": 32.513,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793823348445558,
+          "sensor": "skin",
+          "temperature_c": 32.434,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793828582845639,
+          "sensor": "skin",
+          "temperature_c": 32.362,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793833795071807,
+          "sensor": "skin",
+          "temperature_c": 32.272,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793838911887067,
+          "sensor": "skin",
+          "temperature_c": 32.205,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793844351847896,
+          "sensor": "skin",
+          "temperature_c": 32.132,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793849522483861,
+          "sensor": "skin",
+          "temperature_c": 32.064,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793854823191197,
+          "sensor": "skin",
+          "temperature_c": 32.018,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793860011142883,
+          "sensor": "skin",
+          "temperature_c": 31.945,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793865243045226,
+          "sensor": "skin",
+          "temperature_c": 31.899,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793870459888224,
+          "sensor": "skin",
+          "temperature_c": 31.825,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793875630067366,
+          "sensor": "skin",
+          "temperature_c": 31.774,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793880892517923,
+          "sensor": "skin",
+          "temperature_c": 31.723,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793886129120534,
+          "sensor": "skin",
+          "temperature_c": 31.664,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793891339943582,
+          "sensor": "skin",
+          "temperature_c": 31.625,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793896765156076,
+          "sensor": "skin",
+          "temperature_c": 31.576,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793901993931885,
+          "sensor": "skin",
+          "temperature_c": 31.532,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793907212646371,
+          "sensor": "skin",
+          "temperature_c": 31.494,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793912489898486,
+          "sensor": "skin",
+          "temperature_c": 31.45,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793917606020954,
+          "sensor": "skin",
+          "temperature_c": 31.406,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793922986733931,
+          "sensor": "skin",
+          "temperature_c": 31.372,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793928179435043,
+          "sensor": "skin",
+          "temperature_c": 31.339,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793933422427687,
+          "sensor": "skin",
+          "temperature_c": 31.312,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793938773822615,
+          "sensor": "skin",
+          "temperature_c": 31.267,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793943975401355,
+          "sensor": "skin",
+          "temperature_c": 31.223,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793949308735800,
+          "sensor": "skin",
+          "temperature_c": 31.184,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793954534137247,
+          "sensor": "skin",
+          "temperature_c": 31.145,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793959760418156,
+          "sensor": "skin",
+          "temperature_c": 31.095,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793964945327305,
+          "sensor": "skin",
+          "temperature_c": 31.061,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793970206911293,
+          "sensor": "skin",
+          "temperature_c": 31.028,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793975406664118,
+          "sensor": "skin",
+          "temperature_c": 31.006,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793980632333882,
+          "sensor": "skin",
+          "temperature_c": 30.972,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793985956090529,
+          "sensor": "skin",
+          "temperature_c": 30.938,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793991184448883,
+          "sensor": "skin",
+          "temperature_c": 30.91,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791793996420529841,
+          "sensor": "skin",
+          "temperature_c": 30.86,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794001625759625,
+          "sensor": "skin",
+          "temperature_c": 30.854,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794006859641413,
+          "sensor": "skin",
+          "temperature_c": 30.815,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794011970972014,
+          "sensor": "skin",
+          "temperature_c": 30.775,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794017215211312,
+          "sensor": "skin",
+          "temperature_c": 30.758,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794022376233246,
+          "sensor": "skin",
+          "temperature_c": 30.724,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794027668207498,
+          "sensor": "skin",
+          "temperature_c": 30.697,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794032919344338,
+          "sensor": "skin",
+          "temperature_c": 30.675,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794038003598398,
+          "sensor": "skin",
+          "temperature_c": 30.637,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794043156994897,
+          "sensor": "skin",
+          "temperature_c": 30.605,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794048387348269,
+          "sensor": "skin",
+          "temperature_c": 30.589,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794053564027904,
+          "sensor": "skin",
+          "temperature_c": 30.551,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794058783634901,
+          "sensor": "skin",
+          "temperature_c": 30.524,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794063958759521,
+          "sensor": "skin",
+          "temperature_c": 30.492,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794069324046496,
+          "sensor": "skin",
+          "temperature_c": 30.475,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794074447928185,
+          "sensor": "skin",
+          "temperature_c": 30.459,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794079660014895,
+          "sensor": "skin",
+          "temperature_c": 30.448,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794084796249186,
+          "sensor": "skin",
+          "temperature_c": 30.41,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794090009165159,
+          "sensor": "skin",
+          "temperature_c": 30.405,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794095195148090,
+          "sensor": "skin",
+          "temperature_c": 30.377,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794100564993457,
+          "sensor": "skin",
+          "temperature_c": 30.35,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794105765514750,
+          "sensor": "skin",
+          "temperature_c": 30.334,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794111001153519,
+          "sensor": "skin",
+          "temperature_c": 30.312,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794116177997681,
+          "sensor": "skin",
+          "temperature_c": 30.273,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794121663269667,
+          "sensor": "skin",
+          "temperature_c": 30.257,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794126829301596,
+          "sensor": "skin",
+          "temperature_c": 30.23,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794132059030137,
+          "sensor": "skin",
+          "temperature_c": 30.224,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794137535856755,
+          "sensor": "skin",
+          "temperature_c": 30.208,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794142744187770,
+          "sensor": "skin",
+          "temperature_c": 30.169,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794148069240672,
+          "sensor": "skin",
+          "temperature_c": 30.153,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794153311313716,
+          "sensor": "skin",
+          "temperature_c": 30.131,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794158563011795,
+          "sensor": "skin",
+          "temperature_c": 30.109,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794163759627294,
+          "sensor": "skin",
+          "temperature_c": 30.092,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794168959677951,
+          "sensor": "skin",
+          "temperature_c": 30.059,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794174139179463,
+          "sensor": "skin",
+          "temperature_c": 30.042,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794179395145555,
+          "sensor": "skin",
+          "temperature_c": 30.026,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794184636864368,
+          "sensor": "skin",
+          "temperature_c": 29.993,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794189815351924,
+          "sensor": "skin",
+          "temperature_c": 29.976,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794195080101683,
+          "sensor": "skin",
+          "temperature_c": 29.981,
+          "threshold_c": 30.0
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "run_id": "20261012T083638Z_aa2bc267",
+        "requests": 20,
+        "total_prefill_tokens": 46363,
+        "total_reused_tokens": 41572,
+        "lifecycle": {
+          "protocol": "serial_arrival",
+          "source": "controlled_protocol",
+          "states": {
+            "READY": 20,
+            "RUNNING": 20,
+            "WAITING": 12,
+            "DONE": 8
+          },
+          "capacity_evictions": 3,
+          "policy_decision_ms_total": 0.21950399999999998
+        }
+      }
+    },
+    {
+      "job_id": "a992315ace",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "multi_turn_base_3",
+        "multi_turn_base_96",
+        "multi_turn_base_32",
+        "multi_turn_base_57"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "bfcl_n4_c3_pilot",
+      "status": "pass",
+      "attempts": 1,
+      "started_at_utc": "2026-10-12T08:49:56.205929+00:00",
+      "stdout_tail": "{\n  \"run_id\": \"20261012T084959Z_6dde1bc8\",\n  \"status\": \"pass\",\n  \"requests\": 8,\n  \"duration_ms\": 81103.907534,\n  \"total_input_tokens\": 34798,\n  \"total_prefill_tokens\": 24354,\n  \"total_reused_tokens\": 10444,\n  \"evictions\": 2,\n  \"resets\": 0\n}\n",
+      "stderr_tail": "]: Caching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached backend bundle for current backend: kHtpBackend\n[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2\n[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached backend bundle for current backend: kHtpBackend\n[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2\n[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached backend bundle for current backend: kHtpBackend\n[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2\n[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\nI 00:00:01.524370 executorch:runner.cpp:228] Reading metadata from model\nI 00:00:01.529239 executorch:runner.cpp:368] creating io_memory\nI 00:00:01.648663 executorch:prompt_processor.cpp:272] Prompt Processor: total 2759 prompt tokens (AR-128 * 22 iters)\nI 00:00:10.044207 executorch:prompt_processor.cpp:272] Prompt Processor: total 2759 prompt tokens (AR-128 * 22 iters)\nI 00:00:18.598802 executorch:prompt_processor.cpp:272] Prompt Processor: total 3909 prompt tokens (AR-128 * 31 iters)\nI 00:00:29.823855 executorch:prompt_processor.cpp:272] Prompt Processor: total 4749 prompt tokens (AR-128 * 38 iters)\nI 00:00:43.792356 executorch:prompt_processor.cpp:272] Prompt Processor: total 5695 prompt tokens (AR-128 * 45 iters)\nI 00:01:00.504007 executorch:prompt_processor.cpp:272] Prompt Processor: total 2850 prompt tokens (AR-128 * 23 iters)\nI 00:01:13.551326 executorch:prompt_processor.cpp:272] Prompt Processor: total 4104 prompt tokens (AR-128 * 33 iters)\nI 00:01:25.672449 executorch:prompt_processor.cpp:272] Prompt Processor: total 123 prompt tokens (AR-128 * 1 iters)\nI 00:01:28.516851 executorch:prompt_processor.cpp:272] Prompt Processor: total 165 prompt tokens (AR-128 * 2 iters)\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn device\n[INFO] [Qnn ExecuTorch]: Destroy Qnn backend\n",
+      "completed_at_utc": "2026-10-12T08:51:33.194823+00:00",
+      "run_dir": "results/bfcl_v4_base_lifecycle_pilot_t30/runs/a992315ace",
+      "launch_battery": {
+        "powered": {
+          "ac": false,
+          "usb": false,
+          "wireless": false,
+          "dock": false
+        },
+        "status": 3,
+        "level": 99
+      },
+      "recovery_samples": [
+        {
+          "host_timestamp_ns": 1791794384551512969,
+          "sensor": "skin",
+          "temperature_c": 36.458,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794389716371144,
+          "sensor": "skin",
+          "temperature_c": 36.268,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794394952357269,
+          "sensor": "skin",
+          "temperature_c": 35.651,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794400184100762,
+          "sensor": "skin",
+          "temperature_c": 35.043,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794405398049442,
+          "sensor": "skin",
+          "temperature_c": 34.573,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794410633341561,
+          "sensor": "skin",
+          "temperature_c": 34.205,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794415860467076,
+          "sensor": "skin",
+          "temperature_c": 33.92,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794421067646768,
+          "sensor": "skin",
+          "temperature_c": 33.701,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794426297312372,
+          "sensor": "skin",
+          "temperature_c": 33.516,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794431521217784,
+          "sensor": "skin",
+          "temperature_c": 33.369,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794436770978684,
+          "sensor": "skin",
+          "temperature_c": 33.238,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794441943923660,
+          "sensor": "skin",
+          "temperature_c": 33.124,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794447179985774,
+          "sensor": "skin",
+          "temperature_c": 33.009,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794452424121069,
+          "sensor": "skin",
+          "temperature_c": 32.911,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794457607374763,
+          "sensor": "skin",
+          "temperature_c": 32.825,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794462881943514,
+          "sensor": "skin",
+          "temperature_c": 32.74,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794468053003535,
+          "sensor": "skin",
+          "temperature_c": 32.657,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794473302878407,
+          "sensor": "skin",
+          "temperature_c": 32.579,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794478532360282,
+          "sensor": "skin",
+          "temperature_c": 32.518,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794483791530709,
+          "sensor": "skin",
+          "temperature_c": 32.451,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794489211286196,
+          "sensor": "skin",
+          "temperature_c": 32.373,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794494331831606,
+          "sensor": "skin",
+          "temperature_c": 32.306,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794499553359666,
+          "sensor": "skin",
+          "temperature_c": 32.272,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794504706441138,
+          "sensor": "skin",
+          "temperature_c": 32.211,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794509981175239,
+          "sensor": "skin",
+          "temperature_c": 32.177,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794515195181565,
+          "sensor": "skin",
+          "temperature_c": 32.12,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794520382165764,
+          "sensor": "skin",
+          "temperature_c": 32.081,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794525650005667,
+          "sensor": "skin",
+          "temperature_c": 32.053,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794530897794791,
+          "sensor": "skin",
+          "temperature_c": 32.007,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794536044697911,
+          "sensor": "skin",
+          "temperature_c": 31.962,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794541515281791,
+          "sensor": "skin",
+          "temperature_c": 31.922,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794546759199451,
+          "sensor": "skin",
+          "temperature_c": 31.899,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794551980913313,
+          "sensor": "skin",
+          "temperature_c": 31.848,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794557156601954,
+          "sensor": "skin",
+          "temperature_c": 31.814,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794562417653950,
+          "sensor": "skin",
+          "temperature_c": 31.774,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794567549866070,
+          "sensor": "skin",
+          "temperature_c": 31.734,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794572746025506,
+          "sensor": "skin",
+          "temperature_c": 31.718,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794578076080061,
+          "sensor": "skin",
+          "temperature_c": 31.68,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794583307576168,
+          "sensor": "skin",
+          "temperature_c": 31.636,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794588623754274,
+          "sensor": "skin",
+          "temperature_c": 31.614,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794593800685211,
+          "sensor": "skin",
+          "temperature_c": 31.565,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794599075060986,
+          "sensor": "skin",
+          "temperature_c": 31.549,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794604281368261,
+          "sensor": "skin",
+          "temperature_c": 31.538,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794609612661485,
+          "sensor": "skin",
+          "temperature_c": 31.505,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794614864384783,
+          "sensor": "skin",
+          "temperature_c": 31.477,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794620018659304,
+          "sensor": "skin",
+          "temperature_c": 31.433,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794625270503730,
+          "sensor": "skin",
+          "temperature_c": 31.411,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794630507086584,
+          "sensor": "skin",
+          "temperature_c": 31.372,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794635772239036,
+          "sensor": "skin",
+          "temperature_c": 31.345,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794640968185170,
+          "sensor": "skin",
+          "temperature_c": 31.317,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794646094327422,
+          "sensor": "skin",
+          "temperature_c": 31.273,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794651285342536,
+          "sensor": "skin",
+          "temperature_c": 31.256,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794656515204186,
+          "sensor": "skin",
+          "temperature_c": 31.229,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794661652740582,
+          "sensor": "skin",
+          "temperature_c": 31.19,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794666869228370,
+          "sensor": "skin",
+          "temperature_c": 31.179,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794672079762559,
+          "sensor": "skin",
+          "temperature_c": 31.145,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794677320760058,
+          "sensor": "skin",
+          "temperature_c": 31.123,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794682432419475,
+          "sensor": "skin",
+          "temperature_c": 31.089,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794687623481662,
+          "sensor": "skin",
+          "temperature_c": 31.067,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794692836894143,
+          "sensor": "skin",
+          "temperature_c": 31.039,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794698048412996,
+          "sensor": "skin",
+          "temperature_c": 31.011,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794703520596395,
+          "sensor": "skin",
+          "temperature_c": 30.994,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794708643742777,
+          "sensor": "skin",
+          "temperature_c": 30.966,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794713869342386,
+          "sensor": "skin",
+          "temperature_c": 30.944,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794719101145234,
+          "sensor": "skin",
+          "temperature_c": 30.905,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794724338422458,
+          "sensor": "skin",
+          "temperature_c": 30.888,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794729656706006,
+          "sensor": "skin",
+          "temperature_c": 30.871,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794734833422610,
+          "sensor": "skin",
+          "temperature_c": 30.848,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794740311096236,
+          "sensor": "skin",
+          "temperature_c": 30.826,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794745470639176,
+          "sensor": "skin",
+          "temperature_c": 30.803,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794750958042314,
+          "sensor": "skin",
+          "temperature_c": 30.786,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794756066962994,
+          "sensor": "skin",
+          "temperature_c": 30.758,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794761272285642,
+          "sensor": "skin",
+          "temperature_c": 30.747,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794766459927784,
+          "sensor": "skin",
+          "temperature_c": 30.713,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794771844589324,
+          "sensor": "skin",
+          "temperature_c": 30.708,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794777059046692,
+          "sensor": "skin",
+          "temperature_c": 30.67,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794782224707317,
+          "sensor": "skin",
+          "temperature_c": 30.648,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794787601469756,
+          "sensor": "skin",
+          "temperature_c": 30.637,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794792790705729,
+          "sensor": "skin",
+          "temperature_c": 30.616,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794798045513717,
+          "sensor": "skin",
+          "temperature_c": 30.605,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794803220144208,
+          "sensor": "skin",
+          "temperature_c": 30.578,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794808329150071,
+          "sensor": "skin",
+          "temperature_c": 30.557,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794813610854932,
+          "sensor": "skin",
+          "temperature_c": 30.546,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794818740206496,
+          "sensor": "skin",
+          "temperature_c": 30.508,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794823955243691,
+          "sensor": "skin",
+          "temperature_c": 30.513,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794829148765847,
+          "sensor": "skin",
+          "temperature_c": 30.486,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794834287415276,
+          "sensor": "skin",
+          "temperature_c": 30.459,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794839510591595,
+          "sensor": "skin",
+          "temperature_c": 30.459,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794844736349835,
+          "sensor": "skin",
+          "temperature_c": 30.442,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794849972525847,
+          "sensor": "skin",
+          "temperature_c": 30.415,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794855142300854,
+          "sensor": "skin",
+          "temperature_c": 30.405,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794860390011236,
+          "sensor": "skin",
+          "temperature_c": 30.383,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794865734006226,
+          "sensor": "skin",
+          "temperature_c": 30.372,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794870946148707,
+          "sensor": "skin",
+          "temperature_c": 30.355,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794876196404732,
+          "sensor": "skin",
+          "temperature_c": 30.334,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794881396816694,
+          "sensor": "skin",
+          "temperature_c": 30.323,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794886524930059,
+          "sensor": "skin",
+          "temperature_c": 30.29,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794891628473996,
+          "sensor": "skin",
+          "temperature_c": 30.279,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794896864770732,
+          "sensor": "skin",
+          "temperature_c": 30.262,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794902085543715,
+          "sensor": "skin",
+          "temperature_c": 30.235,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794907316711034,
+          "sensor": "skin",
+          "temperature_c": 30.213,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794912527968991,
+          "sensor": "skin",
+          "temperature_c": 30.197,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794917877768603,
+          "sensor": "skin",
+          "temperature_c": 30.175,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794923034551930,
+          "sensor": "skin",
+          "temperature_c": 30.164,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794928411322635,
+          "sensor": "skin",
+          "temperature_c": 30.158,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794933582073331,
+          "sensor": "skin",
+          "temperature_c": 30.142,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794938868320473,
+          "sensor": "skin",
+          "temperature_c": 30.131,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794943971763683,
+          "sensor": "skin",
+          "temperature_c": 30.109,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794949148167902,
+          "sensor": "skin",
+          "temperature_c": 30.098,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794954631218631,
+          "sensor": "skin",
+          "temperature_c": 30.086,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794959769211951,
+          "sensor": "skin",
+          "temperature_c": 30.064,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794964904621832,
+          "sensor": "skin",
+          "temperature_c": 30.053,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794970095769410,
+          "sensor": "skin",
+          "temperature_c": 30.053,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794975269820491,
+          "sensor": "skin",
+          "temperature_c": 30.026,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794980373130497,
+          "sensor": "skin",
+          "temperature_c": 30.009,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794985561051863,
+          "sensor": "skin",
+          "temperature_c": 29.981,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794990728672515,
+          "sensor": "skin",
+          "temperature_c": 29.965,
+          "threshold_c": 30.0
+        },
+        {
+          "host_timestamp_ns": 1791794996205919038,
+          "sensor": "skin",
+          "temperature_c": 29.959,
+          "threshold_c": 30.0
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "run_id": "20261012T084959Z_6dde1bc8",
+        "requests": 8,
+        "total_prefill_tokens": 24354,
+        "total_reused_tokens": 10444,
+        "lifecycle": {
+          "protocol": "serial_arrival",
+          "source": "controlled_protocol",
+          "states": {
+            "READY": 8,
+            "RUNNING": 8,
+            "WAITING": 4,
+            "DONE": 4
+          },
+          "capacity_evictions": 2,
+          "policy_decision_ms_total": 0.135392
+        }
+      }
+    }
+  ]
+}

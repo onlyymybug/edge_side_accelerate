@@ -1,0 +1,3 @@
+{"task_id":"6bdbc26_1","success":false,"steps":3,"error":"not a single JSON call: '{\"name\":\"supervisor__complete_task\",\"parameters\":{\"answer\":\"The artist \\'{}\\' has {} followers on Spotify.\",\"parameters\":{'","completion_ms":32947.796139,"repaired_tool_calls":1,"filtered_tool_calls":1}
+{"task_id":"6bdbc26_2","success":true,"steps":3,"error":null,"completion_ms":40142.936727,"repaired_tool_calls":1,"filtered_tool_calls":0}
+{"task_id":"6bdbc26_3","success":true,"steps":3,"error":null,"completion_ms":42166.678475,"repaired_tool_calls":1,"filtered_tool_calls":1}

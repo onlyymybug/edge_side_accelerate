@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "adb",
+    "-s",
+    "189f0fad",
+    "shell",
+    "cd /data/local/tmp/qwen3_vl_geniex_sm8750 && chmod +x bin/geniex-bench && sh run_smoke.sh --image /data/local/tmp/qwen3_vl_geniex_sm8750/test_red_square.png"
+  ],
+  "remote": "/data/local/tmp/qwen3_vl_geniex_sm8750"
+}

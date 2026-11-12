@@ -1,0 +1,9 @@
+{
+  "jobs": 4,
+  "passed": 4,
+  "paired_groups": 2,
+  "model_sha256": "f4209253afbea284c6f1d963a07c0e65881400bbbce795102fdd83580be875d1",
+  "trace_sha256": "77c4fb2bc60808390cf4d71ce57ed2e5ca343cbc8a02bb4d02f751ac87ae0651",
+  "bootstrap_unit": "fixed session group",
+  "bootstrap_samples": 10000
+}

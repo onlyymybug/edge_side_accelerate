@@ -1,0 +1,5 @@
+{"event":"task_start","task_id":"b119b1f_1","host_monotonic_ns":161835009168890}
+{"event":"inference_start","task_id":"b119b1f_1","request_id":"b119b1f_1_01","host_monotonic_ns":161839270543106,"input_tokens":492}
+{"event":"inference_end","task_id":"b119b1f_1","request_id":"b119b1f_1_01","host_monotonic_ns":161841693736678,"status":"ok"}
+{"event":"session_release","task_id":"b119b1f_1","host_monotonic_ns":161842001470720,"source":"runtime_explicit"}
+{"event":"task_end","task_id":"b119b1f_1","host_monotonic_ns":161842001475064,"success":false}

@@ -1,0 +1,87 @@
+BUILD_RECORD.json: OK
+README.md: OK
+bin/geniex-bench: OK
+lib/libgeniex.so: OK
+lib/qairt/htp-files/libCalculator_skel.so: OK
+lib/qairt/htp-files/libPlatformValidatorShared.so: OK
+lib/qairt/htp-files/libQnnChrometraceProfilingReader.so: OK
+lib/qairt/htp-files/libQnnHta.so: OK
+lib/qairt/htp-files/libQnnHtaNetRunExtensions.so: OK
+lib/qairt/htp-files/libQnnHtp.so: OK
+lib/qairt/htp-files/libQnnHtpNetRunExtensions.so: OK
+lib/qairt/htp-files/libQnnHtpOptraceProfilingReader.so: OK
+lib/qairt/htp-files/libQnnHtpPrepare.so: OK
+lib/qairt/htp-files/libQnnHtpProfilingReader.so: OK
+lib/qairt/htp-files/libQnnHtpV79.so: OK
+lib/qairt/htp-files/libQnnHtpV79CalculatorStub.so: OK
+lib/qairt/htp-files/libQnnHtpV79Skel.so: OK
+lib/qairt/htp-files/libQnnHtpV79Stub.so: OK
+lib/qairt/htp-files/libQnnHtpV81.so: OK
+lib/qairt/htp-files/libQnnHtpV81CalculatorStub.so: OK
+lib/qairt/htp-files/libQnnHtpV81Skel.so: OK
+lib/qairt/htp-files/libQnnHtpV81Stub.so: OK
+lib/qairt/htp-files/libQnnIr.so: OK
+lib/qairt/htp-files/libQnnJsonProfilingReader.so: OK
+lib/qairt/htp-files/libQnnModelDlc.so: OK
+lib/qairt/htp-files/libQnnNetRunDirectV79Skel.so: OK
+lib/qairt/htp-files/libQnnNetRunDirectV79Stub.so: OK
+lib/qairt/htp-files/libQnnNetRunDirectV81Skel.so: OK
+lib/qairt/htp-files/libQnnNetRunDirectV81Stub.so: OK
+lib/qairt/htp-files/libQnnSaver.so: OK
+lib/qairt/htp-files/libQnnSystem.so: OK
+lib/qairt/htp-files/libcalculator.so: OK
+lib/qairt/htp-files/libhta_hexagon_runtime_qnn.so: OK
+lib/qairt/htp-files/libhta_hexagon_runtime_snpe.so: OK
+lib/qairt/htp-files/libqnnhtpv81.cat: OK
+lib/qairt/libgeniex-proc-vision.so: OK
+lib/qairt/libgeniex-proc.so: OK
+lib/qairt/libgeniex_core.so: OK
+lib/qairt/libgeniex_plugin.so: OK
+lib/qairt/libgeniex_vlm.so: OK
+model/config.json: OK
+model/embedding_weights.raw: OK
+model/genie-app-script.txt: OK
+model/genie_config.json: OK
+model/htp_backend_ext_config.json: OK
+model/img-enc-htp.json: OK
+model/metadata.json: OK
+model/part1_of_4.bin: OK
+model/part2_of_4.bin: OK
+model/part3_of_4.bin: OK
+model/part4_of_4.bin: OK
+model/sample_inputs/full_attention_mask.raw: OK
+model/sample_inputs/pixel_values.raw: OK
+model/sample_inputs/position_ids_cos.raw: OK
+model/sample_inputs/position_ids_sin.raw: OK
+model/sample_inputs/prompt_prefix.txt: OK
+model/sample_inputs/prompt_suffix.txt: OK
+model/sample_inputs/window_attention_mask.raw: OK
+model/sample_prompt.txt: OK
+model/text-encoder.json: OK
+model/text-generator.json: OK
+model/tokenizer.json: OK
+model/tokenizer_config.json: OK
+model/vision_encoder.bin: OK
+prompts.txt: OK
+run_smoke.sh: OK
+[info] resolved model dir to anchor: /data/local/tmp/qwen3_vl_geniex_sm8750/model/tokenizer.json
+[31m[ERROR] [QNN] QnnDsp <E>  contextFromBin (submit) Failed code: 5005
+[0m
+[31m[ERROR] [QNN] QnnDsp <E> Skel failed to process context binary.
+[0m
+[31m[ERROR] [QNN] QnnDsp <E> Context create from binary failed for deviceId 0 coreId 0 pdId 0 for context 4, err 5005
+[0m
+[31m[ERROR] [QNN] QnnDsp <E> Context 4 failed on pd 0
+[0m
+[sep ] prompt 1/3
+[info] stop_reason=eos
+[gen ] 42
+[sep ] prompt 2/3
+[info] stop_reason=eos
+[gen ] {"city": "北京"}
+[sep ] prompt 3/3
+[info] stop_reason=eos
+[gen ] 我是一个AI助手，用于提供信息查询、问题解答和日常陪伴。  
+[gen ] （无图片）
+[ok  ] cell  plugin=qairt device=npu(id=NPU) ngl=0 ttft=60.9ms prefill=2102.4tps decode=27.1tps gen=7 tok
+[31m[ERROR] [src/ml.cpp:202:geniex_get_plugin_version] failed to get plugin version for llama_cpp: std::exception[0m

@@ -1,0 +1,94 @@
+{
+  "created_at_utc": "2026-10-08T08:18:22.902370+00:00",
+  "download_time": null,
+  "download_time_note": "not recoverable from existing local checkouts",
+  "hammerbench": {
+    "repository": "/home/lyyyy/HammerBench",
+    "commit": "403d58f2d30430b04b16b8f68e69665a7fba1264",
+    "license": "Apache-2.0",
+    "license_evidence": "/home/lyyyy/HammerBench/LICENSE",
+    "multi_turn": {
+      "path": "/home/lyyyy/HammerBench/full_dataset/data/en/multi-turn.json",
+      "sha256": "196aa0a4e6160666a2b3ddc2089fb2f87a1cdf604eafacbbd2f12138e54aedaf",
+      "bytes": 47335229,
+      "local_mtime_utc": "2026-08-04T11:43:53.545649+00:00",
+      "format": "json_array",
+      "rows": 17461,
+      "sessions": 6416,
+      "complete_sessions": 6416,
+      "complete_multi_turn_sessions": 5551,
+      "turn_histogram": {
+        "1": 865,
+        "2": 2396,
+        "3": 1715,
+        "4": 911,
+        "5": 333,
+        "6": 104,
+        "7": 42,
+        "8": 28,
+        "9": 14,
+        "10": 6,
+        "11": 2
+      },
+      "malformed_rows": 0
+    }
+  },
+  "bfcl_v4": {
+    "repository": "/home/lyyyy/gorilla/berkeley-function-call-leaderboard",
+    "commit": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+    "license": "Apache-2.0",
+    "license_evidence": "/home/lyyyy/gorilla/berkeley-function-call-leaderboard/pyproject.toml",
+    "base": {
+      "path": "/home/lyyyy/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_base.json",
+      "sha256": "1a21a995d06fd6f20ba55de7bced30ef953ec35e998f502ec2ecf4d66ef1c43a",
+      "bytes": 390425,
+      "local_mtime_utc": "2026-08-04T03:51:48.351711+00:00",
+      "format": "jsonl",
+      "rows": 200,
+      "unique_ids": 200,
+      "turn_histogram": {
+        "1": 3,
+        "2": 40,
+        "3": 50,
+        "4": 50,
+        "5": 43,
+        "6": 12,
+        "7": 2
+      },
+      "field_presence": {
+        "excluded_function": 18,
+        "id": 200,
+        "initial_config": 200,
+        "involved_classes": 200,
+        "path": 200,
+        "question": 200
+      }
+    },
+    "long_context": {
+      "path": "/home/lyyyy/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_long_context.json",
+      "sha256": "78c3268c5cc8e97c0f4ec6c811b3b9a2bba14323b1830b7a874b06d822749324",
+      "bytes": 392016,
+      "local_mtime_utc": "2026-08-04T03:51:48.355711+00:00",
+      "format": "jsonl",
+      "rows": 200,
+      "unique_ids": 200,
+      "turn_histogram": {
+        "1": 3,
+        "2": 40,
+        "3": 50,
+        "4": 50,
+        "5": 43,
+        "6": 12,
+        "7": 2
+      },
+      "field_presence": {
+        "excluded_function": 18,
+        "id": 200,
+        "initial_config": 200,
+        "involved_classes": 200,
+        "path": 200,
+        "question": 200
+      }
+    }
+  }
+}

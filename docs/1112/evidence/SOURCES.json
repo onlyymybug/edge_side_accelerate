@@ -1,0 +1,132 @@
+{
+  "report_date": "2026-11-12",
+  "note": "Read-only aggregation of existing experiments; no new phone run. Copied evidence files are byte-identical to the listed sources.",
+  "files": [
+    {
+      "report_file": "evidence/official_m3a_summary.json",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/timing_analysis/summary.json",
+      "sha256": "2fcda30ec2e9d10632dadb5aab4f2e7b759746df02eb8d487f292de978f6c3a4",
+      "bytes": 38307
+    },
+    {
+      "report_file": "evidence/requests.csv",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/timing_analysis/requests.csv",
+      "sha256": "52f86753d1bb18591b69b27604f74e21cb7ca40d706f9f1cb095104897851212",
+      "bytes": 15250
+    },
+    {
+      "report_file": "evidence/tasks.csv",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/timing_analysis/tasks.csv",
+      "sha256": "b2c745677c3867ad5ba294c5e3f7f071d9b645c1df6abd7244f69372c95943ee",
+      "bytes": 1743
+    },
+    {
+      "report_file": "evidence/service_stats.json",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/service_stats.json",
+      "sha256": "c7886283ddc90a27c66d0daad6fdbf0841130eb149ee245408a9fb3789d05981",
+      "bytes": 16350
+    },
+    {
+      "report_file": "evidence/run_diagnostics.json",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/run_diagnostics.json",
+      "sha256": "f929825bfc5eb26625c995248fbefdc039fb86c6dbbe7e21b9082aedafe8517e",
+      "bytes": 614
+    },
+    {
+      "report_file": "evidence/final_file_verification.json",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/final_file_verification.json",
+      "sha256": "855de10856fc11a06c15c7eea19b2050abb90cde1df1c70121c3029832ce4c2b",
+      "bytes": 1374
+    },
+    {
+      "report_file": "evidence/launch_command_original.json",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/preflight/launch_command.json",
+      "sha256": "a915f306ef140e3190914d798d980e4d99b843779af8c9d00b1fc44c9dc36e2e",
+      "bytes": 407
+    },
+    {
+      "report_file": "evidence/phone_launch_command.json",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/command.json",
+      "sha256": "ae24fc15bd85e83728fdce655dd0837f9021b0d355c25fcb00075546cec0dc75",
+      "bytes": 762
+    },
+    {
+      "report_file": "evidence/manifest.json",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/manifest.json",
+      "sha256": "2e016e111a61456f0f45fdec452593bf0e90e6ad5dbc1415982c852e65cb6ea8",
+      "bytes": 4940
+    },
+    {
+      "report_file": "evidence/decode_short_diagnosis.json",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/decode_diagnosis_20261109_134535/analysis.json",
+      "sha256": "fdea7d702e6bcc0087ba03a57dd805c18ef1e6a083462862d9cc2d274f1e620d",
+      "bytes": 3443
+    },
+    {
+      "report_file": "evidence/decode_near4k_summary.json",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/decode_diagnosis_20261109_142443/summary.json",
+      "sha256": "0f8777e1dfc2423140c55e701cd62ae536fdeac06ec07dc2e51b6bc8438feacc",
+      "bytes": 15992
+    },
+    {
+      "report_file": "evidence/short_response.json",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/multicl16k_3tier_vlm_20261111_133935/short_response.json",
+      "sha256": "094ea23b0e7a14e6d86da0a9015e6b65ef6fd1099eb5e0f9893342004613d89d",
+      "bytes": 947
+    },
+    {
+      "report_file": "evidence/near4k_response.json",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/multicl16k_3tier_vlm_20261111_133935/near4k_response.json",
+      "sha256": "81da185515e1d62c4970ff1d8f688389ccbffd1c4df87fb898cb9ba3a1c075b0",
+      "bytes": 1051
+    },
+    {
+      "report_file": "evidence/official_over8k_response.json",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/multicl16k_3tier_vlm_20261111_133935/official_over8k_response.json",
+      "sha256": "65deedee1e131ca7b8467de5f73656bd283779145c36a4c89c10654141b89afd",
+      "bytes": 682
+    },
+    {
+      "report_file": "evidence/long15k_response.json",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/multicl16k_3tier_vlm_20261111_133935/long15k_response.json",
+      "sha256": "be76303053fccdb3a169b4884158639145ddd049b6af2e0efbc891453308df50",
+      "bytes": 633
+    },
+    {
+      "report_file": "assets/phase_breakdown.png",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/timing_analysis/phase_breakdown.png",
+      "sha256": "ad5bdaee74ca5697794ce31f80c85ed2a93f5a1fa95b7eb15ac648098f46176f",
+      "bytes": 56355
+    },
+    {
+      "report_file": "assets/phase_breakdown.svg",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/timing_analysis/phase_breakdown.svg",
+      "sha256": "80d0eefe8e6e80885c7569bbcf894a0c972ccee6176f04f6c26d9a61ae86804c",
+      "bytes": 40936
+    },
+    {
+      "report_file": "assets/service_timeline.png",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/timing_analysis/service_timeline.png",
+      "sha256": "4cbc1751236b99a4b0cd6a2fe6d278b9fed2323d3b17ab911d67dc8ac70f38f2",
+      "bytes": 25628
+    },
+    {
+      "report_file": "assets/service_timeline.svg",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/timing_analysis/service_timeline.svg",
+      "sha256": "815e3dd8f0f39b1572fe28a232b9fb129715a4e7a0a8b9beca3b259ba179fbc9",
+      "bytes": 37283
+    },
+    {
+      "report_file": "assets/decode_speed_vs_input.png",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/decode_speed_vs_input.png",
+      "sha256": "e6859e4700c1b8463fcf4a448b9580aea0923447b1ed5abef4df0fdbd9893d0c",
+      "bytes": 119506
+    },
+    {
+      "report_file": "assets/decode_speed_vs_input.svg",
+      "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/decode_speed_vs_input.svg",
+      "sha256": "58f46839344171e3842dc07a16935449110ab40532b86b3ddbca8d6362823c25",
+      "bytes": 94783
+    }
+  ]
+}

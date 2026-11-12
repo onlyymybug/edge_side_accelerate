@@ -1,0 +1,20 @@
+{
+  "cwd": "/home/lyyyy/edge_side_work/android_world_phone",
+  "argv": [
+    ".venv/bin/python",
+    "-u",
+    "run_official_m3a.py",
+    "--tasks",
+    "extended",
+    "--repeats",
+    "1",
+    "--max-new-tokens",
+    "512",
+    "--skip-context-tight-tasks",
+    "--request-timeout",
+    "600",
+    "--remote-bundle",
+    "/data/local/tmp/qwen3_vl_geniex_multicl16k_3tier"
+  ],
+  "preflight_passed": true
+}

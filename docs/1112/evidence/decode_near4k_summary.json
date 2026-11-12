@@ -1,0 +1,395 @@
+{
+  "output": "/home/lyyyy/edge_side_work/android_world_phone/results/decode_diagnosis_20261109_142443",
+  "source": "results/near4k_input_20261109_142415",
+  "max_new_tokens": 192,
+  "input_sha256": {
+    "prompt.txt": "2b2e10711fd6b4afddebbd9078175b26540c91b94ab8f38fa32dd02c977aa069",
+    "image_0.png": "55299a8ed788bd5747c1852786e30ed53f1f2a0b72f5cdc50d07ec8a836ac28e",
+    "image_1.png": "d283758bcf5ebc6074f6840c091b3ba9d7a1068882e0d74bcf17d2e883d9570b"
+  },
+  "runner_sha256": "4b0fc52087b4506cc8aaed2ddc9905c861f16d38849ae8ec9ed9642c10c63fca",
+  "instrumentation_enabled": true,
+  "responses": [
+    {
+      "label": "old_4k_before",
+      "repeat": 0,
+      "event": "response",
+      "id": "diag-old_4k_before-0",
+      "image_count": 2,
+      "text": "The first image shows a file explorer screen with a folder named \"Marker\" and a list of files and folders inside it. The screen displays a folder named \"aw_baseline_folder_20261106_110418\" and several other files and folders, with a red plus sign at the bottom right. The second image shows a text editor screen with a text entry field and a keyboard, displaying the text \"AndroidWorld real phone transport works.\"",
+      "elapsed_seconds": 11.1823,
+      "request_accepted_steady_ns": 160385107106576,
+      "compute_start_steady_ns": 160385107309805,
+      "compute_end_steady_ns": 160396289576728,
+      "service_idle_before_request_seconds": 0.307608,
+      "callback_ttft_seconds": 4.0879,
+      "ttft_us": 3975859,
+      "media_time_us": 217450,
+      "prompt_time_us": 3758409,
+      "decode_time_us": 7050870,
+      "prompt_tokens": 3840,
+      "generated_tokens": 98,
+      "decoding_speed": 13.899,
+      "stop_reason": "eos",
+      "host_request_seconds": 11.405779434999204,
+      "host_upload_seconds": 0.210843724,
+      "host_roundtrip_seconds": 11.194738631,
+      "host_send_ns": 9212901046076,
+      "host_response_ns": 9224095784707,
+      "model_image_sha256s": [
+        "55299a8ed788bd5747c1852786e30ed53f1f2a0b72f5cdc50d07ec8a836ac28e",
+        "d283758bcf5ebc6074f6840c091b3ba9d7a1068882e0d74bcf17d2e883d9570b"
+      ],
+      "remote_image_paths": [
+        "/data/local/tmp/android_world_phone/diag-old_4k_before-0_screen_0.png",
+        "/data/local/tmp/android_world_phone/diag-old_4k_before-0_screen_1.png"
+      ]
+    },
+    {
+      "label": "old_4k_before",
+      "repeat": 1,
+      "event": "response",
+      "id": "diag-old_4k_before-1",
+      "image_count": 2,
+      "text": "The first image shows a file explorer screen with a folder named \"Marker\" and a list of files and folders inside it. The screen displays a folder named \"aw_baseline_folder_20261106_110418\" and several other files and folders, with a red plus sign at the bottom right. The second image shows a text editor screen with a text entry field and a keyboard, displaying the text \"AndroidWorld real phone transport works.\"",
+      "elapsed_seconds": 11.3093,
+      "request_accepted_steady_ns": 160396517986832,
+      "compute_start_steady_ns": 160396518176572,
+      "compute_end_steady_ns": 160407827437348,
+      "service_idle_before_request_seconds": 0.22687,
+      "callback_ttft_seconds": 4.10892,
+      "ttft_us": 3990107,
+      "media_time_us": 213035,
+      "prompt_time_us": 3777072,
+      "decode_time_us": 7160193,
+      "prompt_tokens": 3840,
+      "generated_tokens": 98,
+      "decoding_speed": 13.6868,
+      "stop_reason": "eos",
+      "host_request_seconds": 11.533001365000018,
+      "host_upload_seconds": 0.215710184,
+      "host_roundtrip_seconds": 11.317221622,
+      "host_send_ns": 9224312685122,
+      "host_response_ns": 9235629906744,
+      "model_image_sha256s": [
+        "55299a8ed788bd5747c1852786e30ed53f1f2a0b72f5cdc50d07ec8a836ac28e",
+        "d283758bcf5ebc6074f6840c091b3ba9d7a1068882e0d74bcf17d2e883d9570b"
+      ],
+      "remote_image_paths": [
+        "/data/local/tmp/android_world_phone/diag-old_4k_before-1_screen_0.png",
+        "/data/local/tmp/android_world_phone/diag-old_4k_before-1_screen_1.png"
+      ]
+    },
+    {
+      "label": "new_16k",
+      "repeat": 0,
+      "event": "response",
+      "id": "diag-new_16k-0",
+      "image_count": 2,
+      "text": "The first image shows a file explorer screen with a folder named \"Marker\" and a list of files and folders inside it. The screen displays a folder named \"aw_baseline_folder_20261106_110418\" and several other files and folders, with a red plus sign at the bottom right. The second image shows a text editor screen with a text entry field and a keyboard, displaying the text \"AndroidWorld real phone transport works.\"",
+      "elapsed_seconds": 42.4594,
+      "request_accepted_steady_ns": 160415280275419,
+      "compute_start_steady_ns": 160415280813439,
+      "compute_end_steady_ns": 160457740196340,
+      "service_idle_before_request_seconds": 0.408478,
+      "callback_ttft_seconds": 22.1073,
+      "ttft_us": 21990096,
+      "media_time_us": 214691,
+      "prompt_time_us": 21775405,
+      "decode_time_us": 20265338,
+      "prompt_tokens": 3840,
+      "generated_tokens": 98,
+      "decoding_speed": 4.83584,
+      "stop_reason": "eos",
+      "host_request_seconds": 42.78161882799941,
+      "host_upload_seconds": 0.310393396,
+      "host_roundtrip_seconds": 42.471073633,
+      "host_send_ns": 9243074492370,
+      "host_response_ns": 9285545566003,
+      "model_image_sha256s": [
+        "55299a8ed788bd5747c1852786e30ed53f1f2a0b72f5cdc50d07ec8a836ac28e",
+        "d283758bcf5ebc6074f6840c091b3ba9d7a1068882e0d74bcf17d2e883d9570b"
+      ],
+      "remote_image_paths": [
+        "/data/local/tmp/android_world_phone/diag-new_16k-0_screen_0.png",
+        "/data/local/tmp/android_world_phone/diag-new_16k-0_screen_1.png"
+      ]
+    },
+    {
+      "label": "new_16k",
+      "repeat": 1,
+      "event": "response",
+      "id": "diag-new_16k-1",
+      "image_count": 2,
+      "text": "The first image shows a file explorer screen with a folder named \"Marker\" and a list of files and folders inside it. The screen displays a folder named \"aw_baseline_folder_20261106_110418\" and several other files and folders, with a red plus sign at the bottom right. The second image shows a text editor screen with a text entry field and a keyboard, displaying the text \"AndroidWorld real phone transport works.\"",
+      "elapsed_seconds": 43.5438,
+      "request_accepted_steady_ns": 160458019470767,
+      "compute_start_steady_ns": 160458019653892,
+      "compute_end_steady_ns": 160501563411115,
+      "service_idle_before_request_seconds": 0.27921,
+      "callback_ttft_seconds": 23.1485,
+      "ttft_us": 23054876,
+      "media_time_us": 222188,
+      "prompt_time_us": 22832688,
+      "decode_time_us": 20315498,
+      "prompt_tokens": 3840,
+      "generated_tokens": 98,
+      "decoding_speed": 4.8239,
+      "stop_reason": "eos",
+      "host_request_seconds": 43.82296760099962,
+      "host_upload_seconds": 0.265497389,
+      "host_roundtrip_seconds": 43.557382529,
+      "host_send_ns": 9285812499641,
+      "host_response_ns": 9329369882170,
+      "model_image_sha256s": [
+        "55299a8ed788bd5747c1852786e30ed53f1f2a0b72f5cdc50d07ec8a836ac28e",
+        "d283758bcf5ebc6074f6840c091b3ba9d7a1068882e0d74bcf17d2e883d9570b"
+      ],
+      "remote_image_paths": [
+        "/data/local/tmp/android_world_phone/diag-new_16k-1_screen_0.png",
+        "/data/local/tmp/android_world_phone/diag-new_16k-1_screen_1.png"
+      ]
+    },
+    {
+      "label": "old_4k_after",
+      "repeat": 0,
+      "event": "response",
+      "id": "diag-old_4k_after-0",
+      "image_count": 2,
+      "text": "The first image shows a file explorer screen with a folder named \"Marker\" and a list of files and folders inside it. The screen displays a folder named \"aw_baseline_folder_20261106_110418\" and several other files and folders, with a red plus sign at the bottom right. The second image shows a text editor screen with a text entry field and a keyboard, displaying the text \"AndroidWorld real phone transport works.\"",
+      "elapsed_seconds": 10.6055,
+      "request_accepted_steady_ns": 160508464960748,
+      "compute_start_steady_ns": 160508465093716,
+      "compute_end_steady_ns": 160519070626629,
+      "service_idle_before_request_seconds": 0.286596,
+      "callback_ttft_seconds": 3.79782,
+      "ttft_us": 3715113,
+      "media_time_us": 215944,
+      "prompt_time_us": 3499169,
+      "decode_time_us": 6766606,
+      "prompt_tokens": 3840,
+      "generated_tokens": 98,
+      "decoding_speed": 14.4829,
+      "stop_reason": "eos",
+      "host_request_seconds": 10.813306039999588,
+      "host_upload_seconds": 0.196348774,
+      "host_roundtrip_seconds": 10.616891835,
+      "host_send_ns": 9336259423352,
+      "host_response_ns": 9346876315187,
+      "model_image_sha256s": [
+        "55299a8ed788bd5747c1852786e30ed53f1f2a0b72f5cdc50d07ec8a836ac28e",
+        "d283758bcf5ebc6074f6840c091b3ba9d7a1068882e0d74bcf17d2e883d9570b"
+      ],
+      "remote_image_paths": [
+        "/data/local/tmp/android_world_phone/diag-old_4k_after-0_screen_0.png",
+        "/data/local/tmp/android_world_phone/diag-old_4k_after-0_screen_1.png"
+      ]
+    },
+    {
+      "label": "old_4k_after",
+      "repeat": 1,
+      "event": "response",
+      "id": "diag-old_4k_after-1",
+      "image_count": 2,
+      "text": "The first image shows a file explorer screen with a folder named \"Marker\" and a list of files and folders inside it. The screen displays a folder named \"aw_baseline_folder_20261106_110418\" and several other files and folders, with a red plus sign at the bottom right. The second image shows a text editor screen with a text entry field and a keyboard, displaying the text \"AndroidWorld real phone transport works.\"",
+      "elapsed_seconds": 10.648,
+      "request_accepted_steady_ns": 160519285898712,
+      "compute_start_steady_ns": 160519286056681,
+      "compute_end_steady_ns": 160529934097458,
+      "service_idle_before_request_seconds": 0.21407,
+      "callback_ttft_seconds": 3.85797,
+      "ttft_us": 3762385,
+      "media_time_us": 218441,
+      "prompt_time_us": 3543944,
+      "decode_time_us": 6746093,
+      "prompt_tokens": 3840,
+      "generated_tokens": 98,
+      "decoding_speed": 14.5269,
+      "stop_reason": "eos",
+      "host_request_seconds": 10.867085108999163,
+      "host_upload_seconds": 0.202212216,
+      "host_roundtrip_seconds": 10.664787694,
+      "host_send_ns": 9347079702668,
+      "host_response_ns": 9357744490362,
+      "model_image_sha256s": [
+        "55299a8ed788bd5747c1852786e30ed53f1f2a0b72f5cdc50d07ec8a836ac28e",
+        "d283758bcf5ebc6074f6840c091b3ba9d7a1068882e0d74bcf17d2e883d9570b"
+      ],
+      "remote_image_paths": [
+        "/data/local/tmp/android_world_phone/diag-old_4k_after-1_screen_0.png",
+        "/data/local/tmp/android_world_phone/diag-old_4k_after-1_screen_1.png"
+      ]
+    }
+  ],
+  "same_output_text": true,
+  "sessions": {
+    "old_4k_before": {
+      "forced_cl": 0,
+      "decode_tps_pooled": 13.792071712017602,
+      "ttft_seconds": [
+        3.975859,
+        3.990107
+      ],
+      "runs": [
+        {
+          "decode_graph_names": [
+            "ar1_cl4096_1_of_4",
+            "ar1_cl4096_2_of_4",
+            "ar1_cl4096_3_of_4",
+            "ar1_cl4096_4_of_4"
+          ],
+          "decode_cl": [
+            4096
+          ],
+          "decode_graph_calls": 388,
+          "decode_graph_wall_sum": 5.727027395000001,
+          "decode_shard_wall_sum": 6.954134005000004,
+          "decode_kv_worker_wall_sum": 0.09649936300000002,
+          "token_callbacks": 97,
+          "token_interval_median": 0.07321,
+          "graph_mean_seconds_by_shard": {
+            "0": 0.013067661608247422,
+            "1": 0.012769740092783505,
+            "2": 0.01321867862886598,
+            "3": 0.019985439206185566
+          }
+        },
+        {
+          "decode_graph_names": [
+            "ar1_cl4096_1_of_4",
+            "ar1_cl4096_2_of_4",
+            "ar1_cl4096_3_of_4",
+            "ar1_cl4096_4_of_4"
+          ],
+          "decode_cl": [
+            4096
+          ],
+          "decode_graph_calls": 388,
+          "decode_graph_wall_sum": 5.824468335000006,
+          "decode_shard_wall_sum": 7.061555772000005,
+          "decode_kv_worker_wall_sum": 0.09400097900000004,
+          "token_callbacks": 97,
+          "token_interval_median": 0.07354625049999974,
+          "graph_mean_seconds_by_shard": {
+            "0": 0.013265581463917526,
+            "1": 0.012982142432989691,
+            "2": 0.01336652225773196,
+            "3": 0.020431819154639177
+          }
+        }
+      ]
+    },
+    "new_16k": {
+      "forced_cl": 0,
+      "decode_tps_pooled": 4.829865998817766,
+      "ttft_seconds": [
+        21.990096,
+        23.054876
+      ],
+      "runs": [
+        {
+          "decode_graph_names": [
+            "ar1_cl16384_1_of_4",
+            "ar1_cl16384_2_of_4",
+            "ar1_cl16384_3_of_4",
+            "ar1_cl16384_4_of_4"
+          ],
+          "decode_cl": [
+            16384
+          ],
+          "decode_graph_calls": 388,
+          "decode_graph_wall_sum": 19.161894381000003,
+          "decode_shard_wall_sum": 20.130264526000005,
+          "decode_kv_worker_wall_sum": 0.17146840300000007,
+          "token_callbacks": 97,
+          "token_interval_median": 0.20845533849999853,
+          "graph_mean_seconds_by_shard": {
+            "0": 0.0485685803814433,
+            "1": 0.04842902383505154,
+            "2": 0.04707673650515464,
+            "3": 0.05347096217525773
+          }
+        },
+        {
+          "decode_graph_names": [
+            "ar1_cl16384_1_of_4",
+            "ar1_cl16384_2_of_4",
+            "ar1_cl16384_3_of_4",
+            "ar1_cl16384_4_of_4"
+          ],
+          "decode_cl": [
+            16384
+          ],
+          "decode_graph_calls": 388,
+          "decode_graph_wall_sum": 19.184076020000003,
+          "decode_shard_wall_sum": 20.186129728,
+          "decode_kv_worker_wall_sum": 0.16714505400000002,
+          "token_callbacks": 97,
+          "token_interval_median": 0.2085102344999985,
+          "graph_mean_seconds_by_shard": {
+            "0": 0.048583194845360826,
+            "1": 0.04847345888659794,
+            "2": 0.047133385814432986,
+            "3": 0.053583940041237114
+          }
+        }
+      ]
+    },
+    "old_4k_after": {
+      "forced_cl": 0,
+      "decode_tps_pooled": 14.504874266791555,
+      "ttft_seconds": [
+        3.715113,
+        3.762385
+      ],
+      "runs": [
+        {
+          "decode_graph_names": [
+            "ar1_cl4096_1_of_4",
+            "ar1_cl4096_2_of_4",
+            "ar1_cl4096_3_of_4",
+            "ar1_cl4096_4_of_4"
+          ],
+          "decode_cl": [
+            4096
+          ],
+          "decode_graph_calls": 388,
+          "decode_graph_wall_sum": 5.599368548999998,
+          "decode_shard_wall_sum": 6.670574163999995,
+          "decode_kv_worker_wall_sum": 0.08729292299999995,
+          "token_callbacks": 97,
+          "token_interval_median": 0.0697507289999999,
+          "graph_mean_seconds_by_shard": {
+            "0": 0.013007926948453609,
+            "1": 0.01248259187628866,
+            "2": 0.012736088896907216,
+            "3": 0.0194988412371134
+          }
+        },
+        {
+          "decode_graph_names": [
+            "ar1_cl4096_1_of_4",
+            "ar1_cl4096_2_of_4",
+            "ar1_cl4096_3_of_4",
+            "ar1_cl4096_4_of_4"
+          ],
+          "decode_cl": [
+            4096
+          ],
+          "decode_graph_calls": 388,
+          "decode_graph_wall_sum": 5.784810828,
+          "decode_shard_wall_sum": 6.649123690000001,
+          "decode_kv_worker_wall_sum": 0.09306787300000002,
+          "token_callbacks": 97,
+          "token_interval_median": 0.06928924450000062,
+          "graph_mean_seconds_by_shard": {
+            "0": 0.01337265737113402,
+            "1": 0.01287320606185567,
+            "2": 0.01311978249484536,
+            "3": 0.020271579103092782
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{"run_id":"20261009T113133Z_0003028c","host_monotonic_ns":107193237333647,"event":"create_session","session_id":"SO-case1::1056","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"SO-case1::1056","status":"ok","valid_tokens":0}}
+{"run_id":"20261009T113133Z_0003028c","host_monotonic_ns":107193244425641,"event":"create_session","session_id":"sQmA::553","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"sQmA::553","status":"ok","valid_tokens":0}}
+{"run_id":"20261009T113133Z_0003028c","host_monotonic_ns":107196264178471,"event":"reset_all","request_index":0,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T113133Z_0003028c","host_monotonic_ns":107199201247045,"event":"reset_all","request_index":1,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T113133Z_0003028c","host_monotonic_ns":107201874550087,"event":"reset_all","request_index":2,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T113133Z_0003028c","host_monotonic_ns":107204777457301,"event":"reset_all","request_index":3,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T113133Z_0003028c","host_monotonic_ns":107208377470713,"event":"reset_all","request_index":4,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T113133Z_0003028c","host_monotonic_ns":107211853925744,"event":"reset_all","request_index":5,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}

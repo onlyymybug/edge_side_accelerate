@@ -1,0 +1,15 @@
+{
+  "task_id": "b119b1f_3",
+  "steps": 7,
+  "success": false,
+  "error": "not a single JSON call: '{\"name\":\"spotify__previous_song\",\"parameters {\"status\":\"success\",\"answer\":null}}'",
+  "completion_ms": 15181.751673,
+  "evaluation": {
+    "difficulty": 2,
+    "num_tests": 6,
+    "passed_tests": 3
+  },
+  "repaired_tool_calls": 6,
+  "filtered_tool_calls": 0,
+  "note": "single-task feasibility pilot; not a benchmark aggregate"
+}

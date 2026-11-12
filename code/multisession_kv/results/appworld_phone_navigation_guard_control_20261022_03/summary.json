@@ -1,0 +1,17 @@
+{
+  "task_id": "b119b1f_3",
+  "steps": 3,
+  "success": false,
+  "error": "not a single JSON call: 'Given the current song is by Marigold Muse, I will move to the previous song.\\n\\n>{\"name\":\"spotify__previous_song\",\"parame'",
+  "completion_ms": 12582.517592,
+  "evaluation": {
+    "difficulty": 2,
+    "num_tests": 6,
+    "passed_tests": 3
+  },
+  "repaired_tool_calls": 1,
+  "filtered_tool_calls": 1,
+  "enriched_observations": 0,
+  "normalized_action_answers": 0,
+  "note": "single-task feasibility pilot; not a benchmark aggregate"
+}

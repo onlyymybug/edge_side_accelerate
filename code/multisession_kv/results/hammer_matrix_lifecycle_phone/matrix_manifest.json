@@ -1,0 +1,2259 @@
+{
+  "created_at_utc": "2026-10-10T07:09:10.478622+00:00",
+  "spec_hash": "7a5de6dfec27207657843629b2505ebc74f4f8a3c02878d958df5fe6d1a97325",
+  "spec_identity": {
+    "config_sha256": "e3fdbf39398acc3e0eee32fdcf1d7451c6a0ca704ae5c42b7644e14a8a13c063",
+    "trace_sha256": "03a48bc665fe68be8d0434219dfec03005adb988d9fbc9df849fba7b3ac024ef",
+    "bundle_runner_sha256": "b5285172485231c3748f74c471b97ffce6686fff09d3f4ca2e4c62e2aad441d6",
+    "session_ids": [
+      "Based::278",
+      "Based::72",
+      "SO-case1::1067",
+      "sQmA::971",
+      "mSv::120",
+      "mSv::395",
+      "mSv::894",
+      "mQsA::749",
+      "Based::511",
+      "mSv::4",
+      "mSv::684",
+      "SO-case2::749",
+      "SO-case2::415",
+      "SO-case2::556",
+      "mSv::474",
+      "SO-case2::898",
+      "Based::771",
+      "SO-case1::1033",
+      "mQmA::776",
+      "IS::675",
+      "mQsA::997",
+      "Based::705",
+      "mSv::1053",
+      "mQmA::665",
+      "mSv::349",
+      "External::157",
+      "SO-case2::307",
+      "mSv::681",
+      "mSv::415",
+      "mSv::20",
+      "SO-case2::629",
+      "sQmA::925",
+      "Based::843",
+      "sQmA::320",
+      "sQmA::656",
+      "SO-case1::1011",
+      "mQsA::204",
+      "Based::194",
+      "SO-case1::1056",
+      "sQmA::553",
+      "SO-case2::484",
+      "mSv::195",
+      "SO-case1::501",
+      "Based::518",
+      "SO-case2::478",
+      "SO-case2::159",
+      "SO-case2::1080",
+      "mQmA::195",
+      "Based::429",
+      "SO-case1::23"
+    ]
+  },
+  "config": {
+    "seed": 4243,
+    "repeats": 1,
+    "max_groups_per_session_count": null,
+    "experiments": [
+      {
+        "name": "lifecycle_n4",
+        "session_counts": [
+          4
+        ],
+        "max_groups_per_session_count": 12,
+        "schedules": [
+          "round_robin"
+        ],
+        "policies": [
+          {
+            "name": "lru",
+            "budget_ratios": [
+              0.5,
+              0.75
+            ]
+          },
+          {
+            "name": "lifecycle_lru",
+            "budget_ratios": [
+              0.5,
+              0.75
+            ]
+          }
+        ]
+      },
+      {
+        "name": "lifecycle_n8",
+        "session_counts": [
+          8
+        ],
+        "max_groups_per_session_count": 6,
+        "schedules": [
+          "round_robin"
+        ],
+        "policies": [
+          {
+            "name": "lru",
+            "budget_ratios": [
+              0.25,
+              0.5,
+              0.75
+            ]
+          },
+          {
+            "name": "lifecycle_lru",
+            "budget_ratios": [
+              0.25,
+              0.5,
+              0.75
+            ]
+          }
+        ]
+      }
+    ],
+    "max_new_tokens": 64,
+    "htp_mode": 8,
+    "request_timeout_seconds": 180,
+    "warmup": true,
+    "telemetry_interval_seconds": 1,
+    "require_not_charging": true,
+    "temperature_gate": {
+      "enabled": true,
+      "sensor": "skin",
+      "max_start_c": 28.2,
+      "consecutive_samples": 3,
+      "poll_seconds": 10,
+      "timeout_seconds": 1800
+    }
+  },
+  "trace": "/home/lyyyy/edge_side_work/code/multisession_kv/data/hammerbench_en_50/fixed_tools.jsonl",
+  "bundle": "/home/lyyyy/edge_side_work/qnn_multisession_phone_bundle",
+  "randomization_seed": 4243,
+  "jobs": [
+    {
+      "job_id": "c7ff549b61",
+      "nominal_session_count": 8,
+      "session_offset": 40,
+      "session_count": 8,
+      "sessions": [
+        "SO-case2::484",
+        "mSv::195",
+        "SO-case1::501",
+        "Based::518",
+        "SO-case2::478",
+        "SO-case2::159",
+        "SO-case2::1080",
+        "mQmA::195"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 4,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n8",
+      "status": "pass",
+      "attempts": 1,
+      "started_at_utc": "2026-10-10T07:09:44.790920+00:00",
+      "stdout_tail": "{\n  \"run_id\": \"20261010T070944Z_4e2b46b4\",\n  \"status\": \"pass\",\n  \"requests\": 36,\n  \"duration_ms\": 91607.245888,\n  \"total_input_tokens\": 21354,\n  \"total_prefill_tokens\": 15151,\n  \"total_reused_tokens\": 6203,\n  \"evictions\": 19,\n  \"resets\": 0\n}\n",
+      "stderr_tail": "t tokens (AR-128 * 6 iters)\nI 00:00:11.757920 executorch:prompt_processor.cpp:272] Prompt Processor: total 468 prompt tokens (AR-128 * 4 iters)\nI 00:00:13.594418 executorch:prompt_processor.cpp:272] Prompt Processor: total 543 prompt tokens (AR-128 * 5 iters)\nI 00:00:15.934481 executorch:prompt_processor.cpp:272] Prompt Processor: total 596 prompt tokens (AR-128 * 5 iters)\nI 00:00:19.935662 executorch:prompt_processor.cpp:272] Prompt Processor: total 498 prompt tokens (AR-128 * 4 iters)\nI 00:00:21.870379 executorch:prompt_processor.cpp:272] Prompt Processor: total 422 prompt tokens (AR-128 * 4 iters)\nI 00:00:23.113192 executorch:prompt_processor.cpp:272] Prompt Processor: total 529 prompt tokens (AR-128 * 5 iters)\nI 00:00:25.067985 executorch:prompt_processor.cpp:272] Prompt Processor: total 500 prompt tokens (AR-128 * 4 iters)\nI 00:00:26.870949 executorch:prompt_processor.cpp:272] Prompt Processor: total 672 prompt tokens (AR-128 * 6 iters)\nI 00:00:29.914218 executorch:prompt_processor.cpp:272] Prompt Processor: total 500 prompt tokens (AR-128 * 4 iters)\nI 00:00:31.805978 executorch:prompt_processor.cpp:272] Prompt Processor: total 583 prompt tokens (AR-128 * 5 iters)\nI 00:00:34.450618 executorch:prompt_processor.cpp:272] Prompt Processor: total 624 prompt tokens (AR-128 * 5 iters)\nI 00:00:38.991560 executorch:prompt_processor.cpp:272] Prompt Processor: total 547 prompt tokens (AR-128 * 5 iters)\nI 00:00:40.341701 executorch:prompt_processor.cpp:272] Prompt Processor: total 454 prompt tokens (AR-128 * 4 iters)\nI 00:00:41.574345 executorch:prompt_processor.cpp:272] Prompt Processor: total 557 prompt tokens (AR-128 * 5 iters)\nI 00:00:44.009601 executorch:prompt_processor.cpp:272] Prompt Processor: total 580 prompt tokens (AR-128 * 5 iters)\nI 00:00:47.500683 executorch:prompt_processor.cpp:272] Prompt Processor: total 715 prompt tokens (AR-128 * 6 iters)\nI 00:00:50.003560 executorch:prompt_processor.cpp:272] Prompt Processor: total 528 prompt tokens (AR-128 * 5 iters)\nI 00:00:52.350073 executorch:prompt_processor.cpp:272] Prompt Processor: total 619 prompt tokens (AR-128 * 5 iters)\nI 00:00:55.096372 executorch:prompt_processor.cpp:272] Prompt Processor: total 658 prompt tokens (AR-128 * 6 iters)\nI 00:00:59.766826 executorch:prompt_processor.cpp:272] Prompt Processor: total 489 prompt tokens (AR-128 * 4 iters)\nI 00:01:02.002649 executorch:prompt_processor.cpp:272] Prompt Processor: total 579 prompt tokens (AR-128 * 5 iters)\nI 00:01:04.331709 executorch:prompt_processor.cpp:272] Prompt Processor: total 614 prompt tokens (AR-128 * 5 iters)\nI 00:01:07.716107 executorch:prompt_processor.cpp:272] Prompt Processor: total 28 prompt tokens (AR-128 * 1 iters)\nI 00:01:08.344700 executorch:prompt_processor.cpp:272] Prompt Processor: total 571 prompt tokens (AR-128 * 5 iters)\nI 00:01:10.524599 executorch:prompt_processor.cpp:272] Prompt Processor: total 23 prompt tokens (AR-128 * 1 iters)\nI 00:01:13.084129 executorch:prompt_processor.cpp:272] Prompt Processor: total 34 prompt tokens (AR-128 * 1 iters)\nI 00:01:14.124968 executorch:prompt_processor.cpp:272] Prompt Processor: total 32 prompt tokens (AR-128 * 1 iters)\nI 00:01:16.197868 executorch:prompt_processor.cpp:272] Prompt Processor: total 26 prompt tokens (AR-128 * 1 iters)\nI 00:01:18.742582 executorch:prompt_processor.cpp:272] Prompt Processor: total 45 prompt tokens (AR-128 * 1 iters)\nI 00:01:22.782948 executorch:prompt_processor.cpp:272] Prompt Processor: total 29 prompt tokens (AR-128 * 1 iters)\nI 00:01:26.823597 executorch:prompt_processor.cpp:272] Prompt Processor: total 37 prompt tokens (AR-128 * 1 iters)\nI 00:01:30.840563 executorch:prompt_processor.cpp:272] Prompt Processor: total 24 prompt tokens (AR-128 * 1 iters)\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn device\n[INFO] [Qnn ExecuTorch]: Destroy Qnn backend\n",
+      "completed_at_utc": "2026-10-10T07:11:21.634485+00:00",
+      "run_dir": "results/hammer_matrix_lifecycle_phone/runs/c7ff549b61",
+      "launch_battery": {
+        "powered": {
+          "ac": false,
+          "usb": false,
+          "wireless": false,
+          "dock": false
+        },
+        "status": 3,
+        "level": 34
+      },
+      "recovery_samples": [
+        {
+          "host_timestamp_ns": 1791616164243674564,
+          "sensor": "skin",
+          "temperature_c": 27.245,
+          "threshold_c": 28.2
+        },
+        {
+          "host_timestamp_ns": 1791616174441541205,
+          "sensor": "skin",
+          "temperature_c": 27.245,
+          "threshold_c": 28.2
+        },
+        {
+          "host_timestamp_ns": 1791616184790863154,
+          "sensor": "skin",
+          "temperature_c": 27.235,
+          "threshold_c": 28.2
+        }
+      ],
+      "validation": {
+        "status": "pass",
+        "run_id": "20261010T070944Z_4e2b46b4",
+        "requests": 36,
+        "total_prefill_tokens": 15151,
+        "total_reused_tokens": 6203
+      }
+    },
+    {
+      "job_id": "8a1dcb9d88",
+      "nominal_session_count": 4,
+      "session_offset": 40,
+      "session_count": 4,
+      "sessions": [
+        "SO-case2::484",
+        "mSv::195",
+        "SO-case1::501",
+        "Based::518"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "b209e4f138",
+      "nominal_session_count": 4,
+      "session_offset": 12,
+      "session_count": 4,
+      "sessions": [
+        "SO-case2::415",
+        "SO-case2::556",
+        "mSv::474",
+        "SO-case2::898"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "adcc6d379f",
+      "nominal_session_count": 8,
+      "session_offset": 16,
+      "session_count": 8,
+      "sessions": [
+        "Based::771",
+        "SO-case1::1033",
+        "mQmA::776",
+        "IS::675",
+        "mQsA::997",
+        "Based::705",
+        "mSv::1053",
+        "mQmA::665"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 4,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "d862218e15",
+      "nominal_session_count": 8,
+      "session_offset": 8,
+      "session_count": 8,
+      "sessions": [
+        "Based::511",
+        "mSv::4",
+        "mSv::684",
+        "SO-case2::749",
+        "SO-case2::415",
+        "SO-case2::556",
+        "mSv::474",
+        "SO-case2::898"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "440fb39fd7",
+      "nominal_session_count": 8,
+      "session_offset": 32,
+      "session_count": 8,
+      "sessions": [
+        "Based::843",
+        "sQmA::320",
+        "sQmA::656",
+        "SO-case1::1011",
+        "mQsA::204",
+        "Based::194",
+        "SO-case1::1056",
+        "sQmA::553"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "cc8ccfc44e",
+      "nominal_session_count": 4,
+      "session_offset": 28,
+      "session_count": 4,
+      "sessions": [
+        "mSv::415",
+        "mSv::20",
+        "SO-case2::629",
+        "sQmA::925"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "e663fc7eb2",
+      "nominal_session_count": 8,
+      "session_offset": 24,
+      "session_count": 8,
+      "sessions": [
+        "mSv::349",
+        "External::157",
+        "SO-case2::307",
+        "mSv::681",
+        "mSv::415",
+        "mSv::20",
+        "SO-case2::629",
+        "sQmA::925"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "b63eaa7a0d",
+      "nominal_session_count": 4,
+      "session_offset": 4,
+      "session_count": 4,
+      "sessions": [
+        "mSv::120",
+        "mSv::395",
+        "mSv::894",
+        "mQsA::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "79f945b566",
+      "nominal_session_count": 4,
+      "session_offset": 20,
+      "session_count": 4,
+      "sessions": [
+        "mQsA::997",
+        "Based::705",
+        "mSv::1053",
+        "mQmA::665"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "126c585fc9",
+      "nominal_session_count": 4,
+      "session_offset": 36,
+      "session_count": 4,
+      "sessions": [
+        "mQsA::204",
+        "Based::194",
+        "SO-case1::1056",
+        "sQmA::553"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "05a96b6f29",
+      "nominal_session_count": 4,
+      "session_offset": 4,
+      "session_count": 4,
+      "sessions": [
+        "mSv::120",
+        "mSv::395",
+        "mSv::894",
+        "mQsA::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "3fef4a248b",
+      "nominal_session_count": 8,
+      "session_offset": 0,
+      "session_count": 8,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971",
+        "mSv::120",
+        "mSv::395",
+        "mSv::894",
+        "mQsA::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "871b637b22",
+      "nominal_session_count": 4,
+      "session_offset": 44,
+      "session_count": 4,
+      "sessions": [
+        "SO-case2::478",
+        "SO-case2::159",
+        "SO-case2::1080",
+        "mQmA::195"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "43866d11a2",
+      "nominal_session_count": 4,
+      "session_offset": 24,
+      "session_count": 4,
+      "sessions": [
+        "mSv::349",
+        "External::157",
+        "SO-case2::307",
+        "mSv::681"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "26e95bffa0",
+      "nominal_session_count": 8,
+      "session_offset": 8,
+      "session_count": 8,
+      "sessions": [
+        "Based::511",
+        "mSv::4",
+        "mSv::684",
+        "SO-case2::749",
+        "SO-case2::415",
+        "SO-case2::556",
+        "mSv::474",
+        "SO-case2::898"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 4,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "629e23efe8",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "2025b31e6d",
+      "nominal_session_count": 8,
+      "session_offset": 0,
+      "session_count": 8,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971",
+        "mSv::120",
+        "mSv::395",
+        "mSv::894",
+        "mQsA::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "38b91479d2",
+      "nominal_session_count": 4,
+      "session_offset": 8,
+      "session_count": 4,
+      "sessions": [
+        "Based::511",
+        "mSv::4",
+        "mSv::684",
+        "SO-case2::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "a58e7accd7",
+      "nominal_session_count": 4,
+      "session_offset": 8,
+      "session_count": 4,
+      "sessions": [
+        "Based::511",
+        "mSv::4",
+        "mSv::684",
+        "SO-case2::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "b55f964f99",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "83755665f4",
+      "nominal_session_count": 4,
+      "session_offset": 20,
+      "session_count": 4,
+      "sessions": [
+        "mQsA::997",
+        "Based::705",
+        "mSv::1053",
+        "mQmA::665"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "64d3553cf1",
+      "nominal_session_count": 4,
+      "session_offset": 20,
+      "session_count": 4,
+      "sessions": [
+        "mQsA::997",
+        "Based::705",
+        "mSv::1053",
+        "mQmA::665"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "2a160ca81b",
+      "nominal_session_count": 8,
+      "session_offset": 8,
+      "session_count": 8,
+      "sessions": [
+        "Based::511",
+        "mSv::4",
+        "mSv::684",
+        "SO-case2::749",
+        "SO-case2::415",
+        "SO-case2::556",
+        "mSv::474",
+        "SO-case2::898"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 4,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "79dcf83b85",
+      "nominal_session_count": 8,
+      "session_offset": 40,
+      "session_count": 8,
+      "sessions": [
+        "SO-case2::484",
+        "mSv::195",
+        "SO-case1::501",
+        "Based::518",
+        "SO-case2::478",
+        "SO-case2::159",
+        "SO-case2::1080",
+        "mQmA::195"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "7fee1a3609",
+      "nominal_session_count": 4,
+      "session_offset": 36,
+      "session_count": 4,
+      "sessions": [
+        "mQsA::204",
+        "Based::194",
+        "SO-case1::1056",
+        "sQmA::553"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "330ccd0cc8",
+      "nominal_session_count": 8,
+      "session_offset": 24,
+      "session_count": 8,
+      "sessions": [
+        "mSv::349",
+        "External::157",
+        "SO-case2::307",
+        "mSv::681",
+        "mSv::415",
+        "mSv::20",
+        "SO-case2::629",
+        "sQmA::925"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 4,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "a0c975db11",
+      "nominal_session_count": 4,
+      "session_offset": 32,
+      "session_count": 4,
+      "sessions": [
+        "Based::843",
+        "sQmA::320",
+        "sQmA::656",
+        "SO-case1::1011"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "4c1ab3fc51",
+      "nominal_session_count": 8,
+      "session_offset": 16,
+      "session_count": 8,
+      "sessions": [
+        "Based::771",
+        "SO-case1::1033",
+        "mQmA::776",
+        "IS::675",
+        "mQsA::997",
+        "Based::705",
+        "mSv::1053",
+        "mQmA::665"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "0e223967c9",
+      "nominal_session_count": 8,
+      "session_offset": 32,
+      "session_count": 8,
+      "sessions": [
+        "Based::843",
+        "sQmA::320",
+        "sQmA::656",
+        "SO-case1::1011",
+        "mQsA::204",
+        "Based::194",
+        "SO-case1::1056",
+        "sQmA::553"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "6351d52259",
+      "nominal_session_count": 8,
+      "session_offset": 40,
+      "session_count": 8,
+      "sessions": [
+        "SO-case2::484",
+        "mSv::195",
+        "SO-case1::501",
+        "Based::518",
+        "SO-case2::478",
+        "SO-case2::159",
+        "SO-case2::1080",
+        "mQmA::195"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 4,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "9801de29e9",
+      "nominal_session_count": 8,
+      "session_offset": 8,
+      "session_count": 8,
+      "sessions": [
+        "Based::511",
+        "mSv::4",
+        "mSv::684",
+        "SO-case2::749",
+        "SO-case2::415",
+        "SO-case2::556",
+        "mSv::474",
+        "SO-case2::898"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "c8cefb02b2",
+      "nominal_session_count": 8,
+      "session_offset": 32,
+      "session_count": 8,
+      "sessions": [
+        "Based::843",
+        "sQmA::320",
+        "sQmA::656",
+        "SO-case1::1011",
+        "mQsA::204",
+        "Based::194",
+        "SO-case1::1056",
+        "sQmA::553"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 4,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "f49d8dba22",
+      "nominal_session_count": 4,
+      "session_offset": 32,
+      "session_count": 4,
+      "sessions": [
+        "Based::843",
+        "sQmA::320",
+        "sQmA::656",
+        "SO-case1::1011"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "be25dd9fcc",
+      "nominal_session_count": 8,
+      "session_offset": 16,
+      "session_count": 8,
+      "sessions": [
+        "Based::771",
+        "SO-case1::1033",
+        "mQmA::776",
+        "IS::675",
+        "mQsA::997",
+        "Based::705",
+        "mSv::1053",
+        "mQmA::665"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 4,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "1593ae3da8",
+      "nominal_session_count": 4,
+      "session_offset": 20,
+      "session_count": 4,
+      "sessions": [
+        "mQsA::997",
+        "Based::705",
+        "mSv::1053",
+        "mQmA::665"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "b5052662ca",
+      "nominal_session_count": 4,
+      "session_offset": 32,
+      "session_count": 4,
+      "sessions": [
+        "Based::843",
+        "sQmA::320",
+        "sQmA::656",
+        "SO-case1::1011"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "90a49819e3",
+      "nominal_session_count": 4,
+      "session_offset": 16,
+      "session_count": 4,
+      "sessions": [
+        "Based::771",
+        "SO-case1::1033",
+        "mQmA::776",
+        "IS::675"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "f45e442b75",
+      "nominal_session_count": 4,
+      "session_offset": 32,
+      "session_count": 4,
+      "sessions": [
+        "Based::843",
+        "sQmA::320",
+        "sQmA::656",
+        "SO-case1::1011"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "1b5d219b49",
+      "nominal_session_count": 4,
+      "session_offset": 16,
+      "session_count": 4,
+      "sessions": [
+        "Based::771",
+        "SO-case1::1033",
+        "mQmA::776",
+        "IS::675"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "3e6c61ecfe",
+      "nominal_session_count": 4,
+      "session_offset": 44,
+      "session_count": 4,
+      "sessions": [
+        "SO-case2::478",
+        "SO-case2::159",
+        "SO-case2::1080",
+        "mQmA::195"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "8dc09d7633",
+      "nominal_session_count": 8,
+      "session_offset": 16,
+      "session_count": 8,
+      "sessions": [
+        "Based::771",
+        "SO-case1::1033",
+        "mQmA::776",
+        "IS::675",
+        "mQsA::997",
+        "Based::705",
+        "mSv::1053",
+        "mQmA::665"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "89941c8e96",
+      "nominal_session_count": 4,
+      "session_offset": 12,
+      "session_count": 4,
+      "sessions": [
+        "SO-case2::415",
+        "SO-case2::556",
+        "mSv::474",
+        "SO-case2::898"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "febb22011b",
+      "nominal_session_count": 4,
+      "session_offset": 44,
+      "session_count": 4,
+      "sessions": [
+        "SO-case2::478",
+        "SO-case2::159",
+        "SO-case2::1080",
+        "mQmA::195"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "bfcb968078",
+      "nominal_session_count": 4,
+      "session_offset": 24,
+      "session_count": 4,
+      "sessions": [
+        "mSv::349",
+        "External::157",
+        "SO-case2::307",
+        "mSv::681"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "f83b6546b6",
+      "nominal_session_count": 4,
+      "session_offset": 24,
+      "session_count": 4,
+      "sessions": [
+        "mSv::349",
+        "External::157",
+        "SO-case2::307",
+        "mSv::681"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "7424bb186e",
+      "nominal_session_count": 8,
+      "session_offset": 32,
+      "session_count": 8,
+      "sessions": [
+        "Based::843",
+        "sQmA::320",
+        "sQmA::656",
+        "SO-case1::1011",
+        "mQsA::204",
+        "Based::194",
+        "SO-case1::1056",
+        "sQmA::553"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "600aa266c2",
+      "nominal_session_count": 8,
+      "session_offset": 0,
+      "session_count": 8,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971",
+        "mSv::120",
+        "mSv::395",
+        "mSv::894",
+        "mQsA::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 4,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "3479333994",
+      "nominal_session_count": 4,
+      "session_offset": 16,
+      "session_count": 4,
+      "sessions": [
+        "Based::771",
+        "SO-case1::1033",
+        "mQmA::776",
+        "IS::675"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "f94b9dd64f",
+      "nominal_session_count": 4,
+      "session_offset": 36,
+      "session_count": 4,
+      "sessions": [
+        "mQsA::204",
+        "Based::194",
+        "SO-case1::1056",
+        "sQmA::553"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "18fc9d12bd",
+      "nominal_session_count": 8,
+      "session_offset": 24,
+      "session_count": 8,
+      "sessions": [
+        "mSv::349",
+        "External::157",
+        "SO-case2::307",
+        "mSv::681",
+        "mSv::415",
+        "mSv::20",
+        "SO-case2::629",
+        "sQmA::925"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 4,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "a69f1fe800",
+      "nominal_session_count": 4,
+      "session_offset": 28,
+      "session_count": 4,
+      "sessions": [
+        "mSv::415",
+        "mSv::20",
+        "SO-case2::629",
+        "sQmA::925"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "4ab3819e5c",
+      "nominal_session_count": 8,
+      "session_offset": 40,
+      "session_count": 8,
+      "sessions": [
+        "SO-case2::484",
+        "mSv::195",
+        "SO-case1::501",
+        "Based::518",
+        "SO-case2::478",
+        "SO-case2::159",
+        "SO-case2::1080",
+        "mQmA::195"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "2f65dc0b81",
+      "nominal_session_count": 4,
+      "session_offset": 12,
+      "session_count": 4,
+      "sessions": [
+        "SO-case2::415",
+        "SO-case2::556",
+        "mSv::474",
+        "SO-case2::898"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "4ecfacde87",
+      "nominal_session_count": 8,
+      "session_offset": 16,
+      "session_count": 8,
+      "sessions": [
+        "Based::771",
+        "SO-case1::1033",
+        "mQmA::776",
+        "IS::675",
+        "mQsA::997",
+        "Based::705",
+        "mSv::1053",
+        "mQmA::665"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "f66f83150b",
+      "nominal_session_count": 8,
+      "session_offset": 40,
+      "session_count": 8,
+      "sessions": [
+        "SO-case2::484",
+        "mSv::195",
+        "SO-case1::501",
+        "Based::518",
+        "SO-case2::478",
+        "SO-case2::159",
+        "SO-case2::1080",
+        "mQmA::195"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "42591b82af",
+      "nominal_session_count": 4,
+      "session_offset": 28,
+      "session_count": 4,
+      "sessions": [
+        "mSv::415",
+        "mSv::20",
+        "SO-case2::629",
+        "sQmA::925"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "b8d4261881",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "cdc1a42853",
+      "nominal_session_count": 4,
+      "session_offset": 8,
+      "session_count": 4,
+      "sessions": [
+        "Based::511",
+        "mSv::4",
+        "mSv::684",
+        "SO-case2::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "3e1cb6f8ce",
+      "nominal_session_count": 8,
+      "session_offset": 24,
+      "session_count": 8,
+      "sessions": [
+        "mSv::349",
+        "External::157",
+        "SO-case2::307",
+        "mSv::681",
+        "mSv::415",
+        "mSv::20",
+        "SO-case2::629",
+        "sQmA::925"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "0a33544736",
+      "nominal_session_count": 8,
+      "session_offset": 32,
+      "session_count": 8,
+      "sessions": [
+        "Based::843",
+        "sQmA::320",
+        "sQmA::656",
+        "SO-case1::1011",
+        "mQsA::204",
+        "Based::194",
+        "SO-case1::1056",
+        "sQmA::553"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 4,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "40b3afab5d",
+      "nominal_session_count": 8,
+      "session_offset": 0,
+      "session_count": 8,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971",
+        "mSv::120",
+        "mSv::395",
+        "mSv::894",
+        "mQsA::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "3324cdb5e3",
+      "nominal_session_count": 4,
+      "session_offset": 4,
+      "session_count": 4,
+      "sessions": [
+        "mSv::120",
+        "mSv::395",
+        "mSv::894",
+        "mQsA::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "a367b9536d",
+      "nominal_session_count": 8,
+      "session_offset": 8,
+      "session_count": 8,
+      "sessions": [
+        "Based::511",
+        "mSv::4",
+        "mSv::684",
+        "SO-case2::749",
+        "SO-case2::415",
+        "SO-case2::556",
+        "mSv::474",
+        "SO-case2::898"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "7abbc54515",
+      "nominal_session_count": 4,
+      "session_offset": 36,
+      "session_count": 4,
+      "sessions": [
+        "mQsA::204",
+        "Based::194",
+        "SO-case1::1056",
+        "sQmA::553"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "722c31adb1",
+      "nominal_session_count": 4,
+      "session_offset": 16,
+      "session_count": 4,
+      "sessions": [
+        "Based::771",
+        "SO-case1::1033",
+        "mQmA::776",
+        "IS::675"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "64287b80aa",
+      "nominal_session_count": 8,
+      "session_offset": 0,
+      "session_count": 8,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971",
+        "mSv::120",
+        "mSv::395",
+        "mSv::894",
+        "mQsA::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "290b57c0cd",
+      "nominal_session_count": 8,
+      "session_offset": 0,
+      "session_count": 8,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971",
+        "mSv::120",
+        "mSv::395",
+        "mSv::894",
+        "mQsA::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 4,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "23c6ad14bc",
+      "nominal_session_count": 8,
+      "session_offset": 24,
+      "session_count": 8,
+      "sessions": [
+        "mSv::349",
+        "External::157",
+        "SO-case2::307",
+        "mSv::681",
+        "mSv::415",
+        "mSv::20",
+        "SO-case2::629",
+        "sQmA::925"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "fed3d10f82",
+      "nominal_session_count": 4,
+      "session_offset": 40,
+      "session_count": 4,
+      "sessions": [
+        "SO-case2::484",
+        "mSv::195",
+        "SO-case1::501",
+        "Based::518"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "d7fcc47a4b",
+      "nominal_session_count": 8,
+      "session_offset": 32,
+      "session_count": 8,
+      "sessions": [
+        "Based::843",
+        "sQmA::320",
+        "sQmA::656",
+        "SO-case1::1011",
+        "mQsA::204",
+        "Based::194",
+        "SO-case1::1056",
+        "sQmA::553"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "1db483d219",
+      "nominal_session_count": 4,
+      "session_offset": 4,
+      "session_count": 4,
+      "sessions": [
+        "mSv::120",
+        "mSv::395",
+        "mSv::894",
+        "mQsA::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "ba844ffa0a",
+      "nominal_session_count": 4,
+      "session_offset": 28,
+      "session_count": 4,
+      "sessions": [
+        "mSv::415",
+        "mSv::20",
+        "SO-case2::629",
+        "sQmA::925"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "8d480f7adb",
+      "nominal_session_count": 4,
+      "session_offset": 8,
+      "session_count": 4,
+      "sessions": [
+        "Based::511",
+        "mSv::4",
+        "mSv::684",
+        "SO-case2::749"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "125b1cce09",
+      "nominal_session_count": 4,
+      "session_offset": 40,
+      "session_count": 4,
+      "sessions": [
+        "SO-case2::484",
+        "mSv::195",
+        "SO-case1::501",
+        "Based::518"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "4de5956b1f",
+      "nominal_session_count": 4,
+      "session_offset": 40,
+      "session_count": 4,
+      "sessions": [
+        "SO-case2::484",
+        "mSv::195",
+        "SO-case1::501",
+        "Based::518"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "280c9ba52e",
+      "nominal_session_count": 4,
+      "session_offset": 24,
+      "session_count": 4,
+      "sessions": [
+        "mSv::349",
+        "External::157",
+        "SO-case2::307",
+        "mSv::681"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "397a665394",
+      "nominal_session_count": 4,
+      "session_offset": 12,
+      "session_count": 4,
+      "sessions": [
+        "SO-case2::415",
+        "SO-case2::556",
+        "mSv::474",
+        "SO-case2::898"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "c52cca6ebd",
+      "nominal_session_count": 8,
+      "session_offset": 16,
+      "session_count": 8,
+      "sessions": [
+        "Based::771",
+        "SO-case1::1033",
+        "mQmA::776",
+        "IS::675",
+        "mQsA::997",
+        "Based::705",
+        "mSv::1053",
+        "mQmA::665"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "76961a02ef",
+      "nominal_session_count": 4,
+      "session_offset": 44,
+      "session_count": 4,
+      "sessions": [
+        "SO-case2::478",
+        "SO-case2::159",
+        "SO-case2::1080",
+        "mQmA::195"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "a61f6b7ab6",
+      "nominal_session_count": 8,
+      "session_offset": 40,
+      "session_count": 8,
+      "sessions": [
+        "SO-case2::484",
+        "mSv::195",
+        "SO-case1::501",
+        "Based::518",
+        "SO-case2::478",
+        "SO-case2::159",
+        "SO-case2::1080",
+        "mQmA::195"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lifecycle_lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "1a2185125d",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n4",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "442e9dd914",
+      "nominal_session_count": 8,
+      "session_offset": 8,
+      "session_count": 8,
+      "sessions": [
+        "Based::511",
+        "mSv::4",
+        "mSv::684",
+        "SO-case2::749",
+        "SO-case2::415",
+        "SO-case2::556",
+        "mSv::474",
+        "SO-case2::898"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 6,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "11d11aca99",
+      "nominal_session_count": 8,
+      "session_offset": 24,
+      "session_count": 8,
+      "sessions": [
+        "mSv::349",
+        "External::157",
+        "SO-case2::307",
+        "mSv::681",
+        "mSv::415",
+        "mSv::20",
+        "SO-case2::629",
+        "sQmA::925"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "experiment": "lifecycle_n8",
+      "status": "pending",
+      "attempts": 0
+    }
+  ]
+}

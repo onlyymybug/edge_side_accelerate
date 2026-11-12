@@ -1,0 +1,8 @@
+{
+  "tasks": 2,
+  "successes": 2,
+  "requests": 6,
+  "queue_ms_total": 64.24915299999999,
+  "queue_ms_max": 43.326936,
+  "note": "scripted mock with real AppWorld tools; no model accuracy"
+}

@@ -1,0 +1,25 @@
+{"source_index":46,"source_id":"multi_turn_base_46","reason":"ground truth and question turns do not align or are not multi-turn"}
+{"source_index":50,"source_id":"multi_turn_base_50","reason":"ground truth and question turns do not align or are not multi-turn"}
+{"source_index":52,"source_id":"multi_turn_base_52","reason":"context overflow: turn 2 input 6086 + output 64 > 6144"}
+{"source_index":53,"source_id":"multi_turn_base_53","reason":"context overflow: turn 3 input 6183 + output 64 > 6144"}
+{"source_index":54,"source_id":"multi_turn_base_54","reason":"context overflow: turn 2 input 6209 + output 64 > 6144"}
+{"source_index":58,"source_id":"multi_turn_base_58","reason":"context overflow: turn 2 input 6088 + output 64 > 6144"}
+{"source_index":59,"source_id":"multi_turn_base_59","reason":"context overflow: turn 5 input 6189 + output 64 > 6144"}
+{"source_index":65,"source_id":"multi_turn_base_65","reason":"context overflow: turn 2 input 6483 + output 64 > 6144"}
+{"source_index":68,"source_id":"multi_turn_base_68","reason":"context overflow: turn 3 input 6230 + output 64 > 6144"}
+{"source_index":69,"source_id":"multi_turn_base_69","reason":"context overflow: turn 2 input 6156 + output 64 > 6144"}
+{"source_index":75,"source_id":"multi_turn_base_75","reason":"context overflow: turn 3 input 6293 + output 64 > 6144"}
+{"source_index":76,"source_id":"multi_turn_base_76","reason":"context overflow: turn 2 input 6176 + output 64 > 6144"}
+{"source_index":77,"source_id":"multi_turn_base_77","reason":"context overflow: turn 3 input 6208 + output 64 > 6144"}
+{"source_index":78,"source_id":"multi_turn_base_78","reason":"context overflow: turn 2 input 6134 + output 64 > 6144"}
+{"source_index":80,"source_id":"multi_turn_base_80","reason":"context overflow: turn 5 input 6151 + output 64 > 6144"}
+{"source_index":81,"source_id":"multi_turn_base_81","reason":"context overflow: turn 3 input 6101 + output 64 > 6144"}
+{"source_index":86,"source_id":"multi_turn_base_86","reason":"context overflow: turn 2 input 6243 + output 64 > 6144"}
+{"source_index":88,"source_id":"multi_turn_base_88","reason":"context overflow: turn 3 input 6236 + output 64 > 6144"}
+{"source_index":90,"source_id":"multi_turn_base_90","reason":"context overflow: turn 2 input 6205 + output 64 > 6144"}
+{"source_index":170,"source_id":"multi_turn_base_170","reason":"context overflow: turn 4 input 6093 + output 64 > 6144"}
+{"source_index":174,"source_id":"multi_turn_base_174","reason":"context overflow: turn 4 input 6167 + output 64 > 6144"}
+{"source_index":183,"source_id":"multi_turn_base_183","reason":"context overflow: turn 4 input 6105 + output 64 > 6144"}
+{"source_index":186,"source_id":"multi_turn_base_186","reason":"context overflow: turn 5 input 6125 + output 64 > 6144"}
+{"source_index":188,"source_id":"multi_turn_base_188","reason":"context overflow: turn 5 input 6236 + output 64 > 6144"}
+{"source_index":198,"source_id":"multi_turn_base_198","reason":"ground truth and question turns do not align or are not multi-turn"}

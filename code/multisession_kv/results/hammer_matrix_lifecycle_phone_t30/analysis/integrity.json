@@ -1,0 +1,16 @@
+{
+  "jobs": 84,
+  "passed": 84,
+  "retried_jobs": 1,
+  "paired_groups": 42,
+  "offline_reuse_matches": 84,
+  "model_load_violations": 0,
+  "maximum_skin_c": 35.202,
+  "serial_counts": {
+    "192.168.12.71:5555": 36,
+    "10.29.46.37:5555": 16,
+    "192.168.15.32:5555": 32
+  },
+  "decision_ms_total": 18.638697999999998,
+  "decision_ms_max_request": 0.277853
+}

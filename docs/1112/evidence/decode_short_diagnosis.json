@@ -1,0 +1,106 @@
+{
+  "old_1k_pooled_tps": 17.312473451631114,
+  "new_16k_pooled_tps": 4.821336884662973,
+  "slowdown_ratio": 3.590803518979013,
+  "sessions": {
+    "old_auto": {
+      "decode_tps_pooled": 16.654110504415492,
+      "load_seconds": 5.720647,
+      "callback_ttft_seconds": [
+        0.708312,
+        0.736706
+      ],
+      "sdk_ttft_seconds": [
+        0.629271,
+        0.652349
+      ],
+      "qnn_ms_per_decode_step": 48.81058798888888,
+      "shard_ms_per_decode_step": 59.83606078333335,
+      "kv_worker_ms_per_decode_step": 0.8162904722222225,
+      "decode_time_mean_seconds": 5.464116499999999,
+      "qnn_time_mean_seconds": 4.392952918999999
+    },
+    "old_2k": {
+      "decode_tps_pooled": 16.651125616091647,
+      "load_seconds": 5.775066,
+      "callback_ttft_seconds": [
+        0.745309,
+        0.81603
+      ],
+      "sdk_ttft_seconds": [
+        0.663435,
+        0.752036
+      ],
+      "qnn_ms_per_decode_step": 50.59723615555553,
+      "shard_ms_per_decode_step": 59.78093382777778,
+      "kv_worker_ms_per_decode_step": 0.8236026611111114,
+      "decode_time_mean_seconds": 5.465096,
+      "qnn_time_mean_seconds": 4.553751253999998
+    },
+    "old_4k": {
+      "decode_tps_pooled": 14.310220257091757,
+      "load_seconds": 5.918577,
+      "callback_ttft_seconds": [
+        0.913981,
+        1.06402
+      ],
+      "sdk_ttft_seconds": [
+        0.830364,
+        0.955747
+      ],
+      "qnn_ms_per_decode_step": 58.02620109999995,
+      "shard_ms_per_decode_step": 69.6384727944445,
+      "kv_worker_ms_per_decode_step": 0.9330997888888886,
+      "decode_time_mean_seconds": 6.3590915,
+      "qnn_time_mean_seconds": 5.222358098999996
+    },
+    "new_16k": {
+      "decode_tps_pooled": 4.821336884662973,
+      "load_seconds": 6.784122,
+      "callback_ttft_seconds": [
+        4.11952,
+        4.25113
+      ],
+      "sdk_ttft_seconds": [
+        4.018197,
+        4.143255
+      ],
+      "qnn_ms_per_decode_step": 197.21272097222231,
+      "shard_ms_per_decode_step": 208.34846521666668,
+      "kv_worker_ms_per_decode_step": 1.6858302277777781,
+      "decode_time_mean_seconds": 18.874433,
+      "qnn_time_mean_seconds": 17.74914488750001
+    },
+    "old_1k_after": {
+      "decode_tps_pooled": 18.025031023851472,
+      "load_seconds": 6.144049,
+      "callback_ttft_seconds": [
+        0.67303,
+        0.743232
+      ],
+      "sdk_ttft_seconds": [
+        0.575804,
+        0.643345
+      ],
+      "qnn_ms_per_decode_step": 46.29022363888892,
+      "shard_ms_per_decode_step": 55.23079782222224,
+      "kv_worker_ms_per_decode_step": 0.7849831333333334,
+      "decode_time_mean_seconds": 5.048535,
+      "qnn_time_mean_seconds": 4.166120127500003
+    }
+  },
+  "qnn_fraction_of_extra_decode_wall": 0.9890954827257663,
+  "runner_sha256": "4b0fc52087b4506cc8aaed2ddc9905c861f16d38849ae8ec9ed9642c10c63fca",
+  "shim_sha256": "28600765e1cfa02e8e6ed272a939aef4ee7e3275029a50e5ad3b904a76d00d37",
+  "input_sha256": {
+    "prompt.txt": "f1d02c738e5c3242419b5c619a67727eb78b277be50ec5499b0289608be0bc13",
+    "image_0.png": "55299a8ed788bd5747c1852786e30ed53f1f2a0b72f5cdc50d07ec8a836ac28e",
+    "image_1.png": "d283758bcf5ebc6074f6840c091b3ba9d7a1068882e0d74bcf17d2e883d9570b"
+  },
+  "control_run": "/home/lyyyy/edge_side_work/android_world_phone/results/decode_diagnosis_20261109_134950",
+  "all_14_outputs_identical": true,
+  "control_tps": {
+    "new_16k": 4.78147955371036,
+    "old_auto": 17.238348391946243
+  }
+}

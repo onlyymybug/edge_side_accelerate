@@ -1,0 +1,30 @@
+{
+    "schema_version": "7",
+    "cell_id": "cell",
+    "plugin": "qairt",
+    "device": "npu",
+    "device_id": "NPU",
+    "model_path": "/data/local/tmp/qwen3_vl_geniex_sm8750/model/tokenizer.json",
+    "model_id": null,
+    "model_size_bytes": 11422650,
+    "geniex_version": "v0.10.0",
+    "qairt_version": "2.50",
+    "llama_cpp_version": null,
+    "params": {
+      "warmup": 0, "repetitions": 1, "n_prompt": 512, "n_gen": 128,
+      "temperature": 0.000000, "top_p": 0.000000, "seed": 42, "n_ctx": 0, "n_threads": 0, "n_ubatch": 0, "n_gpu_layers": 0
+    },
+    "runs": [
+      {"run_idx": 0, "ttft_us": 63474, "media_us": 0, "prompt_time_us": 63474, "decode_time_us": 89795, "prompt_tokens": 128, "gen_tokens": 3, "prefill_tps": 2016.573715, "decode_tps": 33.409433, "stop_reason": "eos"},
+      {"run_idx": 1, "ttft_us": 60809, "media_us": 0, "prompt_time_us": 60809, "decode_time_us": 258080, "prompt_tokens": 128, "gen_tokens": 7, "prefill_tps": 2104.951570, "decode_tps": 27.123373, "stop_reason": "eos"},
+      {"run_idx": 2, "ttft_us": 60883, "media_us": 0, "prompt_time_us": 60883, "decode_time_us": 919079, "prompt_tokens": 128, "gen_tokens": 22, "prefill_tps": 2102.393115, "decode_tps": 23.937007, "stop_reason": "eos"}
+    ],
+    "agg": {
+      "ttft_ms":     {"median": 60.883000, "min": 60.809000, "max": 63.474000, "mean": 61.722000, "stdev": 1.517728},
+      "prefill_tps": {"median": 2102.393115, "min": 2016.573715, "max": 2104.951570, "mean": 2074.639467, "stdev": 50.302684},
+      "decode_tps":  {"median": 27.123373, "min": 23.937007, "max": 33.409433, "mean": 28.156604, "stdev": 4.819999},
+      "gen_tokens":  {"median": 7.000000},
+      "prompt_tokens":{"median": 128.000000},
+      "media_ms":{"median": 0.000000}
+    }
+}

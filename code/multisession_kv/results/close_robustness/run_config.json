@@ -1,0 +1,19 @@
+{
+  "seed": 4249,
+  "trials": 100,
+  "coverages": [
+    1.0,
+    0.75,
+    0.5,
+    0.25,
+    0.0
+  ],
+  "delays": [
+    0,
+    1,
+    5,
+    20
+  ],
+  "trace": "data/hammerbench_en_50/fixed_tools.jsonl",
+  "simulator_conformance_cases": 144
+}

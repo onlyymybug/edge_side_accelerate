@@ -1,0 +1,8 @@
+{
+  "tasks": 2,
+  "successes": 2,
+  "requests": 6,
+  "queue_ms_total": 8963.178684,
+  "queue_ms_max": 2646.601866,
+  "note": "phone model with real AppWorld tools; controlled extra wait; not a benchmark"
+}

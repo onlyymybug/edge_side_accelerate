@@ -1,0 +1,565 @@
+{
+  "created_at_utc": "2026-10-08T09:05:53.305453+00:00",
+  "spec_hash": "ccd38dcc87e184aa920739979b1a74da63cf7bba1c6f009c4e662afa802da05e",
+  "spec_identity": {
+    "config_sha256": "c0e93adbfed99f3edd65f6c832a33570449fb64c3c69f475ddb04d287e4458b3",
+    "trace_sha256": "03a48bc665fe68be8d0434219dfec03005adb988d9fbc9df849fba7b3ac024ef",
+    "bundle_runner_sha256": "b5285172485231c3748f74c471b97ffce6686fff09d3f4ca2e4c62e2aad441d6",
+    "session_ids": [
+      "Based::278",
+      "Based::72",
+      "SO-case1::1067",
+      "sQmA::971",
+      "mSv::120",
+      "mSv::395",
+      "mSv::894",
+      "mQsA::749",
+      "Based::511",
+      "mSv::4",
+      "mSv::684",
+      "SO-case2::749",
+      "SO-case2::415",
+      "SO-case2::556",
+      "mSv::474",
+      "SO-case2::898",
+      "Based::771",
+      "SO-case1::1033",
+      "mQmA::776",
+      "IS::675",
+      "mQsA::997",
+      "Based::705",
+      "mSv::1053",
+      "mQmA::665",
+      "mSv::349",
+      "External::157",
+      "SO-case2::307",
+      "mSv::681",
+      "mSv::415",
+      "mSv::20",
+      "SO-case2::629",
+      "sQmA::925",
+      "Based::843",
+      "sQmA::320",
+      "sQmA::656",
+      "SO-case1::1011",
+      "mQsA::204",
+      "Based::194",
+      "SO-case1::1056",
+      "sQmA::553",
+      "SO-case2::484",
+      "mSv::195",
+      "SO-case1::501",
+      "Based::518",
+      "SO-case2::478",
+      "SO-case2::159",
+      "SO-case2::1080",
+      "mQmA::195",
+      "Based::429",
+      "SO-case1::23"
+    ]
+  },
+  "config": {
+    "seed": 42,
+    "session_counts": [
+      2,
+      4
+    ],
+    "max_groups_per_session_count": 1,
+    "repeats": 1,
+    "schedules": [
+      "grouped",
+      "round_robin"
+    ],
+    "policies": [
+      {
+        "name": "all_keep"
+      },
+      {
+        "name": "no_reuse"
+      },
+      {
+        "name": "single_slot"
+      },
+      {
+        "name": "lru",
+        "budget_ratios": [
+          0.25,
+          0.5,
+          0.75
+        ]
+      }
+    ],
+    "max_new_tokens": 16,
+    "htp_mode": 8,
+    "request_timeout_seconds": 180,
+    "warmup": true,
+    "telemetry_interval_seconds": 1,
+    "require_not_charging": true,
+    "temperature_gate": {
+      "enabled": false,
+      "sensor": "skin",
+      "max_start_c": null,
+      "consecutive_samples": 3,
+      "poll_seconds": 10,
+      "timeout_seconds": 1800
+    }
+  },
+  "trace": "/home/lyyyy/edge_side_work/code/multisession_kv/data/hammerbench_en_50/fixed_tools.jsonl",
+  "bundle": "/home/lyyyy/edge_side_work/qnn_multisession_phone_bundle",
+  "randomization_seed": 42,
+  "jobs": [
+    {
+      "job_id": "7b6e827feb",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "status": "pass",
+      "attempts": 1,
+      "started_at_utc": "2026-10-08T09:05:58.336512+00:00",
+      "stdout_tail": "{\n  \"run_id\": \"20261008T090558Z_8865c62c\",\n  \"status\": \"pass\",\n  \"requests\": 8,\n  \"duration_ms\": 12624.221849,\n  \"total_input_tokens\": 4570,\n  \"total_prefill_tokens\": 4570,\n  \"total_reused_tokens\": 0,\n  \"evictions\": 5,\n  \"resets\": 0\n}\n",
+      "stderr_tail": "Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached backend bundle for current backend: kHtpBackend\n[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2\n[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached backend bundle for current backend: kHtpBackend\n[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2\n[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached backend bundle for current backend: kHtpBackend\n[INFO] [Qnn ExecuTorch]: Initialize Qnn backend parameters for Qnn executorch backend type 2\n[INFO] [Qnn ExecuTorch]: Caching: Caching is in RESTORE MODE.\n[INFO] [Qnn ExecuTorch]: QnnContextCustomProtocol expected magic number: 0x5678abcd but get: 0x2000000\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Running level=1 optimization.\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\n[INFO] [Qnn ExecuTorch]: Deserializing processed data using QnnContextCustomProtocol\n[INFO] [Qnn ExecuTorch]: Use cached delegate handle for current method: kv_forward\nI 00:00:01.207724 executorch:runner.cpp:228] Reading metadata from model\nI 00:00:01.208525 executorch:runner.cpp:362] creating io_memory\nI 00:00:01.272657 executorch:prompt_processor.cpp:272] Prompt Processor: total 497 prompt tokens (AR-128 * 4 iters)\nI 00:00:02.726249 executorch:prompt_processor.cpp:272] Prompt Processor: total 497 prompt tokens (AR-128 * 4 iters)\nI 00:00:04.164665 executorch:prompt_processor.cpp:272] Prompt Processor: total 524 prompt tokens (AR-128 * 5 iters)\nI 00:00:05.434165 executorch:prompt_processor.cpp:272] Prompt Processor: total 543 prompt tokens (AR-128 * 5 iters)\nI 00:00:07.187027 executorch:prompt_processor.cpp:272] Prompt Processor: total 615 prompt tokens (AR-128 * 5 iters)\nI 00:00:08.783249 executorch:prompt_processor.cpp:272] Prompt Processor: total 531 prompt tokens (AR-128 * 5 iters)\nI 00:00:10.350545 executorch:prompt_processor.cpp:272] Prompt Processor: total 559 prompt tokens (AR-128 * 5 iters)\nI 00:00:12.035334 executorch:prompt_processor.cpp:272] Prompt Processor: total 612 prompt tokens (AR-128 * 5 iters)\nI 00:00:13.674672 executorch:prompt_processor.cpp:272] Prompt Processor: total 689 prompt tokens (AR-128 * 6 iters)\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn context\n[INFO] [Qnn ExecuTorch]: Destroy Qnn device\n[INFO] [Qnn ExecuTorch]: Destroy Qnn backend\n",
+      "completed_at_utc": "2026-10-08T09:06:14.877464+00:00",
+      "run_dir": "results/hammer_matrix_smoke/runs/7b6e827feb",
+      "launch_battery": {
+        "powered": {
+          "ac": false,
+          "usb": false,
+          "wireless": false,
+          "dock": false
+        },
+        "status": 3,
+        "level": 99
+      },
+      "recovery_samples": [],
+      "validation": {
+        "status": "pass",
+        "run_id": "20261008T090558Z_8865c62c",
+        "requests": 8,
+        "total_prefill_tokens": 4570,
+        "total_reused_tokens": 0
+      }
+    },
+    {
+      "job_id": "725e9ac2a5",
+      "nominal_session_count": 2,
+      "session_offset": 0,
+      "session_count": 2,
+      "sessions": [
+        "Based::278",
+        "Based::72"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "all_keep",
+      "lru_slots": null,
+      "nominal_budget_ratios": null,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "923eb4e55b",
+      "nominal_session_count": 2,
+      "session_offset": 0,
+      "session_count": 2,
+      "sessions": [
+        "Based::278",
+        "Based::72"
+      ],
+      "repeat": 0,
+      "schedule": "grouped",
+      "policy": "single_slot",
+      "lru_slots": null,
+      "nominal_budget_ratios": null,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "4d268bc56a",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "grouped",
+      "policy": "lru",
+      "lru_slots": 3,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 0.75,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "32276e2b57",
+      "nominal_session_count": 2,
+      "session_offset": 0,
+      "session_count": 2,
+      "sessions": [
+        "Based::278",
+        "Based::72"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 1.0,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "5530a88200",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "grouped",
+      "policy": "single_slot",
+      "lru_slots": null,
+      "nominal_budget_ratios": null,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "2a6c035caf",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "all_keep",
+      "lru_slots": null,
+      "nominal_budget_ratios": null,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "799a6fc562",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 1,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "8b5d9bf3c4",
+      "nominal_session_count": 2,
+      "session_offset": 0,
+      "session_count": 2,
+      "sessions": [
+        "Based::278",
+        "Based::72"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "no_reuse",
+      "lru_slots": null,
+      "nominal_budget_ratios": null,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "4bb3c15bda",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "grouped",
+      "policy": "lru",
+      "lru_slots": 1,
+      "nominal_budget_ratios": [
+        0.25
+      ],
+      "actual_slot_ratio": 0.25,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "a0cd1cebd6",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "single_slot",
+      "lru_slots": null,
+      "nominal_budget_ratios": null,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "c6381b3626",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "grouped",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "6316083b22",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "grouped",
+      "policy": "all_keep",
+      "lru_slots": null,
+      "nominal_budget_ratios": null,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "2b3c338380",
+      "nominal_session_count": 2,
+      "session_offset": 0,
+      "session_count": 2,
+      "sessions": [
+        "Based::278",
+        "Based::72"
+      ],
+      "repeat": 0,
+      "schedule": "grouped",
+      "policy": "no_reuse",
+      "lru_slots": null,
+      "nominal_budget_ratios": null,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "b9a4a668fc",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "grouped",
+      "policy": "no_reuse",
+      "lru_slots": null,
+      "nominal_budget_ratios": null,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "8f1372f685",
+      "nominal_session_count": 2,
+      "session_offset": 0,
+      "session_count": 2,
+      "sessions": [
+        "Based::278",
+        "Based::72"
+      ],
+      "repeat": 0,
+      "schedule": "grouped",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.75
+      ],
+      "actual_slot_ratio": 1.0,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "c910b194bb",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "no_reuse",
+      "lru_slots": null,
+      "nominal_budget_ratios": null,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "e7bd030e5b",
+      "nominal_session_count": 2,
+      "session_offset": 0,
+      "session_count": 2,
+      "sessions": [
+        "Based::278",
+        "Based::72"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "single_slot",
+      "lru_slots": null,
+      "nominal_budget_ratios": null,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "134e16e811",
+      "nominal_session_count": 2,
+      "session_offset": 0,
+      "session_count": 2,
+      "sessions": [
+        "Based::278",
+        "Based::72"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 1,
+      "nominal_budget_ratios": [
+        0.25,
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "9bb2a9a1f2",
+      "nominal_session_count": 2,
+      "session_offset": 0,
+      "session_count": 2,
+      "sessions": [
+        "Based::278",
+        "Based::72"
+      ],
+      "repeat": 0,
+      "schedule": "grouped",
+      "policy": "all_keep",
+      "lru_slots": null,
+      "nominal_budget_ratios": null,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "4f2dfdb03d",
+      "nominal_session_count": 2,
+      "session_offset": 0,
+      "session_count": 2,
+      "sessions": [
+        "Based::278",
+        "Based::72"
+      ],
+      "repeat": 0,
+      "schedule": "grouped",
+      "policy": "lru",
+      "lru_slots": 1,
+      "nominal_budget_ratios": [
+        0.25,
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "status": "pending",
+      "attempts": 0
+    },
+    {
+      "job_id": "49774fdbcd",
+      "nominal_session_count": 4,
+      "session_offset": 0,
+      "session_count": 4,
+      "sessions": [
+        "Based::278",
+        "Based::72",
+        "SO-case1::1067",
+        "sQmA::971"
+      ],
+      "repeat": 0,
+      "schedule": "round_robin",
+      "policy": "lru",
+      "lru_slots": 2,
+      "nominal_budget_ratios": [
+        0.5
+      ],
+      "actual_slot_ratio": 0.5,
+      "status": "pending",
+      "attempts": 0
+    }
+  ]
+}

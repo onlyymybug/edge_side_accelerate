@@ -1,0 +1,16 @@
+{
+  "task_id": "6bdbc26_1",
+  "experiment_name": "agent_phone_pilot_20261022_02",
+  "bundle": "/home/lyyyy/edge_side_work/qnn_multisession_phone_bundle_ctx6144",
+  "serial": "192.168.12.218:5555",
+  "allowlist": [
+    "supervisor__show_profile",
+    "supervisor__show_account_passwords",
+    "spotify__login",
+    "spotify__show_current_song",
+    "spotify__show_artist",
+    "supervisor__complete_task"
+  ],
+  "max_steps": 8,
+  "note": "AppWorld single-task feasibility pilot"
+}

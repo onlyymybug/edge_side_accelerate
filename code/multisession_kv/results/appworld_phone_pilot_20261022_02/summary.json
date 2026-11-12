@@ -1,0 +1,14 @@
+{
+  "task_id": "6bdbc26_1",
+  "steps": 2,
+  "success": false,
+  "error": "API not allowed or parameters invalid: 'supervisor__show_artist'",
+  "completion_ms": 6794.274027,
+  "evaluation": {
+    "difficulty": 1,
+    "num_tests": 2,
+    "passed_tests": 1
+  },
+  "repaired_tool_calls": 1,
+  "note": "single-task feasibility pilot; not a benchmark aggregate"
+}

@@ -1,0 +1,3 @@
+nominal_session_count,session_offset,capacity,repeat,requests,input_tokens,lru_reused_tokens,lifecycle_reused_tokens,lru_prefill_tokens,lifecycle_prefill_tokens,prefill_reduction_pct,prefill_time_reduction_pct,ttft_delta_pct,makespan_delta_pct,rss_delta_mib,decode_delta_pct,decision_ms,maximum_skin_c
+4,0,3,0,8,34798,0,10444,34798,24354,30.013219150525895,29.638017926745757,-24.349197236423436,-25.975667433809434,-0.1484375,0.0421620323723948,0.135392,35.343
+8,0,6,0,20,87935,17687,41572,70248,46363,34.00096799908894,33.296584896050476,-28.577488046510226,-26.15554829171669,-34.01953125,-0.16392820974507893,0.21950399999999998,36.605

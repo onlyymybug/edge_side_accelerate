@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/lyyyy/edge_side_work/code/multisession_kv/appworld_multisession_smoke.py", line 357, in main
+    events, requests, summaries = run_dispatcher(
+                                  ^^^^^^^^^^^^^^^
+  File "/home/lyyyy/edge_side_work/code/multisession_kv/appworld_multisession_smoke.py", line 255, in run_dispatcher
+    raise RuntimeError(f"create_session failed: {response}")
+RuntimeError: create_session failed: {'error_code': 'SESSION_CAPACITY', 'message': 'max_resident_sessions reached', 'session_id': '6bdbc26_2', 'session_invalidated': False, 'status': 'error'}

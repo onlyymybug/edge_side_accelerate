@@ -1,0 +1,26 @@
+{
+  "task_id": "6bdbc26_1",
+  "steps": 1,
+  "success": false,
+  "error": "not a single JSON call: '{\"name\":\"supervisor__show_account_passwords\",\"parameters:{}}\"'",
+  "completion_ms": 0.0,
+  "evaluation": {
+    "success": false,
+    "difficulty": 1,
+    "num_tests": 2,
+    "passes": [
+      {
+        "requirement": "assert no model changes.",
+        "label": "no_op_pass"
+      }
+    ],
+    "failures": [
+      {
+        "requirement": "assert answers match.",
+        "trace": "```python\nwith test(\n    \"\"\"\n    assert answers match.\n    \"\"\"\n):\n    test.answer(predicted_answer, ground_truth_answer)\n```\n----------\nAssertionError:  '<<not_given>>' == '20'",
+        "label": "no_op_fail"
+      }
+    ]
+  },
+  "note": "single-task feasibility pilot; not a benchmark aggregate"
+}

@@ -1,0 +1,166 @@
+{
+  "argv": {
+    "serial": "189f0fad",
+    "tasks": "extended",
+    "repeats": 1,
+    "max_new_tokens": 512,
+    "remote_bundle": "/data/local/tmp/qwen3_vl_geniex_multicl16k_3tier",
+    "request_timeout": 600.0,
+    "cap_output_to_context": false,
+    "skip_context_tight_tasks": true,
+    "extended_tasks": null
+  },
+  "agent": "upstream M3A",
+  "upstream_commit": "55ddaf5edc6f6c25673aed343907d5b9dca66f84",
+  "source_sha256": {
+    "agents/m3a.py": "672f96be7073c7fc35e0e7810d1ba7d0e277e639c4abc16e572480f95daa564d",
+    "agents/base_agent.py": "92704263af1024b3953f2ee169dbeacaa3b03b4b138053fa1284de5f65b22fbe",
+    "episode_runner.py": "e18374002bf5038240025a0e3d013a63da3affa9f279bc8393f3d95d5c22d26a",
+    "env/actuation.py": "b979caca453f4b0885f94fd2a2a27073bfe7ba4522086bc61338fd3dc3f81360"
+  },
+  "start_on_home_screen": true,
+  "transition_pause_seconds": 1,
+  "wait_after_action_seconds": 2,
+  "score_feedback_to_agent": false,
+  "task_evaluation": "only after episode, successful only if agent done and score == 1",
+  "adaptations": [
+    "Root ADB/UIAutomator instead of emulator gRPC",
+    "XML leaves/content-description/scrollable nodes, matching upstream forest selection rule",
+    "GenieX wrapper letterboxes each of two separate images to 512x512",
+    "Task setup uses fresh target names; no shared-storage wipe/snapshots/clock change/noise files",
+    "Task app scope is Markor; model bundle and max generation configured in argv",
+    "Timing wrappers replace module-local time binding without changing durations or agent decisions",
+    "Fresh per-task note fixtures replace destructive Markor setup; unrelated-file interactions are blocked by the real-phone adapter"
+  ],
+  "fixture_adapter_sha256": "e93665845d4e860822eda0699487500428491be0f0ebc7413dba9b2c540e225f",
+  "prior_stay_on_while_plugged_in": "0",
+  "remote_genie_config": {
+    "dialog": {
+      "version": 1,
+      "type": "basic",
+      "max-num-tokens": 2048,
+      "context": {
+        "version": 1,
+        "size": 16384,
+        "n-vocab": 151936,
+        "bos-token": 151643,
+        "eos-token": 151645
+      },
+      "sampler": {
+        "version": 1,
+        "seed": 42,
+        "temp": 0.8,
+        "top-k": 40,
+        "top-p": 0.95
+      },
+      "tokenizer": {
+        "version": 1,
+        "path": "tokenizer.json"
+      },
+      "engine": {
+        "version": 1,
+        "n-threads": 3,
+        "backend": {
+          "version": 1,
+          "type": "QnnHtp",
+          "QnnHtp": {
+            "version": 1,
+            "use-mmap": true,
+            "spill-fill-bufsize": 0,
+            "mmap-budget": 0,
+            "poll": true,
+            "cpu-mask": "0xe0",
+            "kv-dim": 128,
+            "allow-async-init": false,
+            "enable-graph-switching": false
+          },
+          "extensions": "htp_backend_ext_config.json"
+        },
+        "model": {
+          "version": 1,
+          "type": "binary",
+          "binary": {
+            "version": 1,
+            "ctx-bins": [
+              "part1_of_4.bin",
+              "part2_of_4.bin",
+              "part3_of_4.bin",
+              "part4_of_4.bin"
+            ]
+          },
+          "positional-encoding": {
+            "type": "rope",
+            "rope-dim": 64,
+            "rope-theta": 5000000,
+            "rope-scaling": {
+              "rope-type": "qwen3vl-mrope",
+              "time-step": 50,
+              "spatial-merge-size": 2,
+              "mrope-section": [
+                24,
+                20,
+                20
+              ]
+            }
+          }
+        }
+      },
+      "embedding": {
+        "version": 1,
+        "type": "lut",
+        "lut-path": "embedding_weights.raw",
+        "size": 2560,
+        "datatype": "float32"
+      }
+    }
+  },
+  "model_ready": {
+    "event": "ready",
+    "load_seconds": 8.871677,
+    "ready_steady_ns": 68137775535152
+  },
+  "outcomes": [
+    {
+      "task": "MarkorEditNote",
+      "success": false,
+      "skipped": null,
+      "skip_reason": null,
+      "elapsed_seconds": 494.62802177,
+      "request_count": 23,
+      "action_requests": 12,
+      "summary_requests": 11
+    },
+    {
+      "task": "MarkorEditNote",
+      "success": false,
+      "skipped": null,
+      "skip_reason": null,
+      "elapsed_seconds": 425.356685609,
+      "request_count": 17,
+      "action_requests": 9,
+      "summary_requests": 8
+    },
+    {
+      "task": "MarkorEditNote",
+      "success": false,
+      "skipped": null,
+      "skip_reason": null,
+      "elapsed_seconds": 299.554921741,
+      "request_count": 13,
+      "action_requests": 7,
+      "summary_requests": 6
+    },
+    {
+      "task": "MarkorChangeNoteContent",
+      "success": false,
+      "skipped": null,
+      "skip_reason": null,
+      "elapsed_seconds": 1144.848841484,
+      "request_count": 24,
+      "action_requests": 12,
+      "summary_requests": 12
+    }
+  ],
+  "fixture_scope_blocks": [],
+  "service_stats_available": true
+}

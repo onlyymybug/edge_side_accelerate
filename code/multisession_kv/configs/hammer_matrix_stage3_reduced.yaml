@@ -1,0 +1,51 @@
+# Population-expansion matrix selected after the paired Pilot.
+# One run per fixed group is used because Pilot run-level CV was below 3%;
+# population variation is estimated across groups, not repeated turns.
+seed: 4242
+repeats: 1
+max_groups_per_session_count: null
+experiments:
+  # With one Session, Grouped and RoundRobin are identical. Keep only the
+  # reuse upper bound and resident NoReuse control for all 50 Sessions.
+  - name: single_session_controls
+    session_counts: [1]
+    schedules: [grouped]
+    policies:
+      - name: all_keep
+      - name: no_reuse
+
+  # Pilot showed that Grouped needs only one resident slot. Extra LRU budgets
+  # and SingleSlot are therefore redundant for the population expansion.
+  - name: grouped_controls
+    session_counts: [2, 4, 8]
+    schedules: [grouped]
+    policies:
+      - name: all_keep
+      - name: no_reuse
+
+  # Preserve the capacity-pressure curve where the Pilot found contention.
+  # SingleSlot is the no-reuse-equivalent cyclic baseline; a duplicate
+  # RoundRobin NoReuse job is intentionally omitted.
+  - name: round_robin_pressure
+    session_counts: [2, 4, 8]
+    schedules: [round_robin]
+    policies:
+      - name: all_keep
+      - name: single_slot
+      - name: lru
+        budget_ratios: [0.25, 0.5, 0.75]
+
+max_new_tokens: 64
+htp_mode: 8
+request_timeout_seconds: 180
+warmup: true
+telemetry_interval_seconds: 1
+require_not_charging: true
+temperature_gate:
+  enabled: true
+  sensor: skin
+  # Redmi stable idle baseline on 2026-10-08: median 27.139 C, range 0.139 C.
+  max_start_c: 28.2
+  consecutive_samples: 3
+  poll_seconds: 10
+  timeout_seconds: 1800

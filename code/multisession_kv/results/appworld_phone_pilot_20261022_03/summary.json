@@ -1,0 +1,14 @@
+{
+  "task_id": "6bdbc26_1",
+  "steps": 1,
+  "success": false,
+  "error": "not a single JSON call: '{\"name\":\"spotify__show_current_song\",\"parameters\":{\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzcG90'",
+  "completion_ms": 16866.945092,
+  "evaluation": {
+    "difficulty": 1,
+    "num_tests": 2,
+    "passed_tests": 1
+  },
+  "repaired_tool_calls": 0,
+  "note": "single-task feasibility pilot; not a benchmark aggregate"
+}

@@ -1,0 +1,3 @@
+{"host_timestamp_ns":1791611163127354691,"phone_timestamp_ms":1791611163303,"probe_ms":110.22225001943298,"pid":29086,"rss_kb":51612,"vmhwm_kb":1086432,"skin_temp_c":28.255,"nsp0_temp_c":40.9,"vbat_v":3.717,"ibat_a":0.138,"error":""}
+{"host_timestamp_ns":1791611164228910867,"phone_timestamp_ms":1791611164504,"probe_ms":312.5526339863427,"pid":29086,"rss_kb":51612,"vmhwm_kb":1086432,"skin_temp_c":28.325,"nsp0_temp_c":42.4,"vbat_v":3.746,"ibat_a":0.148,"error":""}
+{"host_timestamp_ns":1791611165182972140,"phone_timestamp_ms":1791611165414,"probe_ms":220.29164698324166,"pid":29086,"rss_kb":51612,"vmhwm_kb":1086432,"skin_temp_c":28.415,"nsp0_temp_c":43.6,"vbat_v":3.724,"ibat_a":0.131,"error":""}

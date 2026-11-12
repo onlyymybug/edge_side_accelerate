@@ -1,0 +1,12 @@
+experiment:
+  seed: 42
+  context_tokens: 6144
+  max_new_tokens: 64
+
+hammerbench:
+  tokenizer: /home/lyyyy/edge_side_work/qnn_multisession_phone_bundle_ctx6144/device/tokenizer.json
+
+bfcl:
+  repository: /home/lyyyy/gorilla/berkeley-function-call-leaderboard
+  base: /home/lyyyy/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_base.json
+  long_context: /home/lyyyy/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_long_context.json

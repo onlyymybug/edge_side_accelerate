@@ -1,0 +1,25 @@
+{
+  "task_id": "b119b1f_1",
+  "experiment_name": "agent_phone_navigation_20261022_01",
+  "profile": "song_navigation",
+  "bundle": "/home/lyyyy/edge_side_work/qnn_multisession_phone_bundle_ctx6144",
+  "serial": "192.168.12.218:5555",
+  "allowlist": [
+    "supervisor__show_profile",
+    "supervisor__show_account_passwords",
+    "spotify__login",
+    "spotify__show_current_song",
+    "spotify__show_artist",
+    "spotify__previous_song",
+    "spotify__next_song",
+    "supervisor__complete_task"
+  ],
+  "max_steps": 10,
+  "max_new_tokens": 128,
+  "context_tokens": 6144,
+  "htp_mode": 8,
+  "bootstrap_auth": true,
+  "adapter_sha256": "a33694fc0f08bc35a194e0d7f71c0bc3837d643ba6502841a57f248e7f1bbec4",
+  "tool_docs_sha256": "f5a71e65a82518f5ff768b7c5f3ca2204d7c0d6168888b2b81d3d3898ee107b5",
+  "note": "AppWorld single-task feasibility pilot"
+}

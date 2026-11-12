@@ -1,0 +1,19 @@
+{
+  "backend": "phone",
+  "task_ids": [
+    "6bdbc26_2",
+    "6bdbc26_3"
+  ],
+  "profile": "follower_count",
+  "capacity": 1,
+  "tool_delay_ms": 1000.0,
+  "max_steps": 5,
+  "max_new_tokens": 128,
+  "context_tokens": 6144,
+  "serial": "192.168.12.227:5555",
+  "experiment_name": "agent_multi_phone_cap1_20261022_01",
+  "bootstrap_auth": true,
+  "prompt_style": "direct_json",
+  "script_sha256": "891a8d411efac9d19bec2636226a2b3e89b7625e4ddc0af22538c088334eb2de",
+  "note": "small multi-session plumbing smoke; synthetic tool delay, not benchmark"
+}

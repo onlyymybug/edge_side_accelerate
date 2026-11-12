@@ -1,0 +1,12 @@
+{"run_id":"20261008T160911Z_782c688e","host_monotonic_ns":37450566902177,"event":"create_session","session_id":"Based::278","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"Based::278","status":"ok","valid_tokens":0}}
+{"run_id":"20261008T160911Z_782c688e","host_monotonic_ns":37450571899433,"event":"create_session","session_id":"Based::72","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"Based::72","status":"ok","valid_tokens":0}}
+{"run_id":"20261008T160911Z_782c688e","host_monotonic_ns":37450576433895,"event":"create_session","session_id":"SO-case1::1067","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"SO-case1::1067","status":"ok","valid_tokens":0}}
+{"run_id":"20261008T160911Z_782c688e","host_monotonic_ns":37450580677040,"event":"create_session","session_id":"sQmA::971","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"sQmA::971","status":"ok","valid_tokens":0}}
+{"run_id":"20261008T160911Z_782c688e","host_monotonic_ns":37452423312263,"event":"reset_all","request_index":0,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261008T160911Z_782c688e","host_monotonic_ns":37454289416994,"event":"reset_all","request_index":1,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261008T160911Z_782c688e","host_monotonic_ns":37456916302570,"event":"reset_all","request_index":2,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261008T160911Z_782c688e","host_monotonic_ns":37458260168682,"event":"reset_all","request_index":3,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261008T160911Z_782c688e","host_monotonic_ns":37460471133947,"event":"reset_all","request_index":4,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261008T160911Z_782c688e","host_monotonic_ns":37463536467069,"event":"reset_all","request_index":5,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261008T160911Z_782c688e","host_monotonic_ns":37466878258497,"event":"reset_all","request_index":6,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261008T160911Z_782c688e","host_monotonic_ns":37469373318274,"event":"reset_all","request_index":7,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}

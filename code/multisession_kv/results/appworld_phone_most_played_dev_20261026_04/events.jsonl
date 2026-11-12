@@ -1,0 +1,16 @@
+{"event":"task_start","task_id":"e85d92a_1","host_monotonic_ns":37502014833863}
+{"event":"llm_ready","task_id":"e85d92a_1","host_monotonic_ns":37502017885159,"ready_ns":37502017412324,"step":1}
+{"event":"session_create","task_id":"e85d92a_1","host_monotonic_ns":37502033360945}
+{"event":"inference_start","task_id":"e85d92a_1","host_monotonic_ns":37502033371714,"request_id":"e85d92a_1_01","queue_ms":15.951204,"input_tokens":632}
+{"event":"inference_end","task_id":"e85d92a_1","host_monotonic_ns":37505562915175,"request_id":"e85d92a_1_01","status":"ok"}
+{"event":"tool_end","task_id":"e85d92a_1","host_monotonic_ns":37505593466048,"name":"spotify__search_artists","tool_start_ns":37505565550515,"tool_end_ns":37505593456570,"tool_ms":27.906055,"synthetic_tool_delay_ms":0.0,"parse_repaired":true,"dropped_parameters":[],"ignored_extra_calls":0,"enriched_observation":false,"normalized_action_answer":false}
+{"event":"llm_ready","task_id":"e85d92a_1","host_monotonic_ns":37505597441501,"ready_ns":37505596688616,"step":2}
+{"event":"inference_start","task_id":"e85d92a_1","host_monotonic_ns":37505597586404,"request_id":"e85d92a_1_02","queue_ms":0.883491,"input_tokens":973}
+{"event":"inference_end","task_id":"e85d92a_1","host_monotonic_ns":37509990355779,"request_id":"e85d92a_1_02","status":"ok"}
+{"event":"tool_end","task_id":"e85d92a_1","host_monotonic_ns":37510013368675,"name":"spotify__search_songs","tool_start_ns":37509990872308,"tool_end_ns":37510013362580,"tool_ms":22.490272,"synthetic_tool_delay_ms":0.0,"parse_repaired":false,"dropped_parameters":[],"ignored_extra_calls":0,"enriched_observation":false,"normalized_action_answer":false}
+{"event":"llm_ready","task_id":"e85d92a_1","host_monotonic_ns":37510016136906,"ready_ns":37510015618797,"step":3}
+{"event":"inference_start","task_id":"e85d92a_1","host_monotonic_ns":37510016200008,"request_id":"e85d92a_1_03","queue_ms":0.573734,"input_tokens":1168}
+{"event":"inference_end","task_id":"e85d92a_1","host_monotonic_ns":37513030932962,"request_id":"e85d92a_1_03","status":"ok"}
+{"event":"tool_end","task_id":"e85d92a_1","host_monotonic_ns":37513043788503,"name":"supervisor__complete_task","tool_start_ns":37513031281481,"tool_end_ns":37513043782272,"tool_ms":12.500791,"synthetic_tool_delay_ms":0.0,"parse_repaired":false,"dropped_parameters":[],"ignored_extra_calls":0,"enriched_observation":false,"normalized_action_answer":false}
+{"event":"task_end","task_id":"e85d92a_1","host_monotonic_ns":37513211969916,"success":true,"error":null}
+{"event":"session_release","task_id":"e85d92a_1","host_monotonic_ns":37513267221637,"source":"runtime_explicit"}

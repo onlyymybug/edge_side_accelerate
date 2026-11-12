@@ -1,0 +1,3 @@
+{"run_id":"20261009T142808Z_301b12a7","host_monotonic_ns":117785564267152,"event":"create_session","session_id":"mQmA::776","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"mQmA::776","status":"ok","valid_tokens":0}}
+{"run_id":"20261009T142808Z_301b12a7","host_monotonic_ns":117788425949766,"event":"reset_all","request_index":0,"response":{"model_load_count":1,"sessions_reset":1,"status":"ok"}}
+{"run_id":"20261009T142808Z_301b12a7","host_monotonic_ns":117791229332759,"event":"reset_all","request_index":1,"response":{"model_load_count":1,"sessions_reset":1,"status":"ok"}}

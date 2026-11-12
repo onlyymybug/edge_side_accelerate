@@ -1,0 +1,30 @@
+[
+  {
+    "run_dir": "results/hammer_fixed_2s_offset4_formal_smoke",
+    "run_id": "20261008T081925Z_6fd75f11",
+    "variant": "fixed_tools",
+    "session_count": 2,
+    "session_offset": 4,
+    "policy": "all_keep",
+    "schedule": "round_robin",
+    "lru_slots": null,
+    "max_new_tokens": 64,
+    "request_count": 6,
+    "input_tokens": 3155,
+    "prefill_tokens": 1104,
+    "reused_tokens": 2051,
+    "token_reuse_rate": 0.6500792393026942,
+    "ttft_ms_p50": 143.40138050000002,
+    "ttft_ms_p95": 596.784739,
+    "request_ms_p50": 1464.6426295,
+    "request_ms_p95": 1929.023801,
+    "trace_makespan_ms": 9043.722132,
+    "save_restore_ms": 93.09031300000001,
+    "evictions": 0,
+    "resets": 0,
+    "rss_kb_peak": 89784,
+    "skin_temp_c_start": 29.376,
+    "skin_temp_c_end": 30.432,
+    "skin_temp_c_peak": 30.432
+  }
+]

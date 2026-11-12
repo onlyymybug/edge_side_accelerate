@@ -1,0 +1,87 @@
+{"wall_seconds": 2.3361508669913746, "line": "BUILD_RECORD.json: OK"}
+{"wall_seconds": 2.336260174983181, "line": "README.md: OK"}
+{"wall_seconds": 2.3362788500089664, "line": "bin/geniex-bench: OK"}
+{"wall_seconds": 2.336288935999619, "line": "lib/libgeniex.so: OK"}
+{"wall_seconds": 2.3362964119878598, "line": "lib/qairt/htp-files/libCalculator_skel.so: OK"}
+{"wall_seconds": 2.3363055709924083, "line": "lib/qairt/htp-files/libPlatformValidatorShared.so: OK"}
+{"wall_seconds": 2.336313296982553, "line": "lib/qairt/htp-files/libQnnChrometraceProfilingReader.so: OK"}
+{"wall_seconds": 2.3363206810026895, "line": "lib/qairt/htp-files/libQnnHta.so: OK"}
+{"wall_seconds": 2.3363273959839717, "line": "lib/qairt/htp-files/libQnnHtaNetRunExtensions.so: OK"}
+{"wall_seconds": 2.336334377003368, "line": "lib/qairt/htp-files/libQnnHtp.so: OK"}
+{"wall_seconds": 2.3363404299889226, "line": "lib/qairt/htp-files/libQnnHtpNetRunExtensions.so: OK"}
+{"wall_seconds": 2.3363466789887752, "line": "lib/qairt/htp-files/libQnnHtpOptraceProfilingReader.so: OK"}
+{"wall_seconds": 2.336353799008066, "line": "lib/qairt/htp-files/libQnnHtpPrepare.so: OK"}
+{"wall_seconds": 2.336360604997026, "line": "lib/qairt/htp-files/libQnnHtpProfilingReader.so: OK"}
+{"wall_seconds": 2.336366856994573, "line": "lib/qairt/htp-files/libQnnHtpV79.so: OK"}
+{"wall_seconds": 2.3363733979931567, "line": "lib/qairt/htp-files/libQnnHtpV79CalculatorStub.so: OK"}
+{"wall_seconds": 2.336379921005573, "line": "lib/qairt/htp-files/libQnnHtpV79Skel.so: OK"}
+{"wall_seconds": 2.3363859659875743, "line": "lib/qairt/htp-files/libQnnHtpV79Stub.so: OK"}
+{"wall_seconds": 2.336392192984931, "line": "lib/qairt/htp-files/libQnnHtpV81.so: OK"}
+{"wall_seconds": 2.336398143990664, "line": "lib/qairt/htp-files/libQnnHtpV81CalculatorStub.so: OK"}
+{"wall_seconds": 2.3364040089945775, "line": "lib/qairt/htp-files/libQnnHtpV81Skel.so: OK"}
+{"wall_seconds": 2.3364098370075226, "line": "lib/qairt/htp-files/libQnnHtpV81Stub.so: OK"}
+{"wall_seconds": 2.3364160799828824, "line": "lib/qairt/htp-files/libQnnIr.so: OK"}
+{"wall_seconds": 2.3364222059899475, "line": "lib/qairt/htp-files/libQnnJsonProfilingReader.so: OK"}
+{"wall_seconds": 2.3364281530084554, "line": "lib/qairt/htp-files/libQnnModelDlc.so: OK"}
+{"wall_seconds": 2.336434177006595, "line": "lib/qairt/htp-files/libQnnNetRunDirectV79Skel.so: OK"}
+{"wall_seconds": 2.3364403239975218, "line": "lib/qairt/htp-files/libQnnNetRunDirectV79Stub.so: OK"}
+{"wall_seconds": 2.3364466780039947, "line": "lib/qairt/htp-files/libQnnNetRunDirectV81Skel.so: OK"}
+{"wall_seconds": 2.3364522669871803, "line": "lib/qairt/htp-files/libQnnNetRunDirectV81Stub.so: OK"}
+{"wall_seconds": 2.3364582679932937, "line": "lib/qairt/htp-files/libQnnSaver.so: OK"}
+{"wall_seconds": 2.3364642490050755, "line": "lib/qairt/htp-files/libQnnSystem.so: OK"}
+{"wall_seconds": 2.3364701209939085, "line": "lib/qairt/htp-files/libcalculator.so: OK"}
+{"wall_seconds": 2.3364760919939727, "line": "lib/qairt/htp-files/libhta_hexagon_runtime_qnn.so: OK"}
+{"wall_seconds": 2.3364822219882626, "line": "lib/qairt/htp-files/libhta_hexagon_runtime_snpe.so: OK"}
+{"wall_seconds": 2.336488241009647, "line": "lib/qairt/htp-files/libqnnhtpv81.cat: OK"}
+{"wall_seconds": 2.3364939790044446, "line": "lib/qairt/libgeniex-proc-vision.so: OK"}
+{"wall_seconds": 2.336500089993933, "line": "lib/qairt/libgeniex-proc.so: OK"}
+{"wall_seconds": 2.3365061749937013, "line": "lib/qairt/libgeniex_core.so: OK"}
+{"wall_seconds": 2.3365121569950134, "line": "lib/qairt/libgeniex_plugin.so: OK"}
+{"wall_seconds": 2.3365180880064145, "line": "lib/qairt/libgeniex_vlm.so: OK"}
+{"wall_seconds": 2.3365240650018677, "line": "model/config.json: OK"}
+{"wall_seconds": 2.3365303259924985, "line": "model/embedding_weights.raw: OK"}
+{"wall_seconds": 2.336536568007432, "line": "model/genie-app-script.txt: OK"}
+{"wall_seconds": 2.336542406992521, "line": "model/genie_config.json: OK"}
+{"wall_seconds": 2.3365483279922046, "line": "model/htp_backend_ext_config.json: OK"}
+{"wall_seconds": 2.3365546139830258, "line": "model/img-enc-htp.json: OK"}
+{"wall_seconds": 2.336560505005764, "line": "model/metadata.json: OK"}
+{"wall_seconds": 2.3365711889928207, "line": "model/part1_of_4.bin: OK"}
+{"wall_seconds": 2.3365777480066754, "line": "model/part2_of_4.bin: OK"}
+{"wall_seconds": 2.3365835169970524, "line": "model/part3_of_4.bin: OK"}
+{"wall_seconds": 2.3365889620035887, "line": "model/part4_of_4.bin: OK"}
+{"wall_seconds": 2.33659457199974, "line": "model/sample_inputs/full_attention_mask.raw: OK"}
+{"wall_seconds": 2.3366007739969064, "line": "model/sample_inputs/pixel_values.raw: OK"}
+{"wall_seconds": 2.3366072939825244, "line": "model/sample_inputs/position_ids_cos.raw: OK"}
+{"wall_seconds": 2.336613594001392, "line": "model/sample_inputs/position_ids_sin.raw: OK"}
+{"wall_seconds": 2.336619506997522, "line": "model/sample_inputs/prompt_prefix.txt: OK"}
+{"wall_seconds": 2.3366254899883643, "line": "model/sample_inputs/prompt_suffix.txt: OK"}
+{"wall_seconds": 2.3366312659927644, "line": "model/sample_inputs/window_attention_mask.raw: OK"}
+{"wall_seconds": 2.336637565982528, "line": "model/sample_prompt.txt: OK"}
+{"wall_seconds": 2.336643277987605, "line": "model/text-encoder.json: OK"}
+{"wall_seconds": 2.336649311997462, "line": "model/text-generator.json: OK"}
+{"wall_seconds": 2.3366556279943325, "line": "model/tokenizer.json: OK"}
+{"wall_seconds": 2.3366616319981404, "line": "model/tokenizer_config.json: OK"}
+{"wall_seconds": 2.336673516983865, "line": "model/vision_encoder.bin: OK"}
+{"wall_seconds": 2.336687194998376, "line": "prompts.txt: OK"}
+{"wall_seconds": 2.336701763997553, "line": "run_smoke.sh: OK"}
+{"wall_seconds": 2.368212950997986, "line": "[info] resolved model dir to anchor: /data/local/tmp/qwen3_vl_geniex_sm8750/model/tokenizer.json"}
+{"wall_seconds": 5.337828647985589, "line": "\u001b[31m[ERROR] [QNN] QnnDsp <E>  contextFromBin (submit) Failed code: 5005"}
+{"wall_seconds": 5.33812553199823, "line": "\u001b[0m"}
+{"wall_seconds": 5.338169150985777, "line": "\u001b[31m[ERROR] [QNN] QnnDsp <E> Skel failed to process context binary."}
+{"wall_seconds": 5.338213331007864, "line": "\u001b[0m"}
+{"wall_seconds": 5.339396808994934, "line": "\u001b[31m[ERROR] [QNN] QnnDsp <E> Context create from binary failed for deviceId 0 coreId 0 pdId 0 for context 4, err 5005"}
+{"wall_seconds": 5.339468657999532, "line": "\u001b[0m"}
+{"wall_seconds": 5.366596573992865, "line": "\u001b[31m[ERROR] [QNN] QnnDsp <E> Context 4 failed on pd 0"}
+{"wall_seconds": 5.3667708940047305, "line": "\u001b[0m"}
+{"wall_seconds": 7.912581545999274, "line": "[sep ] prompt 1/3"}
+{"wall_seconds": 7.9126803780090995, "line": "[info] stop_reason=eos"}
+{"wall_seconds": 7.913688900996931, "line": "[gen ] 42"}
+{"wall_seconds": 8.302215878997231, "line": "[sep ] prompt 2/3"}
+{"wall_seconds": 8.30233400099678, "line": "[info] stop_reason=eos"}
+{"wall_seconds": 8.30294987099478, "line": "[gen ] {\"city\": \"北京\"}"}
+{"wall_seconds": 9.35694893100299, "line": "[sep ] prompt 3/3"}
+{"wall_seconds": 9.357095213985303, "line": "[info] stop_reason=eos"}
+{"wall_seconds": 9.3585919830075, "line": "[gen ] 我是一个AI助手，用于提供信息查询、问题解答和日常陪伴。  "}
+{"wall_seconds": 9.3588158210041, "line": "[gen ] （无图片）"}
+{"wall_seconds": 9.646413401991595, "line": "[ok  ] cell  plugin=qairt device=npu(id=NPU) ngl=0 ttft=60.9ms prefill=2102.4tps decode=27.1tps gen=7 tok"}
+{"wall_seconds": 9.646649394999258, "line": "\u001b[31m[ERROR] [src/ml.cpp:202:geniex_get_plugin_version] failed to get plugin version for llama_cpp: std::exception\u001b[0m"}

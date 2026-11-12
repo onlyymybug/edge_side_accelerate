@@ -1,0 +1,16 @@
+{"event":"task_start","task_id":"6bdbc26_2","host_monotonic_ns":175495695369923}
+{"event":"llm_ready","task_id":"6bdbc26_2","host_monotonic_ns":175495697593643,"ready_ns":175495697212570,"step":1}
+{"event":"session_create","task_id":"6bdbc26_2","host_monotonic_ns":175495697617752}
+{"event":"inference_start","task_id":"6bdbc26_2","host_monotonic_ns":175495697623072,"request_id":"6bdbc26_2_01","queue_ms":0.405805,"input_tokens":466}
+{"event":"inference_end","task_id":"6bdbc26_2","host_monotonic_ns":175495739247431,"request_id":"6bdbc26_2_01","status":"ok"}
+{"event":"task_start","task_id":"6bdbc26_3","host_monotonic_ns":175495696132349}
+{"event":"llm_ready","task_id":"6bdbc26_3","host_monotonic_ns":175495740929846,"ready_ns":175495697864216,"step":1}
+{"event":"session_create","task_id":"6bdbc26_3","host_monotonic_ns":175495740976955}
+{"event":"inference_start","task_id":"6bdbc26_3","host_monotonic_ns":175495740988119,"request_id":"6bdbc26_3_01","queue_ms":43.113939,"input_tokens":466}
+{"event":"inference_end","task_id":"6bdbc26_3","host_monotonic_ns":175495781847128,"request_id":"6bdbc26_3_01","status":"ok"}
+{"event":"worker_exception","task_id":"6bdbc26_2","host_monotonic_ns":175496776445297,"traceback":"Traceback (most recent call last):\n  File \"/home/lyyyy/edge_side_work/code/multisession_kv/appworld_multisession_smoke.py\", line 151, in task_worker\n    outbox.put(event(\"tool_end\", task_id, name=name,\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: event() got multiple values for argument 'name'\n"}
+{"event":"task_end","task_id":"6bdbc26_2","host_monotonic_ns":175496812561423,"success":false,"error":"TypeError: event() got multiple values for argument 'name'"}
+{"event":"session_release","task_id":"6bdbc26_2","host_monotonic_ns":175496812568315,"source":"runtime_explicit"}
+{"event":"worker_exception","task_id":"6bdbc26_3","host_monotonic_ns":175496819466517,"traceback":"Traceback (most recent call last):\n  File \"/home/lyyyy/edge_side_work/code/multisession_kv/appworld_multisession_smoke.py\", line 151, in task_worker\n    outbox.put(event(\"tool_end\", task_id, name=name,\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: event() got multiple values for argument 'name'\n"}
+{"event":"task_end","task_id":"6bdbc26_3","host_monotonic_ns":175496864880060,"success":false,"error":"TypeError: event() got multiple values for argument 'name'"}
+{"event":"session_release","task_id":"6bdbc26_3","host_monotonic_ns":175496864886784,"source":"runtime_explicit"}

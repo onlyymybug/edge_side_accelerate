@@ -1,0 +1,8 @@
+{"event":"task_start","task_id":"6bdbc26_1","host_monotonic_ns":160178680250832}
+{"event":"inference_start","task_id":"6bdbc26_1","request_id":"6bdbc26_1_01","host_monotonic_ns":160180292538568,"input_tokens":505}
+{"event":"inference_end","task_id":"6bdbc26_1","request_id":"6bdbc26_1_01","host_monotonic_ns":160183017591065,"status":"ok"}
+{"event":"tool_call","task_id":"6bdbc26_1","host_monotonic_ns":160183017847463,"tool_end_ns":160183040464827,"name":"supervisor__show_account_passwords","parse_repaired":true,"tool_ms":22.617364}
+{"event":"inference_start","task_id":"6bdbc26_1","request_id":"6bdbc26_1_02","host_monotonic_ns":160183041858169,"input_tokens":730}
+{"event":"inference_end","task_id":"6bdbc26_1","request_id":"6bdbc26_1_02","host_monotonic_ns":160185229649042,"status":"ok"}
+{"event":"session_release","task_id":"6bdbc26_1","host_monotonic_ns":160185474519366,"source":"runtime_explicit"}
+{"event":"task_end","task_id":"6bdbc26_1","host_monotonic_ns":160185474524859,"success":false}

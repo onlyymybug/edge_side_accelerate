@@ -1,0 +1,18 @@
+{
+  "task_id": "6bdbc26_1",
+  "steps": 3,
+  "success": false,
+  "error": "not a Hermes tool call: 'The artist of the currently playing song on Spotify has a follower count of of of 20. \\n\\n<tool_call>\\n{\"name\":\"supervisor_'",
+  "completion_ms": 13310.82741,
+  "evaluation": {
+    "difficulty": 1,
+    "num_tests": 2,
+    "passed_tests": 1
+  },
+  "repaired_tool_calls": 1,
+  "ignored_extra_calls": 0,
+  "filtered_tool_calls": 0,
+  "enriched_observations": 0,
+  "normalized_action_answers": 0,
+  "note": "single-task feasibility pilot; not a benchmark aggregate"
+}

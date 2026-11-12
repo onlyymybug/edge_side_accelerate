@@ -1,0 +1,21 @@
+{
+  "event": "response",
+  "id": "retry16k-multicl16k_3tier_vlm_20261111_133935-3",
+  "image_count": 2,
+  "text": "OK",
+  "elapsed_seconds": 69.365,
+  "request_accepted_steady_ns": 66897343801198,
+  "compute_start_steady_ns": 66897346606042,
+  "compute_end_steady_ns": 66966711655650,
+  "service_idle_before_request_seconds": 0.00721234,
+  "callback_ttft_seconds": 68.9835,
+  "ttft_us": 68849787,
+  "media_time_us": 214630,
+  "prompt_time_us": 68635157,
+  "decode_time_us": 271676,
+  "prompt_tokens": 15032,
+  "generated_tokens": 2,
+  "decoding_speed": 7.36171,
+  "stop_reason": "eos",
+  "host_roundtrip_seconds": 69.37428494598134
+}

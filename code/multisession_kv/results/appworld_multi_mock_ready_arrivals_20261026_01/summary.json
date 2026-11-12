@@ -1,0 +1,13 @@
+{
+  "tasks": 3,
+  "successes": 3,
+  "requests": 9,
+  "max_sessions": 3,
+  "kv_slots": 2,
+  "policy": "ready_lru",
+  "release_on_done": true,
+  "capacity_evictions": 1,
+  "queue_ms_total": 170.13239200000004,
+  "queue_ms_max": 67.34961,
+  "note": "scripted mock with real AppWorld tools; no model accuracy"
+}

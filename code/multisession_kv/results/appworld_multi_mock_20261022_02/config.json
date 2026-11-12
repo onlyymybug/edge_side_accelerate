@@ -1,0 +1,19 @@
+{
+  "backend": "mock",
+  "task_ids": [
+    "6bdbc26_2",
+    "6bdbc26_3"
+  ],
+  "profile": "follower_count",
+  "capacity": 2,
+  "tool_delay_ms": 1000.0,
+  "max_steps": 5,
+  "max_new_tokens": 128,
+  "context_tokens": 6144,
+  "serial": null,
+  "experiment_name": "agent_multi_mock_20261022_02",
+  "bootstrap_auth": true,
+  "prompt_style": "direct_json",
+  "script_sha256": "3eec78c84383749607c83afb3f59693eaaf3a5245f5823f4fb4e7f24c4fbfd32",
+  "note": "small multi-session plumbing smoke; synthetic tool delay, not benchmark"
+}

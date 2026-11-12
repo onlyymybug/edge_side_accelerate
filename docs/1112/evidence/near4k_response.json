@@ -1,0 +1,21 @@
+{
+  "event": "response",
+  "id": "retry16k-multicl16k_3tier_vlm_20261111_133935-1",
+  "image_count": 2,
+  "text": "The first image shows a file explorer screen with a folder named \"Marker\" and a list of files and folders inside it. The screen displays a folder named \"aw_baseline_folder_20261106_110418\" and several other files and folders, with a red plus sign at the bottom right. The second image shows a text editor screen with a text entry field and a keyboard, displaying the text \"AndroidWorld real phone transport works.\"",
+  "elapsed_seconds": 10.6241,
+  "request_accepted_steady_ns": 66846753144759,
+  "compute_start_steady_ns": 66846754082259,
+  "compute_end_steady_ns": 66857378179755,
+  "service_idle_before_request_seconds": 0.00365031,
+  "callback_ttft_seconds": 3.92843,
+  "ttft_us": 3846244,
+  "media_time_us": 206223,
+  "prompt_time_us": 3640021,
+  "decode_time_us": 6583814,
+  "prompt_tokens": 3840,
+  "generated_tokens": 98,
+  "decoding_speed": 14.885,
+  "stop_reason": "eos",
+  "host_roundtrip_seconds": 10.628249947010772
+}

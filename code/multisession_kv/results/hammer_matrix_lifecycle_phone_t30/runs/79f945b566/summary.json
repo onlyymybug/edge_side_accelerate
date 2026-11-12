@@ -1,0 +1,11 @@
+{
+  "run_id": "20261010T085519Z_34944f41",
+  "status": "pass",
+  "requests": 12,
+  "duration_ms": 37227.967504,
+  "total_input_tokens": 7016,
+  "total_prefill_tokens": 7016,
+  "total_reused_tokens": 0,
+  "evictions": 10,
+  "resets": 0
+}

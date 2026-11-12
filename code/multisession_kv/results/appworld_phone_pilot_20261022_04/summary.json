@@ -1,0 +1,14 @@
+{
+  "task_id": "6bdbc26_1",
+  "steps": 1,
+  "success": false,
+  "error": "call must contain only name and parameters",
+  "completion_ms": 6097.564726,
+  "evaluation": {
+    "difficulty": 1,
+    "num_tests": 2,
+    "passed_tests": 1
+  },
+  "repaired_tool_calls": 0,
+  "note": "single-task feasibility pilot; not a benchmark aggregate"
+}

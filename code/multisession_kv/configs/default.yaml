@@ -1,0 +1,23 @@
+experiment:
+  seed: 42
+  context_tokens: 1024
+  max_new_tokens: 64
+  htp_performance_mode: 8
+
+hammerbench:
+  dataset: /home/lyyyy/HammerBench/full_dataset/data/en/multi-turn.json
+  repository: /home/lyyyy/HammerBench
+  language: en
+  session_count: 50
+  minimum_turns: 2
+  tokenizer: /home/lyyyy/qwen25_3b_qnn_artifacts_hybrid_1024_balanced/tokenizer.json
+
+bfcl:
+  repository: /home/lyyyy/gorilla/berkeley-function-call-leaderboard
+  base: /home/lyyyy/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_base.json
+  long_context: /home/lyyyy/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/BFCL_v4_multi_turn_long_context.json
+
+device:
+  serial: null
+  bundle: /home/lyyyy/edge_side_work/qnn_multisession_phone_bundle
+  remote_dir: /data/local/tmp/qnn_multisession

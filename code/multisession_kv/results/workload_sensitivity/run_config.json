@@ -1,0 +1,23 @@
+{
+  "seed": 4247,
+  "replicates": 200,
+  "session_counts": [
+    4,
+    8
+  ],
+  "alphas": [
+    0.0,
+    0.5,
+    1.0,
+    1.5
+  ],
+  "schedules": [
+    "round_robin",
+    "uniform_random",
+    "zipf"
+  ],
+  "length_models": [
+    "real"
+  ],
+  "workloads": 6042
+}

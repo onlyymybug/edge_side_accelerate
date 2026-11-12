@@ -1,0 +1,2 @@
+{"task_id":"6bdbc26_2","success":false,"steps":1,"error":"TypeError: event() got multiple values for argument 'name'","completion_ms":6695.061766,"repaired_tool_calls":0,"filtered_tool_calls":0}
+{"task_id":"6bdbc26_3","success":false,"steps":1,"error":"TypeError: event() got multiple values for argument 'name'","completion_ms":6731.658249,"repaired_tool_calls":0,"filtered_tool_calls":0}

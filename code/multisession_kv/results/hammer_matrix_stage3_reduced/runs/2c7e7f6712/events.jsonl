@@ -1,0 +1,12 @@
+{"run_id":"20261009T213359Z_ddba9799","host_monotonic_ns":143339520194236,"event":"create_session","session_id":"Based::278","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"Based::278","status":"ok","valid_tokens":0}}
+{"run_id":"20261009T213359Z_ddba9799","host_monotonic_ns":143339527505728,"event":"create_session","session_id":"Based::72","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"Based::72","status":"ok","valid_tokens":0}}
+{"run_id":"20261009T213359Z_ddba9799","host_monotonic_ns":143339535300523,"event":"create_session","session_id":"SO-case1::1067","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"SO-case1::1067","status":"ok","valid_tokens":0}}
+{"run_id":"20261009T213359Z_ddba9799","host_monotonic_ns":143339542453293,"event":"create_session","session_id":"sQmA::971","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"sQmA::971","status":"ok","valid_tokens":0}}
+{"run_id":"20261009T213359Z_ddba9799","host_monotonic_ns":143341385604061,"event":"reset_all","request_index":0,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261009T213359Z_ddba9799","host_monotonic_ns":143343275323283,"event":"reset_all","request_index":1,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261009T213359Z_ddba9799","host_monotonic_ns":143345937260411,"event":"reset_all","request_index":2,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261009T213359Z_ddba9799","host_monotonic_ns":143347253212180,"event":"reset_all","request_index":3,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261009T213359Z_ddba9799","host_monotonic_ns":143349511877609,"event":"reset_all","request_index":4,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261009T213359Z_ddba9799","host_monotonic_ns":143352595981152,"event":"reset_all","request_index":5,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261009T213359Z_ddba9799","host_monotonic_ns":143356105534161,"event":"reset_all","request_index":6,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}
+{"run_id":"20261009T213359Z_ddba9799","host_monotonic_ns":143358655970036,"event":"reset_all","request_index":7,"response":{"model_load_count":1,"sessions_reset":4,"status":"ok"}}

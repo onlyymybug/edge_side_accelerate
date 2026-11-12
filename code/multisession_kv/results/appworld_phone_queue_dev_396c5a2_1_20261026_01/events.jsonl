@@ -1,0 +1,7 @@
+{"event":"task_start","task_id":"396c5a2_1","host_monotonic_ns":37928018053666}
+{"event":"llm_ready","task_id":"396c5a2_1","host_monotonic_ns":37928021309489,"ready_ns":37928020965264,"step":1}
+{"event":"session_create","task_id":"396c5a2_1","host_monotonic_ns":37928351776181}
+{"event":"inference_start","task_id":"396c5a2_1","host_monotonic_ns":37928351816388,"request_id":"396c5a2_1_01","queue_ms":330.818834,"input_tokens":645}
+{"event":"inference_end","task_id":"396c5a2_1","host_monotonic_ns":37933210705127,"request_id":"396c5a2_1_01","status":"ok"}
+{"event":"task_end","task_id":"396c5a2_1","host_monotonic_ns":37933492114693,"success":false,"error":"not a single JSON call: '{\"name\":\"spotify__search_artists\",\"query\":\"Lily Moon\"}>{\"parameters\": {\"query\": \"Lily Moon\"}}'"}
+{"event":"session_release","task_id":"396c5a2_1","host_monotonic_ns":37933566489477,"source":"runtime_explicit"}

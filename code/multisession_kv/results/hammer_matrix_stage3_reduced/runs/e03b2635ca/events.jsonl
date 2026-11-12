@@ -1,0 +1,12 @@
+{"run_id":"20261009T180233Z_b388b1b8","host_monotonic_ns":130653009952262,"event":"create_session","session_id":"SO-case2::478","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"SO-case2::478","status":"ok","valid_tokens":0}}
+{"run_id":"20261009T180233Z_b388b1b8","host_monotonic_ns":130653016258819,"event":"create_session","session_id":"SO-case2::159","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"SO-case2::159","status":"ok","valid_tokens":0}}
+{"run_id":"20261009T180233Z_b388b1b8","host_monotonic_ns":130654874864874,"event":"reset_all","request_index":0,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T180233Z_b388b1b8","host_monotonic_ns":130656696901237,"event":"reset_all","request_index":1,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T180233Z_b388b1b8","host_monotonic_ns":130658499516329,"event":"reset_all","request_index":2,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T180233Z_b388b1b8","host_monotonic_ns":130660739071687,"event":"reset_all","request_index":3,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T180233Z_b388b1b8","host_monotonic_ns":130662892425780,"event":"reset_all","request_index":4,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T180233Z_b388b1b8","host_monotonic_ns":130665283305033,"event":"reset_all","request_index":5,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T180233Z_b388b1b8","host_monotonic_ns":130667595622835,"event":"reset_all","request_index":6,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T180233Z_b388b1b8","host_monotonic_ns":130670200470918,"event":"reset_all","request_index":7,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T180233Z_b388b1b8","host_monotonic_ns":130672957553058,"event":"reset_all","request_index":8,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}
+{"run_id":"20261009T180233Z_b388b1b8","host_monotonic_ns":130676086911506,"event":"reset_all","request_index":9,"response":{"model_load_count":1,"sessions_reset":2,"status":"ok"}}

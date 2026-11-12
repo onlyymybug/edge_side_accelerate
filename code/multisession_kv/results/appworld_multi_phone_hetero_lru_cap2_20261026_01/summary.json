@@ -1,0 +1,13 @@
+{
+  "tasks": 3,
+  "successes": 3,
+  "requests": 11,
+  "max_sessions": 3,
+  "kv_slots": 2,
+  "policy": "lru",
+  "release_on_done": true,
+  "capacity_evictions": 6,
+  "queue_ms_total": 52944.020109000005,
+  "queue_ms_max": 8714.341319,
+  "note": "phone model with real AppWorld tools; controlled extra wait; not a benchmark"
+}

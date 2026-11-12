@@ -1,0 +1,7 @@
+{
+  "tasks": 2,
+  "successes": 2,
+  "requests": 4,
+  "queue_ms_total": 15.960666999999999,
+  "note": "smoke test only; no paper-level claim"
+}

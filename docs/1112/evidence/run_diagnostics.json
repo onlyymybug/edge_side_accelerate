@@ -1,0 +1,31 @@
+{
+  "model_requests": 77,
+  "response_status_counts": {
+    "ok": 77
+  },
+  "stop_reason_counts": {
+    "eos": 76,
+    "length": 1
+  },
+  "max_prompt_tokens": 10825,
+  "non_eos_requests": [
+    {
+      "id": "rep01_header-4-action",
+      "status": "ok",
+      "prompt_tokens": 3523,
+      "generated_tokens": 512,
+      "stop_reason": "length",
+      "image_count": 2
+    }
+  ],
+  "memory_samples": 444,
+  "min_memavailable_kb_sampled": 983552,
+  "boot_ids": [
+    "f1bfe3d7-981b-4004-b7e3-b55bf429889d"
+  ],
+  "model_oom_score_adj_observed": [
+    "1000"
+  ],
+  "fixture_scope_blocks": [],
+  "phase_errors": []
+}

@@ -1,0 +1,7 @@
+{"event":"task_start","task_id":"e85d92a_1","host_monotonic_ns":37441999899703}
+{"event":"llm_ready","task_id":"e85d92a_1","host_monotonic_ns":37442002549933,"ready_ns":37442002167638,"step":1}
+{"event":"session_create","task_id":"e85d92a_1","host_monotonic_ns":37442120071568}
+{"event":"inference_start","task_id":"e85d92a_1","host_monotonic_ns":37442120144801,"request_id":"e85d92a_1_01","queue_ms":117.910839,"input_tokens":632}
+{"event":"inference_end","task_id":"e85d92a_1","host_monotonic_ns":37445643929379,"request_id":"e85d92a_1_01","status":"ok"}
+{"event":"task_end","task_id":"e85d92a_1","host_monotonic_ns":37445807532251,"success":false,"error":"call must contain only name and parameters"}
+{"event":"session_release","task_id":"e85d92a_1","host_monotonic_ns":37445817580350,"source":"runtime_explicit"}

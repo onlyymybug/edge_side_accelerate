@@ -1,0 +1,15 @@
+{
+  "task_id": "6bdbc26_2",
+  "steps": 3,
+  "success": true,
+  "error": null,
+  "completion_ms": 10660.337041,
+  "evaluation": {
+    "difficulty": 1,
+    "num_tests": 2,
+    "passed_tests": 2
+  },
+  "repaired_tool_calls": 1,
+  "filtered_tool_calls": 0,
+  "note": "single-task feasibility pilot; not a benchmark aggregate"
+}

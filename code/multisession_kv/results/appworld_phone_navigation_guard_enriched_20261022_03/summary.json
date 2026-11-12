@@ -1,0 +1,17 @@
+{
+  "task_id": "b119b1f_3",
+  "steps": 5,
+  "success": true,
+  "error": null,
+  "completion_ms": 14428.084689,
+  "evaluation": {
+    "difficulty": 2,
+    "num_tests": 6,
+    "passed_tests": 6
+  },
+  "repaired_tool_calls": 1,
+  "filtered_tool_calls": 0,
+  "enriched_observations": 4,
+  "normalized_action_answers": 1,
+  "note": "single-task feasibility pilot; not a benchmark aggregate"
+}

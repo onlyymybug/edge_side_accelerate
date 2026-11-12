@@ -1,0 +1,11 @@
+{"event":"task_start","task_id":"6bdbc26_1","host_monotonic_ns":163341935935107}
+{"event":"inference_start","task_id":"6bdbc26_1","request_id":"6bdbc26_1_01","host_monotonic_ns":163345227936026,"input_tokens":532}
+{"event":"inference_end","task_id":"6bdbc26_1","request_id":"6bdbc26_1_01","host_monotonic_ns":163348555063029,"status":"ok"}
+{"event":"tool_call","task_id":"6bdbc26_1","host_monotonic_ns":163348557102430,"tool_end_ns":163348607969742,"name":"spotify__show_current_song","parse_repaired":true,"ignored_extra_calls":0,"dropped_parameters":[],"normalized_action_answer":false,"enriched_observation":false,"tool_ms":50.867312}
+{"event":"inference_start","task_id":"6bdbc26_1","request_id":"6bdbc26_1_02","host_monotonic_ns":163348616825514,"input_tokens":647}
+{"event":"inference_end","task_id":"6bdbc26_1","request_id":"6bdbc26_1_02","host_monotonic_ns":163350848133455,"status":"ok"}
+{"event":"tool_call","task_id":"6bdbc26_1","host_monotonic_ns":163350848261607,"tool_end_ns":163350860908775,"name":"spotify__show_artist","parse_repaired":false,"ignored_extra_calls":0,"dropped_parameters":[],"normalized_action_answer":false,"enriched_observation":false,"tool_ms":12.647168}
+{"event":"inference_start","task_id":"6bdbc26_1","request_id":"6bdbc26_1_03","host_monotonic_ns":163350868658145,"input_tokens":741}
+{"event":"inference_end","task_id":"6bdbc26_1","request_id":"6bdbc26_1_03","host_monotonic_ns":163354727780490,"status":"ok"}
+{"event":"session_release","task_id":"6bdbc26_1","host_monotonic_ns":163355246755611,"source":"runtime_explicit"}
+{"event":"task_end","task_id":"6bdbc26_1","host_monotonic_ns":163355246762517,"success":false}

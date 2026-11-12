@@ -1,0 +1,27 @@
+{
+  "backend": "phone",
+  "task_ids": [
+    "e85d92a_1"
+  ],
+  "profile": "most_played_song",
+  "task_profiles": {
+    "e85d92a_1": "most_played_song"
+  },
+  "enrich_navigation_tasks": [],
+  "max_sessions": 1,
+  "kv_slots": 1,
+  "policy": "lru",
+  "release_on_done": true,
+  "tool_delay_ms": 0.0,
+  "max_steps": 5,
+  "task_tool_delay_ms": {},
+  "task_arrival_delay_ms": {},
+  "max_new_tokens": 128,
+  "context_tokens": 6144,
+  "serial": "192.168.15.61:5555",
+  "experiment_name": "agent_phone_most_played_dev_20261026_02",
+  "bootstrap_auth": true,
+  "prompt_style": "direct_json",
+  "script_sha256": "561bf9cf059a9b733e27fe308ea9a8596b6c9ada137f065eec759ce5fa1f8ab0",
+  "note": "small multi-session plumbing smoke; synthetic tool delay, not benchmark"
+}

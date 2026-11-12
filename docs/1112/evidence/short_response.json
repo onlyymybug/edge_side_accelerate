@@ -1,0 +1,21 @@
+{
+  "event": "response",
+  "id": "retry16k-multicl16k_3tier_vlm_20261111_133935-0",
+  "image_count": 2,
+  "text": "The first image shows a file explorer screen with a list of folders and files, including a folder named \"aw_baseline_folder_20261106_110418\" and a file named \"aw_note_20261106_110046.md\". The second image shows a text editor screen with the text \"AndroidWorld real phone transport works\" displayed on the screen.",
+  "elapsed_seconds": 5.83142,
+  "request_accepted_steady_ns": 66840916603198,
+  "compute_start_steady_ns": 66840917471271,
+  "compute_end_steady_ns": 66846748894915,
+  "service_idle_before_request_seconds": 0.00337656,
+  "callback_ttft_seconds": 0.659134,
+  "ttft_us": 577961,
+  "media_time_us": 208152,
+  "prompt_time_us": 369809,
+  "decode_time_us": 5068012,
+  "prompt_tokens": 558,
+  "generated_tokens": 91,
+  "decoding_speed": 17.9558,
+  "stop_reason": "eos",
+  "host_roundtrip_seconds": 5.835982023010729
+}

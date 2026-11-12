@@ -1,0 +1,20 @@
+{
+  "catalog": {
+    "redmi_case": "blue",
+    "usb_c_cable": "black"
+  },
+  "tasks": [
+    {
+      "task_id": "smoke_case",
+      "item": "redmi_case",
+      "expected": "blue",
+      "question": "Look up redmi_case and tell me its color."
+    },
+    {
+      "task_id": "smoke_cable",
+      "item": "usb_c_cable",
+      "expected": "black",
+      "question": "Look up usb_c_cable and tell me its color."
+    }
+  ]
+}

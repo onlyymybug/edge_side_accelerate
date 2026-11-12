@@ -1,0 +1,4 @@
+{"run_id":"20261009T141527Z_e619c86d","host_monotonic_ns":117028746084572,"event":"create_session","session_id":"SO-case2::484","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"SO-case2::484","status":"ok","valid_tokens":0}}
+{"run_id":"20261009T141527Z_e619c86d","host_monotonic_ns":117028755804402,"event":"create_session","session_id":"mSv::195","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"mSv::195","status":"ok","valid_tokens":0}}
+{"run_id":"20261009T141527Z_e619c86d","host_monotonic_ns":117028762493219,"event":"create_session","session_id":"SO-case1::501","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"SO-case1::501","status":"ok","valid_tokens":0}}
+{"run_id":"20261009T141527Z_e619c86d","host_monotonic_ns":117028770241814,"event":"create_session","session_id":"Based::518","response":{"cache_position":0,"kv_allocated_bytes":0,"session_id":"Based::518","status":"ok","valid_tokens":0}}

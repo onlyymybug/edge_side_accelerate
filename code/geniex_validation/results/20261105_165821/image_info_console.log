@@ -1,0 +1,29 @@
+5.072s [31m[ERROR] [QNN] QnnDsp <E>  contextFromBin (submit) Failed code: 5005
+5.072s [31m[ERROR] [QNN] QnnDsp <E> Skel failed to process context binary.
+5.072s [31m[ERROR] [QNN] QnnDsp <E> Context create from binary failed for deviceId 0 coreId 0 pdId 0 for context 4, err 5005
+5.089s [31m[ERROR] [QNN] QnnDsp <E> Context 4 failed on pd 0
+8.158s [info] stop_reason=eos
+8.158s [gen ] 42
+9.176s [info] stop_reason=eos
+9.176s [gen ] {
+9.177s [gen ]   "city": "北京"
+9.177s [gen ] }
+11.009s [info] stop_reason=eos
+11.010s [gen ] 我是一个AI助手，用于提供各种信息和帮助。图片显示了一个红色正方形，没有其他内容。
+11.293s [ok  ] cell  plugin=qairt device=npu(id=NPU) ngl=0 ttft=325.7ms prefill=1719.4tps decode=17.6tps gen=10 tok
+11.293s [31m[ERROR] [src/ml.cpp:202:geniex_get_plugin_version] failed to get plugin version for llama_cpp: std::exception[0m
+{
+  "phase": "image_info",
+  "process_exit_code": 0,
+  "process_wall_seconds": 11.41523409500951,
+  "first_complete_answer_print_wall_seconds": 8.157581362000201,
+  "generated_lines": [
+    "[gen ] 42",
+    "[gen ] {",
+    "[gen ]   \"city\": \"北京\"",
+    "[gen ] }",
+    "[gen ] 我是一个AI助手，用于提供各种信息和帮助。图片显示了一个红色正方形，没有其他内容。"
+  ],
+  "sdk_json_pulled": true,
+  "note": "First printed answer is full-answer completion, not SDK TTFT; process wall includes hash verification and startup."
+}

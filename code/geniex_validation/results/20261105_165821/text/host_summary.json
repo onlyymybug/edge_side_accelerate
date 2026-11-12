@@ -1,0 +1,14 @@
+{
+  "phase": "text",
+  "process_exit_code": 0,
+  "process_wall_seconds": 9.745862420997582,
+  "first_complete_answer_print_wall_seconds": 7.913688900996931,
+  "generated_lines": [
+    "[gen ] 42",
+    "[gen ] {\"city\": \"北京\"}",
+    "[gen ] 我是一个AI助手，用于提供信息查询、问题解答和日常陪伴。",
+    "[gen ] （无图片）"
+  ],
+  "sdk_json_pulled": true,
+  "note": "First printed answer is full-answer completion, not SDK TTFT; process wall includes hash verification and startup."
+}

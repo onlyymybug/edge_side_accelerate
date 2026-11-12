@@ -1,0 +1,40 @@
+{
+  "baseline_file_count": 22,
+  "unchanged_baseline_files": 22,
+  "changed_or_missing_baseline_files": [],
+  "new_paths": [
+    "/storage/emulated/0/Documents/Markor/aw4950c.md",
+    "/storage/emulated/0/Documents/Markor/aw4950f.md",
+    "/storage/emulated/0/Documents/Markor/aw4950h.md",
+    "/storage/emulated/0/Documents/Markor/aw4950r.md"
+  ],
+  "fixtures": {
+    "aw4950f.md": {
+      "exists": true,
+      "content": "The garden has green trees.\nEnd of note.\nEnd of note.\nEnd of note.\n",
+      "sha256": "836149a85c95ae4158dc2aabf0712362171996dc3f2c8e77d2b7790454a04aad"
+    },
+    "aw4950h.md": {
+      "exists": true,
+      "content": "The garden has green trees.\nDaily update\nDaily update\nDaily update\nDaily update\n",
+      "sha256": "d74ff1c1e10560df7d5923388ead4a007f4c05c90c0ed5f3021bd913bd174bba"
+    },
+    "aw4950c.md": {
+      "exists": true,
+      "content": "The garden has green trees.\n",
+      "sha256": "7ef3563958bd042f2bdfa360afd3f3f0ff1f64f3895beaf008f172a129571741"
+    },
+    "aw4950n.md": {
+      "exists": false,
+      "content": null,
+      "sha256": null
+    },
+    "aw4950r.md": {
+      "exists": true,
+      "content": "The garden has green trees.\nThe meeting starts at noon.\n",
+      "sha256": "eda8e946a29a701f5064a5baa7684fd21408b54816bacc6b2ec47ebf4e3a5d2e"
+    }
+  },
+  "boot_id_unchanged": true,
+  "stayon_restored": true
+}

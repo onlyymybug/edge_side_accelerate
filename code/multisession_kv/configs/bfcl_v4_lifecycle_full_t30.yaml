@@ -1,0 +1,36 @@
+# Run separately for BFCL V4 Base and Long-Context, with distinct result roots.
+seed: 4245
+repeats: 1
+max_groups_per_session_count: null
+experiments:
+  - name: bfcl_n4
+    session_counts: [4]
+    max_groups_per_session_count: 12
+    schedules: [round_robin]
+    policies:
+      - name: lru
+        budget_ratios: [0.5, 0.75]
+      - name: lifecycle_lru
+        budget_ratios: [0.5, 0.75]
+  - name: bfcl_n8
+    session_counts: [8]
+    max_groups_per_session_count: 6
+    schedules: [round_robin]
+    policies:
+      - name: lru
+        budget_ratios: [0.25, 0.5, 0.75]
+      - name: lifecycle_lru
+        budget_ratios: [0.25, 0.5, 0.75]
+max_new_tokens: 64
+htp_mode: 8
+request_timeout_seconds: 600
+warmup: true
+telemetry_interval_seconds: 1
+require_not_charging: true
+temperature_gate:
+  enabled: true
+  sensor: skin
+  max_start_c: 30.0
+  consecutive_samples: 3
+  poll_seconds: 5
+  timeout_seconds: 1800

@@ -1,0 +1,22 @@
+{
+  "task_id": "6bdbc26_2",
+  "experiment_name": "agent_phone_holdout_20261022_02",
+  "bundle": "/home/lyyyy/edge_side_work/qnn_multisession_phone_bundle_ctx6144",
+  "serial": "192.168.12.218:5555",
+  "allowlist": [
+    "supervisor__show_profile",
+    "supervisor__show_account_passwords",
+    "spotify__login",
+    "spotify__show_current_song",
+    "spotify__show_artist",
+    "supervisor__complete_task"
+  ],
+  "max_steps": 5,
+  "max_new_tokens": 128,
+  "context_tokens": 6144,
+  "htp_mode": 8,
+  "bootstrap_auth": true,
+  "adapter_sha256": "beb71a635b85defcef4a6878f87e29a3f15d2c13beea19e237196befdbae9ac2",
+  "tool_docs_sha256": "042aade5f437988af289071bf233d05a8d557bf66480f8488b0221148173f523",
+  "note": "AppWorld single-task feasibility pilot"
+}

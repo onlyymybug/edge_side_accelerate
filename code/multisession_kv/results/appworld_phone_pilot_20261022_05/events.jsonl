@@ -1,0 +1,8 @@
+{"event":"task_start","task_id":"6bdbc26_1","host_monotonic_ns":160416393506034}
+{"event":"inference_start","task_id":"6bdbc26_1","request_id":"6bdbc26_1_01","host_monotonic_ns":160420367083902,"input_tokens":466}
+{"event":"inference_end","task_id":"6bdbc26_1","request_id":"6bdbc26_1_01","host_monotonic_ns":160422838754521,"status":"ok"}
+{"event":"tool_call","task_id":"6bdbc26_1","host_monotonic_ns":160422839066268,"tool_end_ns":160422856685513,"name":"spotify__show_current_song","parse_repaired":true,"tool_ms":17.619245}
+{"event":"inference_start","task_id":"6bdbc26_1","request_id":"6bdbc26_1_02","host_monotonic_ns":160422857736774,"input_tokens":569}
+{"event":"inference_end","task_id":"6bdbc26_1","request_id":"6bdbc26_1_02","host_monotonic_ns":160426699360906,"status":"ok"}
+{"event":"session_release","task_id":"6bdbc26_1","host_monotonic_ns":160426944574560,"source":"runtime_explicit"}
+{"event":"task_end","task_id":"6bdbc26_1","host_monotonic_ns":160426944581461,"success":false}

@@ -1,0 +1,24 @@
+seed: 42
+session_counts: [2, 4]
+max_groups_per_session_count: 1
+repeats: 1
+schedules: [grouped, round_robin]
+policies:
+  - name: all_keep
+  - name: no_reuse
+  - name: single_slot
+  - name: lru
+    budget_ratios: [0.25, 0.5, 0.75]
+max_new_tokens: 16
+htp_mode: 8
+request_timeout_seconds: 180
+warmup: true
+telemetry_interval_seconds: 1
+require_not_charging: true
+temperature_gate:
+  enabled: false
+  sensor: skin
+  max_start_c: null
+  consecutive_samples: 3
+  poll_seconds: 10
+  timeout_seconds: 1800

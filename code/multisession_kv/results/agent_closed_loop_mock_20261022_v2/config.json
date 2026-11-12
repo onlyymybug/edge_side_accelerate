@@ -1,0 +1,12 @@
+{
+  "backend": "mock",
+  "tasks": "/home/lyyyy/edge_side_work/code/multisession_kv/data/agent_closed_loop_smoke.json",
+  "task_count": 2,
+  "bundle": "/home/lyyyy/edge_side_work/qnn_multisession_phone_bundle_ctx6144",
+  "serial": null,
+  "tool_delay_ms": 1000,
+  "max_new_tokens": 96,
+  "context_tokens": 6144,
+  "htp_mode": 8,
+  "note": "synthetic closed-loop plumbing smoke; not a benchmark result"
+}

@@ -1,0 +1,1 @@
+{"task_id":"396c5a2_1","success":false,"profile":"queue_popular_songs","steps":1,"error":"not a single JSON call: '{\"name\":\"spotify__search_artists\",\"query\":\"Lily Moon\"}>{\"parameters\": {\"query\": \"Lily Moon\"}}'","completion_ms":9032.329468,"repaired_tool_calls":0,"filtered_tool_calls":0}

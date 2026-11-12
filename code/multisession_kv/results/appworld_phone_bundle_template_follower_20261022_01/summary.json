@@ -1,0 +1,18 @@
+{
+  "task_id": "6bdbc26_1",
+  "steps": 1,
+  "success": false,
+  "error": "not a Hermes tool call: '<tool_call>\\n\"name\": \"spotify__show_current_song\",\\n\"arguments\": {}\\n</tool_call>'",
+  "completion_ms": 9031.243866,
+  "evaluation": {
+    "difficulty": 1,
+    "num_tests": 2,
+    "passed_tests": 1
+  },
+  "repaired_tool_calls": 0,
+  "ignored_extra_calls": 0,
+  "filtered_tool_calls": 0,
+  "enriched_observations": 0,
+  "normalized_action_answers": 0,
+  "note": "single-task feasibility pilot; not a benchmark aggregate"
+}

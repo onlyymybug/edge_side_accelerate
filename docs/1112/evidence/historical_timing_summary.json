@@ -1,0 +1,67 @@
+{
+  "20261106_123655": {
+    "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/20261106_123655/timing_analysis/summary.json",
+    "counts": {
+      "tasks": 6,
+      "successes": 2,
+      "steps": 67
+    },
+    "loop_seconds": 510.38608951599997,
+    "host_request_seconds": 229.490456602,
+    "no_request_seconds": 280.895632914,
+    "host_request_fraction": 0.4496408920933292,
+    "native_handler_idle_fraction": 0.5752169733203105,
+    "native_load_seconds": 5.485355
+  },
+  "official_m3a_20261108_010622": {
+    "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261108_010622/timing_analysis/summary.json",
+    "counts": {
+      "tasks": 2,
+      "successes": 0,
+      "steps": 26,
+      "requests": 50,
+      "action": 26,
+      "summary": 24
+    },
+    "loop_seconds": 2898.804263059,
+    "host_request_seconds": 2400.875814681,
+    "no_request_seconds": 497.92844837799976,
+    "host_request_fraction": 0.8282297101865876,
+    "native_handler_idle_fraction": 0.17279630195586504,
+    "native_load_seconds": 6.295632
+  },
+  "official_m3a_20261110_142917": {
+    "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261110_142917/timing_analysis/summary.json",
+    "counts": {
+      "tasks": 2,
+      "successes": 0,
+      "steps": 20,
+      "requests": 38,
+      "action": 20,
+      "summary": 18
+    },
+    "loop_seconds": 648.6007243480001,
+    "host_request_seconds": 381.51097444899995,
+    "no_request_seconds": 267.08974989900014,
+    "host_request_fraction": 0.5882062108896199,
+    "native_handler_idle_fraction": 0.41422655202456743,
+    "native_load_seconds": 6.940634
+  },
+  "official_m3a_20261111_140115": {
+    "source": "/home/lyyyy/edge_side_work/code/android_world_phone/results/official_m3a_20261111_140115/timing_analysis/summary.json",
+    "counts": {
+      "tasks": 4,
+      "successes": 0,
+      "steps": 40,
+      "requests": 77,
+      "action": 40,
+      "summary": 37
+    },
+    "loop_seconds": 2364.388470604,
+    "host_request_seconds": 1802.2693976480002,
+    "no_request_seconds": 562.1190729559996,
+    "host_request_fraction": 0.7622560421247518,
+    "native_handler_idle_fraction": 0.2395586094736491,
+    "native_load_seconds": 8.871677
+  }
+}
